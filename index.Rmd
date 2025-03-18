@@ -1,7 +1,0 @@
----
-title: "My Website"
----
-
-![](Ankur 5.jpg){width=50%}
-
-Hello! Welcome to my website.
