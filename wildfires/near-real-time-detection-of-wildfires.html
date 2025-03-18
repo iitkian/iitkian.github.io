@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Near-real-time detection of wildfires | Wildfires</title>
+  <meta name="description" content="This book provides an easy introduction to the causes, principles, management strategies, and best practices in wildfires." />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Near-real-time detection of wildfires | Wildfires" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This book provides an easy introduction to the causes, principles, management strategies, and best practices in wildfires." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Near-real-time detection of wildfires | Wildfires" />
+  
+  <meta name="twitter:description" content="This book provides an easy introduction to the causes, principles, management strategies, and best practices in wildfires." />
+  
+
+<meta name="author" content="Ankur Awadhiya" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="wildfire-prevention.html"/>
+<link rel="next" href="wildfire-suppression.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Wildfires</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Links to procure the book</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the author</a></li>
+<li class="part"><span><b>I Wildfire principles</b></span></li>
+<li class="chapter" data-level="1" data-path="wildfires-an-introduction.html"><a href="wildfires-an-introduction.html"><i class="fa fa-check"></i><b>1</b> Wildfires: An introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="wildfires-an-introduction.html"><a href="wildfires-an-introduction.html#what-is-a-wildfire"><i class="fa fa-check"></i><b>1.1</b> What is a wildfire?</a></li>
+<li class="chapter" data-level="1.2" data-path="wildfires-an-introduction.html"><a href="wildfires-an-introduction.html#distribution-of-wildfires"><i class="fa fa-check"></i><b>1.2</b> Distribution of wildfires</a></li>
+<li class="chapter" data-level="1.3" data-path="wildfires-an-introduction.html"><a href="wildfires-an-introduction.html#types-and-causes-of-wildfires"><i class="fa fa-check"></i><b>1.3</b> Types and causes of wildfires</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="wildfires-an-introduction.html"><a href="wildfires-an-introduction.html#classification-based-on-the-parts-of-forests-consumed-by-the-wildfire"><i class="fa fa-check"></i><b>1.3.1</b> Classification based on the parts of forests consumed by the wildfire</a></li>
+<li class="chapter" data-level="1.3.2" data-path="wildfires-an-introduction.html"><a href="wildfires-an-introduction.html#classification-based-on-energy-released-by-the-wildfire"><i class="fa fa-check"></i><b>1.3.2</b> Classification based on energy released by the wildfire</a></li>
+<li class="chapter" data-level="1.3.3" data-path="wildfires-an-introduction.html"><a href="wildfires-an-introduction.html#classification-based-on-location-and-fuel-type"><i class="fa fa-check"></i><b>1.3.3</b> Classification based on location and fuel type</a></li>
+<li class="chapter" data-level="1.3.4" data-path="wildfires-an-introduction.html"><a href="wildfires-an-introduction.html#classification-based-on-the-origin-of-wildfire"><i class="fa fa-check"></i><b>1.3.4</b> Classification based on the origin of wildfire</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="wildfires-an-introduction.html"><a href="wildfires-an-introduction.html#the-fire-triangle"><i class="fa fa-check"></i><b>1.4</b> The fire triangle</a></li>
+<li class="chapter" data-level="1.5" data-path="wildfires-an-introduction.html"><a href="wildfires-an-introduction.html#trends-in-wildfires"><i class="fa fa-check"></i><b>1.5</b> Trends in wildfires</a></li>
+<li class="chapter" data-level="1.6" data-path="wildfires-an-introduction.html"><a href="wildfires-an-introduction.html#wildfires-and-society"><i class="fa fa-check"></i><b>1.6</b> Wildfires and society</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html"><i class="fa fa-check"></i><b>2</b> Effects of wildfires</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#classification-of-wildfire-effects"><i class="fa fa-check"></i><b>2.1</b> Classification of wildfire effects</a></li>
+<li class="chapter" data-level="2.2" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#physical-effects"><i class="fa fa-check"></i><b>2.2</b> Physical effects</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#changes-in-temperature"><i class="fa fa-check"></i><b>2.2.1</b> Changes in temperature</a></li>
+<li class="chapter" data-level="2.2.2" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#changes-in-soil"><i class="fa fa-check"></i><b>2.2.2</b> Changes in soil</a></li>
+<li class="chapter" data-level="2.2.3" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#changes-in-hydrology"><i class="fa fa-check"></i><b>2.2.3</b> Changes in hydrology</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#chemical-effects"><i class="fa fa-check"></i><b>2.3</b> Chemical effects</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#release-of-hazardous-substances"><i class="fa fa-check"></i><b>2.3.1</b> Release of hazardous substances</a></li>
+<li class="chapter" data-level="2.3.2" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#degradation-of-air-and-water-quality"><i class="fa fa-check"></i><b>2.3.2</b> Degradation of air and water quality</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#biological-effects"><i class="fa fa-check"></i><b>2.4</b> Biological effects</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#changes-in-habitat"><i class="fa fa-check"></i><b>2.4.1</b> Changes in habitat</a></li>
+<li class="chapter" data-level="2.4.2" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#death-and-displacement-of-organisms"><i class="fa fa-check"></i><b>2.4.2</b> Death and displacement of organisms</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#effects-on-society"><i class="fa fa-check"></i><b>2.5</b> Effects on society</a></li>
+<li class="chapter" data-level="2.6" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#effects-on-weather-and-climate"><i class="fa fa-check"></i><b>2.6</b> Effects on weather and climate</a></li>
+</ul></li>
+<li class="part"><span><b>II Wildfire management strategies</b></span></li>
+<li class="chapter" data-level="3" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html"><i class="fa fa-check"></i><b>3</b> Strategies for wildfire management</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#what-is-management"><i class="fa fa-check"></i><b>3.1</b> What is management?</a></li>
+<li class="chapter" data-level="3.2" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#the-deming-cycle-in-wildfire-management"><i class="fa fa-check"></i><b>3.2</b> The Deming cycle in wildfire management</a></li>
+<li class="chapter" data-level="3.3" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#prevention"><i class="fa fa-check"></i><b>3.3</b> Prevention</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#education-and-awareness"><i class="fa fa-check"></i><b>3.3.1</b> Education and awareness</a></li>
+<li class="chapter" data-level="3.3.2" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#fuel-management"><i class="fa fa-check"></i><b>3.3.2</b> Fuel management</a></li>
+<li class="chapter" data-level="3.3.3" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#building-codes-and-design"><i class="fa fa-check"></i><b>3.3.3</b> Building codes and design</a></li>
+<li class="chapter" data-level="3.3.4" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#firebreaks-and-barriers"><i class="fa fa-check"></i><b>3.3.4</b> Firebreaks and barriers</a></li>
+<li class="chapter" data-level="3.3.5" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#community-planning"><i class="fa fa-check"></i><b>3.3.5</b> Community planning</a></li>
+<li class="chapter" data-level="3.3.6" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#fire-detection-and-monitoring"><i class="fa fa-check"></i><b>3.3.6</b> Fire detection and monitoring</a></li>
+<li class="chapter" data-level="3.3.7" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#burn-bans-and-other-regulations"><i class="fa fa-check"></i><b>3.3.7</b> Burn bans and other regulations</a></li>
+<li class="chapter" data-level="3.3.8" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#research-and-innovation"><i class="fa fa-check"></i><b>3.3.8</b> Research and innovation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#detection"><i class="fa fa-check"></i><b>3.4</b> Detection</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#traditional-detection-methods"><i class="fa fa-check"></i><b>3.4.1</b> Traditional detection methods</a></li>
+<li class="chapter" data-level="3.4.2" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#technological-advances-in-detection"><i class="fa fa-check"></i><b>3.4.2</b> Technological advances in detection</a></li>
+<li class="chapter" data-level="3.4.3" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#advanced-monitoring-systems"><i class="fa fa-check"></i><b>3.4.3</b> Advanced monitoring systems</a></li>
+<li class="chapter" data-level="3.4.4" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#machine-learning-and-artificial-intelligence"><i class="fa fa-check"></i><b>3.4.4</b> Machine Learning and Artificial Intelligence</a></li>
+<li class="chapter" data-level="3.4.5" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#community-and-crowd-sourced-reporting"><i class="fa fa-check"></i><b>3.4.5</b> Community and crowd-Sourced reporting</a></li>
+<li class="chapter" data-level="3.4.6" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#integrated-detection-systems"><i class="fa fa-check"></i><b>3.4.6</b> Integrated detection systems</a></li>
+<li class="chapter" data-level="3.4.7" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#challenges-and-future-directions"><i class="fa fa-check"></i><b>3.4.7</b> Challenges and future directions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#suppression"><i class="fa fa-check"></i><b>3.5</b> Suppression</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#fundamental-suppression-strategies"><i class="fa fa-check"></i><b>3.5.1</b> Fundamental suppression strategies</a></li>
+<li class="chapter" data-level="3.5.2" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#technological-innovations-in-suppression"><i class="fa fa-check"></i><b>3.5.2</b> Technological innovations in suppression</a></li>
+<li class="chapter" data-level="3.5.3" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#firefighting-equipment"><i class="fa fa-check"></i><b>3.5.3</b> Firefighting equipment</a></li>
+<li class="chapter" data-level="3.5.4" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#coordination-and-communication"><i class="fa fa-check"></i><b>3.5.4</b> Coordination and communication</a></li>
+<li class="chapter" data-level="3.5.5" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#challenges-and-future-directions-1"><i class="fa fa-check"></i><b>3.5.5</b> Challenges and future directions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#post-wildfire-management"><i class="fa fa-check"></i><b>3.6</b> Post-wildfire management</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#ecological-restoration"><i class="fa fa-check"></i><b>3.6.1</b> Ecological restoration</a></li>
+<li class="chapter" data-level="3.6.2" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#community-recovery"><i class="fa fa-check"></i><b>3.6.2</b> Community recovery</a></li>
+<li class="chapter" data-level="3.6.3" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#infrastructure-restoration"><i class="fa fa-check"></i><b>3.6.3</b> Infrastructure restoration</a></li>
+<li class="chapter" data-level="3.6.4" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#monitoring-and-evaluation"><i class="fa fa-check"></i><b>3.6.4</b> Monitoring and evaluation</a></li>
+<li class="chapter" data-level="3.6.5" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#challenges-and-future-directions-2"><i class="fa fa-check"></i><b>3.6.5</b> Challenges and future directions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html"><i class="fa fa-check"></i><b>4</b> Wildfire prevention</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#need-for-data-and-data-analysis"><i class="fa fa-check"></i><b>4.1</b> Need for data and data analysis</a></li>
+<li class="chapter" data-level="4.2" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#from-data-to-information"><i class="fa fa-check"></i><b>4.2</b> From data to information</a></li>
+<li class="chapter" data-level="4.3" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#wildfire-hazard-indices"><i class="fa fa-check"></i><b>4.3</b> Wildfire hazard indices</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#components-of-wildfire-hazard-indices"><i class="fa fa-check"></i><b>4.3.1</b> Components of wildfire hazard indices</a></li>
+<li class="chapter" data-level="4.3.2" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#types-of-wildfire-hazard-indices"><i class="fa fa-check"></i><b>4.3.2</b> Types of wildfire hazard indices</a></li>
+<li class="chapter" data-level="4.3.3" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#applications-of-wildfire-hazard-indices"><i class="fa fa-check"></i><b>4.3.3</b> Applications of wildfire hazard indices</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#identifying-wildfire-prone-areas"><i class="fa fa-check"></i><b>4.4</b> Identifying wildfire-prone areas</a></li>
+<li class="chapter" data-level="4.5" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#dissemination-of-information"><i class="fa fa-check"></i><b>4.5</b> Dissemination of information</a></li>
+<li class="chapter" data-level="4.6" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#community-involvement-and-cooperation"><i class="fa fa-check"></i><b>4.6</b> Community involvement and cooperation</a></li>
+<li class="chapter" data-level="4.7" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#use-of-fire-lines-and-fire-breakers"><i class="fa fa-check"></i><b>4.7</b> Use of fire lines and fire breakers</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#purpose-and-function-of-fire-lines"><i class="fa fa-check"></i><b>4.7.1</b> Purpose and function of fire lines</a></li>
+<li class="chapter" data-level="4.7.2" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#types-of-fire-lines"><i class="fa fa-check"></i><b>4.7.2</b> Types of fire lines</a></li>
+<li class="chapter" data-level="4.7.3" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#site-selection-and-preparation"><i class="fa fa-check"></i><b>4.7.3</b> Site selection and preparation</a></li>
+<li class="chapter" data-level="4.7.4" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#implementation-of-fire-lines"><i class="fa fa-check"></i><b>4.7.4</b> Implementation of fire lines</a></li>
+<li class="chapter" data-level="4.7.5" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#case-study-from-madhya-pradesh"><i class="fa fa-check"></i><b>4.7.5</b> Case study from Madhya Pradesh</a></li>
+<li class="chapter" data-level="4.7.6" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#limitations-of-traditional-fire-lines"><i class="fa fa-check"></i><b>4.7.6</b> Limitations of traditional fire lines</a></li>
+<li class="chapter" data-level="4.7.7" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#construction-of-fire-breakers"><i class="fa fa-check"></i><b>4.7.7</b> Construction of fire breakers</a></li>
+<li class="chapter" data-level="4.7.8" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#effectiveness-of-fire-breakers"><i class="fa fa-check"></i><b>4.7.8</b> Effectiveness of fire breakers</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#reduction-of-fuel-load"><i class="fa fa-check"></i><b>4.8</b> Reduction of fuel load</a></li>
+<li class="chapter" data-level="4.9" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#cold-burning"><i class="fa fa-check"></i><b>4.9</b> Cold burning</a></li>
+<li class="chapter" data-level="4.10" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#species-selection-for-wildfire-prevention"><i class="fa fa-check"></i><b>4.10</b> Species-selection for wildfire prevention</a>
+<ul>
+<li class="chapter" data-level="4.10.1" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#characteristics-of-fire-resistant-plants"><i class="fa fa-check"></i><b>4.10.1</b> Characteristics of fire-resistant plants</a></li>
+<li class="chapter" data-level="4.10.2" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#recommended-plant-species"><i class="fa fa-check"></i><b>4.10.2</b> Recommended plant species</a></li>
+<li class="chapter" data-level="4.10.3" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#landscaping-practices"><i class="fa fa-check"></i><b>4.10.3</b> Landscaping practices</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html"><i class="fa fa-check"></i><b>5</b> Near-real-time detection of wildfires</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#satellite-based-detection"><i class="fa fa-check"></i><b>5.1</b> Satellite-based detection</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#satellite-systems-for-wildfire-detection"><i class="fa fa-check"></i><b>5.1.1</b> Satellite systems for wildfire detection</a></li>
+<li class="chapter" data-level="5.1.2" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#types-of-data-provided-by-satellites"><i class="fa fa-check"></i><b>5.1.2</b> Types of data provided by satellites</a></li>
+<li class="chapter" data-level="5.1.3" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#applications-in-fire-management"><i class="fa fa-check"></i><b>5.1.3</b> Applications in fire management</a></li>
+<li class="chapter" data-level="5.1.4" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#challenges-and-limitations"><i class="fa fa-check"></i><b>5.1.4</b> Challenges and limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#aerial-surveillance"><i class="fa fa-check"></i><b>5.2</b> Aerial surveillance</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#aerial-platforms-for-wildfire-detection"><i class="fa fa-check"></i><b>5.2.1</b> Aerial platforms for wildfire detection</a></li>
+<li class="chapter" data-level="5.2.2" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#types-of-data-provided-by-aerial-surveillance"><i class="fa fa-check"></i><b>5.2.2</b> Types of data provided by aerial surveillance</a></li>
+<li class="chapter" data-level="5.2.3" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#applications-in-fire-management-1"><i class="fa fa-check"></i><b>5.2.3</b> Applications in fire management</a></li>
+<li class="chapter" data-level="5.2.4" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#challenges-and-limitations-1"><i class="fa fa-check"></i><b>5.2.4</b> Challenges and limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#ground-based-detection-systems"><i class="fa fa-check"></i><b>5.3</b> Ground-based detection systems</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#fire-towers"><i class="fa fa-check"></i><b>5.3.1</b> Fire towers</a></li>
+<li class="chapter" data-level="5.3.2" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#sensor-networks"><i class="fa fa-check"></i><b>5.3.2</b> Sensor networks</a></li>
+<li class="chapter" data-level="5.3.3" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#advantages-of-ground-based-detection-systems"><i class="fa fa-check"></i><b>5.3.3</b> Advantages of ground-based detection systems</a></li>
+<li class="chapter" data-level="5.3.4" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#challenges-and-limitations-2"><i class="fa fa-check"></i><b>5.3.4</b> Challenges and limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#social-media-and-citizen-reports"><i class="fa fa-check"></i><b>5.4</b> Social media and citizen reports</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#role-of-social-media-in-wildfire-detection"><i class="fa fa-check"></i><b>5.4.1</b> Role of social media in wildfire detection</a></li>
+<li class="chapter" data-level="5.4.2" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#role-of-citizen-reports-in-wildfire-detection"><i class="fa fa-check"></i><b>5.4.2</b> Role of citizen reports in wildfire detection</a></li>
+<li class="chapter" data-level="5.4.3" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#benefits-of-social-media-and-citizen-reports"><i class="fa fa-check"></i><b>5.4.3</b> Benefits of social media and citizen reports</a></li>
+<li class="chapter" data-level="5.4.4" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#challenges-and-limitations-3"><i class="fa fa-check"></i><b>5.4.4</b> Challenges and limitations</a></li>
+<li class="chapter" data-level="5.4.5" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#integration-with-other-detection-methods"><i class="fa fa-check"></i><b>5.4.5</b> Integration with other detection methods</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#integrated-detection-systems-1"><i class="fa fa-check"></i><b>5.5</b> Integrated detection systems</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#components-of-integrated-detection-systems"><i class="fa fa-check"></i><b>5.5.1</b> Components of integrated detection systems</a></li>
+<li class="chapter" data-level="5.5.2" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#benefits-of-integrated-detection-systems"><i class="fa fa-check"></i><b>5.5.2</b> Benefits of integrated detection systems</a></li>
+<li class="chapter" data-level="5.5.3" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#challenges-and-limitations-4"><i class="fa fa-check"></i><b>5.5.3</b> Challenges and limitations</a></li>
+<li class="chapter" data-level="5.5.4" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#case-studies-and-examples"><i class="fa fa-check"></i><b>5.5.4</b> Case studies and examples</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html"><i class="fa fa-check"></i><b>6</b> Wildfire suppression</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#principles-of-wildfire-suppression"><i class="fa fa-check"></i><b>6.1</b> Principles of wildfire suppression</a></li>
+<li class="chapter" data-level="6.2" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#wildfire-suppression-methods"><i class="fa fa-check"></i><b>6.2</b> Wildfire suppression methods</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#firebreaks"><i class="fa fa-check"></i><b>6.2.1</b> Firebreaks</a></li>
+<li class="chapter" data-level="6.2.2" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#use-of-explosives"><i class="fa fa-check"></i><b>6.2.2</b> Use of explosives</a></li>
+<li class="chapter" data-level="6.2.3" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#beating-of-fires"><i class="fa fa-check"></i><b>6.2.3</b> Beating of fires</a></li>
+<li class="chapter" data-level="6.2.4" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#water-and-fire-retardants"><i class="fa fa-check"></i><b>6.2.4</b> Water and fire retardants</a></li>
+<li class="chapter" data-level="6.2.5" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#aerial-suppression-and-water-bombing"><i class="fa fa-check"></i><b>6.2.5</b> Aerial suppression and water bombing</a></li>
+<li class="chapter" data-level="6.2.6" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#fire-suppression-teams"><i class="fa fa-check"></i><b>6.2.6</b> Fire suppression teams</a></li>
+<li class="chapter" data-level="6.2.7" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#monitoring-of-wildfire-suppression"><i class="fa fa-check"></i><b>6.2.7</b> Monitoring of wildfire suppression</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#data-and-wildfire-suppression"><i class="fa fa-check"></i><b>6.3</b> Data and wildfire suppression</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#types-of-data-used-in-wildfire-suppression"><i class="fa fa-check"></i><b>6.3.1</b> Types of data used in wildfire suppression</a></li>
+<li class="chapter" data-level="6.3.2" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#integration-of-data-into-suppression-strategies"><i class="fa fa-check"></i><b>6.3.2</b> Integration of data into suppression strategies</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#factors-determining-the-choice-of-methods"><i class="fa fa-check"></i><b>6.4</b> Factors determining the choice of methods</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#fire-behavior"><i class="fa fa-check"></i><b>6.4.1</b> Fire behavior</a></li>
+<li class="chapter" data-level="6.4.2" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#environmental-conditions"><i class="fa fa-check"></i><b>6.4.2</b> Environmental conditions</a></li>
+<li class="chapter" data-level="6.4.3" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#resource-availability"><i class="fa fa-check"></i><b>6.4.3</b> Resource availability</a></li>
+<li class="chapter" data-level="6.4.4" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#objectives-of-suppression"><i class="fa fa-check"></i><b>6.4.4</b> Objectives of suppression</a></li>
+<li class="chapter" data-level="6.4.5" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#safety-considerations"><i class="fa fa-check"></i><b>6.4.5</b> Safety considerations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="post-fire-management.html"><a href="post-fire-management.html"><i class="fa fa-check"></i><b>7</b> Post-fire management</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="post-fire-management.html"><a href="post-fire-management.html#lid-and-biological-communities"><i class="fa fa-check"></i><b>7.1</b> LID and biological communities</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="post-fire-management.html"><a href="post-fire-management.html#characteristics-of-lid"><i class="fa fa-check"></i><b>7.1.1</b> Characteristics of LID</a></li>
+<li class="chapter" data-level="7.1.2" data-path="post-fire-management.html"><a href="post-fire-management.html#effects-on-biological-communities"><i class="fa fa-check"></i><b>7.1.2</b> Effects on biological communities</a></li>
+<li class="chapter" data-level="7.1.3" data-path="post-fire-management.html"><a href="post-fire-management.html#ecological-succession-and-recovery"><i class="fa fa-check"></i><b>7.1.3</b> Ecological succession and recovery</a></li>
+<li class="chapter" data-level="7.1.4" data-path="post-fire-management.html"><a href="post-fire-management.html#implications-for-ecosystem-management"><i class="fa fa-check"></i><b>7.1.4</b> Implications for ecosystem management</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="post-fire-management.html"><a href="post-fire-management.html#post-fire-management-options"><i class="fa fa-check"></i><b>7.2</b> Post-fire management options</a></li>
+<li class="chapter" data-level="7.3" data-path="post-fire-management.html"><a href="post-fire-management.html#post-wildfire-management-steps"><i class="fa fa-check"></i><b>7.3</b> Post-wildfire management steps</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="post-fire-management.html"><a href="post-fire-management.html#damage-assessment"><i class="fa fa-check"></i><b>7.3.1</b> Damage assessment</a></li>
+<li class="chapter" data-level="7.3.2" data-path="post-fire-management.html"><a href="post-fire-management.html#hazard-mitigation"><i class="fa fa-check"></i><b>7.3.2</b> Hazard mitigation</a></li>
+<li class="chapter" data-level="7.3.3" data-path="post-fire-management.html"><a href="post-fire-management.html#burned-area-emergency-response-baer"><i class="fa fa-check"></i><b>7.3.3</b> Burned Area Emergency Response (BAER)</a></li>
+<li class="chapter" data-level="7.3.4" data-path="post-fire-management.html"><a href="post-fire-management.html#ecosystem-restoration"><i class="fa fa-check"></i><b>7.3.4</b> Ecosystem restoration</a></li>
+<li class="chapter" data-level="7.3.5" data-path="post-fire-management.html"><a href="post-fire-management.html#community-support"><i class="fa fa-check"></i><b>7.3.5</b> Community support</a></li>
+<li class="chapter" data-level="7.3.6" data-path="post-fire-management.html"><a href="post-fire-management.html#long-term-recovery-planning"><i class="fa fa-check"></i><b>7.3.6</b> Long-term recovery planning</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="post-fire-management.html"><a href="post-fire-management.html#time-and-cost-of-restoration"><i class="fa fa-check"></i><b>7.4</b> Time and cost of restoration</a></li>
+<li class="chapter" data-level="7.5" data-path="post-fire-management.html"><a href="post-fire-management.html#data-and-post-fire-management"><i class="fa fa-check"></i><b>7.5</b> Data and post-fire management</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="post-fire-management.html"><a href="post-fire-management.html#assessment-of-fire-impact"><i class="fa fa-check"></i><b>7.5.1</b> Assessment of fire impact</a></li>
+<li class="chapter" data-level="7.5.2" data-path="post-fire-management.html"><a href="post-fire-management.html#resource-allocation-and-management"><i class="fa fa-check"></i><b>7.5.2</b> Resource allocation and management</a></li>
+<li class="chapter" data-level="7.5.3" data-path="post-fire-management.html"><a href="post-fire-management.html#planning-and-implementation-of-restoration-strategies"><i class="fa fa-check"></i><b>7.5.3</b> Planning and implementation of restoration strategies</a></li>
+<li class="chapter" data-level="7.5.4" data-path="post-fire-management.html"><a href="post-fire-management.html#monitoring-and-evaluation-1"><i class="fa fa-check"></i><b>7.5.4</b> Monitoring and evaluation</a></li>
+<li class="chapter" data-level="7.5.5" data-path="post-fire-management.html"><a href="post-fire-management.html#risk-reduction-and-preparedness"><i class="fa fa-check"></i><b>7.5.5</b> Risk reduction and preparedness</a></li>
+<li class="chapter" data-level="7.5.6" data-path="post-fire-management.html"><a href="post-fire-management.html#policy-and-decision-making"><i class="fa fa-check"></i><b>7.5.6</b> Policy and Decision-Making</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="post-fire-management.html"><a href="post-fire-management.html#case-study-yellowstone-national-park-wildfire-of-1988"><i class="fa fa-check"></i><b>7.6</b> Case Study: Yellowstone National Park Wildfire of 1988</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="post-fire-management.html"><a href="post-fire-management.html#the-1988-fire-event"><i class="fa fa-check"></i><b>7.6.1</b> The 1988 fire event</a></li>
+<li class="chapter" data-level="7.6.2" data-path="post-fire-management.html"><a href="post-fire-management.html#response-and-management"><i class="fa fa-check"></i><b>7.6.2</b> Response and management</a></li>
+<li class="chapter" data-level="7.6.3" data-path="post-fire-management.html"><a href="post-fire-management.html#recovery-and-long-term-impact"><i class="fa fa-check"></i><b>7.6.3</b> Recovery and long-term impact</a></li>
+<li class="chapter" data-level="7.6.4" data-path="post-fire-management.html"><a href="post-fire-management.html#conclusion"><i class="fa fa-check"></i><b>7.6.4</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="post-fire-management.html"><a href="post-fire-management.html#case-study-bandhavgarh-tiger-reserve-wildfire-of-2021"><i class="fa fa-check"></i><b>7.7</b> Case Study: Bandhavgarh Tiger Reserve Wildfire of 2021</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="post-fire-management.html"><a href="post-fire-management.html#the-wildfire-event"><i class="fa fa-check"></i><b>7.7.1</b> The wildfire event</a></li>
+<li class="chapter" data-level="7.7.2" data-path="post-fire-management.html"><a href="post-fire-management.html#response-and-challenges"><i class="fa fa-check"></i><b>7.7.2</b> Response and challenges</a></li>
+<li class="chapter" data-level="7.7.3" data-path="post-fire-management.html"><a href="post-fire-management.html#restoration-and-recovery"><i class="fa fa-check"></i><b>7.7.3</b> Restoration and recovery</a></li>
+<li class="chapter" data-level="7.7.4" data-path="post-fire-management.html"><a href="post-fire-management.html#conclusion-1"><i class="fa fa-check"></i><b>7.7.4</b> Conclusion</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>III Technologies &amp; best practices</b></span></li>
+<li class="chapter" data-level="8" data-path="remote-sensing.html"><a href="remote-sensing.html"><i class="fa fa-check"></i><b>8</b> Remote Sensing</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="remote-sensing.html"><a href="remote-sensing.html#fundamentals"><i class="fa fa-check"></i><b>8.1</b> Fundamentals</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="remote-sensing.html"><a href="remote-sensing.html#what-is-remote-sensing"><i class="fa fa-check"></i><b>8.1.1</b> What is Remote Sensing?</a></li>
+<li class="chapter" data-level="8.1.2" data-path="remote-sensing.html"><a href="remote-sensing.html#electromagnetic-spectrum"><i class="fa fa-check"></i><b>8.1.2</b> Electromagnetic spectrum</a></li>
+<li class="chapter" data-level="8.1.3" data-path="remote-sensing.html"><a href="remote-sensing.html#interaction-of-waves-with-matter"><i class="fa fa-check"></i><b>8.1.3</b> Interaction of waves with matter</a></li>
+<li class="chapter" data-level="8.1.4" data-path="remote-sensing.html"><a href="remote-sensing.html#atm-window"><i class="fa fa-check"></i><b>8.1.4</b> Atmospheric interactions and atmospheric window</a></li>
+<li class="chapter" data-level="8.1.5" data-path="remote-sensing.html"><a href="remote-sensing.html#passive-and-active-remote-sensing"><i class="fa fa-check"></i><b>8.1.5</b> Passive and active remote sensing</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="remote-sensing.html"><a href="remote-sensing.html#earth-observation-satellites"><i class="fa fa-check"></i><b>8.2</b> Earth-observation satellites</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="remote-sensing.html"><a href="remote-sensing.html#historical-development"><i class="fa fa-check"></i><b>8.2.1</b> Historical development</a></li>
+<li class="chapter" data-level="8.2.2" data-path="remote-sensing.html"><a href="remote-sensing.html#satellite-orbits"><i class="fa fa-check"></i><b>8.2.2</b> Satellite orbits</a></li>
+<li class="chapter" data-level="8.2.3" data-path="remote-sensing.html"><a href="remote-sensing.html#time-period-of-a-satellite"><i class="fa fa-check"></i><b>8.2.3</b> Time period of a satellite</a></li>
+<li class="chapter" data-level="8.2.4" data-path="remote-sensing.html"><a href="remote-sensing.html#types-of-satellite-orbits"><i class="fa fa-check"></i><b>8.2.4</b> Types of satellite orbits</a></li>
+<li class="chapter" data-level="8.2.5" data-path="remote-sensing.html"><a href="remote-sensing.html#sat-data"><i class="fa fa-check"></i><b>8.2.5</b> Satellite data</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="remote-sensing.html"><a href="remote-sensing.html#radar"><i class="fa fa-check"></i><b>8.3</b> RADAR</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="remote-sensing.html"><a href="remote-sensing.html#sar"><i class="fa fa-check"></i><b>8.3.1</b> SAR</a></li>
+<li class="chapter" data-level="8.3.2" data-path="remote-sensing.html"><a href="remote-sensing.html#distance-of-the-target-from-the-satellite"><i class="fa fa-check"></i><b>8.3.2</b> Distance of the target from the satellite</a></li>
+<li class="chapter" data-level="8.3.3" data-path="remote-sensing.html"><a href="remote-sensing.html#polsar"><i class="fa fa-check"></i><b>8.3.3</b> PolSAR</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="remote-sensing.html"><a href="remote-sensing.html#lidar"><i class="fa fa-check"></i><b>8.4</b> LiDAR</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="remote-sensing.html"><a href="remote-sensing.html#features-of-lidar"><i class="fa fa-check"></i><b>8.4.1</b> Features of LiDAR</a></li>
+<li class="chapter" data-level="8.4.2" data-path="remote-sensing.html"><a href="remote-sensing.html#fundamental-components"><i class="fa fa-check"></i><b>8.4.2</b> Fundamental components</a></li>
+<li class="chapter" data-level="8.4.3" data-path="remote-sensing.html"><a href="remote-sensing.html#modes-of-operation"><i class="fa fa-check"></i><b>8.4.3</b> Modes of operation</a></li>
+<li class="chapter" data-level="8.4.4" data-path="remote-sensing.html"><a href="remote-sensing.html#applications-in-forestry"><i class="fa fa-check"></i><b>8.4.4</b> Applications in forestry</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="remote-sensing.html"><a href="remote-sensing.html#geographic-information-systems-gis"><i class="fa fa-check"></i><b>8.5</b> Geographic Information Systems (GIS)</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="remote-sensing.html"><a href="remote-sensing.html#core-components-of-gis"><i class="fa fa-check"></i><b>8.5.1</b> Core components of GIS</a></li>
+<li class="chapter" data-level="8.5.2" data-path="remote-sensing.html"><a href="remote-sensing.html#data-integration-in-gis"><i class="fa fa-check"></i><b>8.5.2</b> Data Integration in GIS</a></li>
+<li class="chapter" data-level="8.5.3" data-path="remote-sensing.html"><a href="remote-sensing.html#applications-in-forestry-and-wildfire-management"><i class="fa fa-check"></i><b>8.5.3</b> Applications in forestry and wildfire management</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="remote-sensing.html"><a href="remote-sensing.html#drones"><i class="fa fa-check"></i><b>8.6</b> Drones</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="remote-sensing.html"><a href="remote-sensing.html#working-of-drones"><i class="fa fa-check"></i><b>8.6.1</b> Working of drones</a></li>
+<li class="chapter" data-level="8.6.2" data-path="remote-sensing.html"><a href="remote-sensing.html#advantages-of-drones"><i class="fa fa-check"></i><b>8.6.2</b> Advantages of drones</a></li>
+<li class="chapter" data-level="8.6.3" data-path="remote-sensing.html"><a href="remote-sensing.html#applications-of-drones"><i class="fa fa-check"></i><b>8.6.3</b> Applications of drones</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="comp-systems.html"><a href="comp-systems.html"><i class="fa fa-check"></i><b>9</b> Computational systems in wildfire management</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="comp-systems.html"><a href="comp-systems.html#fire-behavior-modeling"><i class="fa fa-check"></i><b>9.1</b> Fire behavior modeling</a></li>
+<li class="chapter" data-level="9.2" data-path="comp-systems.html"><a href="comp-systems.html#computational-systems-for-remote-sensing-and-gis-data-analyses"><i class="fa fa-check"></i><b>9.2</b> Computational systems for Remote Sensing and GIS data analyses</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="comp-systems.html"><a href="comp-systems.html#remote-sensing-integration"><i class="fa fa-check"></i><b>9.2.1</b> Remote Sensing integration</a></li>
+<li class="chapter" data-level="9.2.2" data-path="comp-systems.html"><a href="comp-systems.html#gis-data-analyses"><i class="fa fa-check"></i><b>9.2.2</b> GIS data analyses</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="comp-systems.html"><a href="comp-systems.html#predictive-analytics"><i class="fa fa-check"></i><b>9.3</b> Predictive analytics</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="comp-systems.html"><a href="comp-systems.html#forecasting"><i class="fa fa-check"></i><b>9.3.1</b> Forecasting</a></li>
+<li class="chapter" data-level="9.3.2" data-path="comp-systems.html"><a href="comp-systems.html#risk-identification"><i class="fa fa-check"></i><b>9.3.2</b> Risk identification</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="comp-systems.html"><a href="comp-systems.html#decision-support-systems-dss"><i class="fa fa-check"></i><b>9.4</b> Decision Support Systems (DSS)</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="comp-systems.html"><a href="comp-systems.html#scenario-analysis"><i class="fa fa-check"></i><b>9.4.1</b> Scenario analysis</a></li>
+<li class="chapter" data-level="9.4.2" data-path="comp-systems.html"><a href="comp-systems.html#resource-management"><i class="fa fa-check"></i><b>9.4.2</b> Resource management</a></li>
+<li class="chapter" data-level="9.4.3" data-path="comp-systems.html"><a href="comp-systems.html#evacuation-planning"><i class="fa fa-check"></i><b>9.4.3</b> Evacuation planning</a></li>
+<li class="chapter" data-level="9.4.4" data-path="comp-systems.html"><a href="comp-systems.html#incident-coordination"><i class="fa fa-check"></i><b>9.4.4</b> Incident coordination</a></li>
+<li class="chapter" data-level="9.4.5" data-path="comp-systems.html"><a href="comp-systems.html#public-communication"><i class="fa fa-check"></i><b>9.4.5</b> Public communication</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="comp-systems.html"><a href="comp-systems.html#internet-of-things-iot-and-sensor-networks"><i class="fa fa-check"></i><b>9.5</b> Internet of Things (IoT) and sensor networks</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="comp-systems.html"><a href="comp-systems.html#environmental-sensors"><i class="fa fa-check"></i><b>9.5.1</b> Environmental sensors</a></li>
+<li class="chapter" data-level="9.5.2" data-path="comp-systems.html"><a href="comp-systems.html#fire-detection-sensors"><i class="fa fa-check"></i><b>9.5.2</b> Fire detection sensors</a></li>
+<li class="chapter" data-level="9.5.3" data-path="comp-systems.html"><a href="comp-systems.html#networked-systems"><i class="fa fa-check"></i><b>9.5.3</b> Networked systems</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="comp-systems.html"><a href="comp-systems.html#artificial-intelligence-ai-and-machine-learning-ml"><i class="fa fa-check"></i><b>9.6</b> Artificial Intelligence (AI) and Machine Learning (ML)</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="comp-systems.html"><a href="comp-systems.html#fire-behavior-prediction"><i class="fa fa-check"></i><b>9.6.1</b> Fire behavior prediction</a></li>
+<li class="chapter" data-level="9.6.2" data-path="comp-systems.html"><a href="comp-systems.html#pattern-recognition"><i class="fa fa-check"></i><b>9.6.2</b> Pattern recognition</a></li>
+<li class="chapter" data-level="9.6.3" data-path="comp-systems.html"><a href="comp-systems.html#adaptive-learning"><i class="fa fa-check"></i><b>9.6.3</b> Adaptive learning</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="comp-systems.html"><a href="comp-systems.html#cloud-computing"><i class="fa fa-check"></i><b>9.7</b> Cloud computing</a>
+<ul>
+<li class="chapter" data-level="9.7.1" data-path="comp-systems.html"><a href="comp-systems.html#data-storage-and-processing"><i class="fa fa-check"></i><b>9.7.1</b> Data storage and processing</a></li>
+<li class="chapter" data-level="9.7.2" data-path="comp-systems.html"><a href="comp-systems.html#real-time-data-access"><i class="fa fa-check"></i><b>9.7.2</b> Real-time data access</a></li>
+<li class="chapter" data-level="9.7.3" data-path="comp-systems.html"><a href="comp-systems.html#collaboration"><i class="fa fa-check"></i><b>9.7.3</b> Collaboration</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html"><i class="fa fa-check"></i><b>10</b> Research and Development (R&amp;D) in wildfire management</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#advancements-in-fire-behavior-modeling"><i class="fa fa-check"></i><b>10.1</b> Advancements in fire behavior modeling</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#enhanced-computational-techniques"><i class="fa fa-check"></i><b>10.1.1</b> Enhanced computational techniques</a></li>
+<li class="chapter" data-level="10.1.2" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#integration-of-multi-source-data"><i class="fa fa-check"></i><b>10.1.2</b> Integration of multi-source data</a></li>
+<li class="chapter" data-level="10.1.3" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#real-time-modeling-and-simulation"><i class="fa fa-check"></i><b>10.1.3</b> Real-time modeling and simulation</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#development-of-new-technologies"><i class="fa fa-check"></i><b>10.2</b> Development of new technologies</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#advanced-sensor-networks"><i class="fa fa-check"></i><b>10.2.1</b> Advanced sensor networks</a></li>
+<li class="chapter" data-level="10.2.2" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#remote-sensing-technologies"><i class="fa fa-check"></i><b>10.2.2</b> Remote sensing technologies</a></li>
+<li class="chapter" data-level="10.2.3" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#autonomous-systems"><i class="fa fa-check"></i><b>10.2.3</b> Autonomous systems</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#enhancements-in-fire-detection-and-monitoring"><i class="fa fa-check"></i><b>10.3</b> Enhancements in fire detection and monitoring</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#improved-detection-algorithms"><i class="fa fa-check"></i><b>10.3.1</b> Improved detection algorithms</a></li>
+<li class="chapter" data-level="10.3.2" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#integration-of-iot-and-cloud-computing"><i class="fa fa-check"></i><b>10.3.2</b> Integration of IoT and cloud computing</a></li>
+<li class="chapter" data-level="10.3.3" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#enhanced-data-visualization-and-analysis"><i class="fa fa-check"></i><b>10.3.3</b> Enhanced data visualization and analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#new-materials"><i class="fa fa-check"></i><b>10.4</b> New materials</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#fire-resistant-materials"><i class="fa fa-check"></i><b>10.4.1</b> Fire-resistant materials</a></li>
+<li class="chapter" data-level="10.4.2" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#fire-resistant-foams-and-gels"><i class="fa fa-check"></i><b>10.4.2</b> Fire-resistant foams and gels</a></li>
+<li class="chapter" data-level="10.4.3" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#innovative-fire-retardants"><i class="fa fa-check"></i><b>10.4.3</b> Innovative fire retardants</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#modern-vehicles"><i class="fa fa-check"></i><b>10.5</b> Modern vehicles</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#all-terrain-firefighting-vehicles"><i class="fa fa-check"></i><b>10.5.1</b> All-terrain firefighting vehicles</a></li>
+<li class="chapter" data-level="10.5.2" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#amphibious-firefighting-vehicles"><i class="fa fa-check"></i><b>10.5.2</b> Amphibious firefighting vehicles</a></li>
+<li class="chapter" data-level="10.5.3" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#drone-based-firefighting-systems"><i class="fa fa-check"></i><b>10.5.3</b> Drone-based firefighting systems</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#firefighting-safety-and-efficiency"><i class="fa fa-check"></i><b>10.6</b> Firefighting safety and efficiency</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#advanced-personal-protective-equipment-ppe"><i class="fa fa-check"></i><b>10.6.1</b> Advanced personal protective equipment (PPE)</a></li>
+<li class="chapter" data-level="10.6.2" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#wearable-technology"><i class="fa fa-check"></i><b>10.6.2</b> Wearable technology</a></li>
+<li class="chapter" data-level="10.6.3" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#firefighting-equipment-innovations"><i class="fa fa-check"></i><b>10.6.3</b> Firefighting equipment innovations</a></li>
+<li class="chapter" data-level="10.6.4" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#enhanced-training-and-simulation"><i class="fa fa-check"></i><b>10.6.4</b> Enhanced training and simulation</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#integrating-climate-change"><i class="fa fa-check"></i><b>10.7</b> Integrating climate change</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#modeling-climate-change-impacts"><i class="fa fa-check"></i><b>10.7.1</b> Modeling climate change impacts</a></li>
+<li class="chapter" data-level="10.7.2" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#developing-adaptive-management-strategies"><i class="fa fa-check"></i><b>10.7.2</b> Developing adaptive management strategies</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>IV Appendix</b></span></li>
+<li class="chapter" data-level="11" data-path="wind-movement.html"><a href="wind-movement.html"><i class="fa fa-check"></i><b>11</b> Wind movement</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="wind-movement.html"><a href="wind-movement.html#bernoulli-equation"><i class="fa fa-check"></i><b>11.1</b> Bernoulli equation</a></li>
+<li class="chapter" data-level="11.2" data-path="wind-movement.html"><a href="wind-movement.html#principles-of-air-movement"><i class="fa fa-check"></i><b>11.2</b> Principles of air movement</a></li>
+<li class="chapter" data-level="11.3" data-path="wind-movement.html"><a href="wind-movement.html#general-circulation"><i class="fa fa-check"></i><b>11.3</b> General circulation</a></li>
+<li class="chapter" data-level="11.4" data-path="wind-movement.html"><a href="wind-movement.html#local-winds"><i class="fa fa-check"></i><b>11.4</b> Local winds</a>
+<ul>
+<li class="chapter" data-level="11.4.1" data-path="wind-movement.html"><a href="wind-movement.html#periodical-winds"><i class="fa fa-check"></i><b>11.4.1</b> Periodical winds</a></li>
+<li class="chapter" data-level="11.4.2" data-path="wind-movement.html"><a href="wind-movement.html#non-periodical-winds"><i class="fa fa-check"></i><b>11.4.2</b> Non-periodical winds</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="wind-movement.html"><a href="wind-movement.html#other-wind-phenomena"><i class="fa fa-check"></i><b>11.5</b> Other wind phenomena</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Wildfires</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="near-real-time-detection-of-wildfires" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Near-real-time detection of wildfires<a href="near-real-time-detection-of-wildfires.html#near-real-time-detection-of-wildfires" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Near-real-time detection of wildfires is essential for effective fire management and minimizing potential damage. This becomes crucial since with the passage of time, the fire front increases in size [Figure <a href="strategies-for-wildfire-management.html#fig:WildfireTiming">3.1</a>], necessitating the deployment of more personnel, equipment, and resources to tackle a larger fire front.</p>
+<p>The principal technologies utilized in wildfire detection today encompass satellite-based systems, aerial surveillance, and ground-based detection methods. Satellites such as MODIS and GOES play a crucial role by providing extensive, near-real-time coverage. These satellites capture thermal anomalies and smoke plumes, offering valuable data regarding fire location, size, intensity, and movement. Aerial platforms, including drones and manned aircraft, complement satellite technology by delivering detailed, localized monitoring through thermal and infrared sensors, which are instrumental in assessing fire behavior and conditions. Ground-based manual and automated fire detection methods, including watch towers, further enhance these capabilities.</p>
+<p>In addition to traditional methods, advancements in machine learning and artificial intelligence (AI) have significantly enhanced wildfire detection capabilities. AI algorithms analyze large volumes of data from satellite and aerial sources to accurately identify fire patterns and anomalies. Predictive modeling driven by AI further supports fire management by forecasting fire behavior based on historical data and current conditions. This also allows us to concentrate our attention and processing to areas that have a high probability of having wildfires.</p>
+<p>Social media and citizen reports have also become integral to wildfire detection, providing real-time, crowd-sourced information. Social media platforms such as X (formerly Twitter) and Facebook, along with specialized reporting applications, provide immediate reports of wildfire sightings. These reports are utilized to corroborate and enhance data gathered from conventional detection methods.</p>
+<p>In this chapter, we shall discuss all these in detail.</p>
+<div id="satellite-based-detection" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Satellite-based detection<a href="near-real-time-detection-of-wildfires.html#satellite-based-detection" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Satellite-based fire detection has become the bedrock of modern wildfire management, offering extensive, continuous, near-instantaneous, and cost-effective observational capabilities <span class="citation">(<a href="#ref-chuvieco2020satellite">Chuvieco et al. 2020</a>; <a href="#ref-wooster2021satellite">Wooster et al. 2021</a>)</span>. By employing satellite technology, we can achieve comprehensive spatial coverage and frequent revisit opportunities, which are crucial for effective wildfire detection and monitoring. Satellite-based monitoring enables us to monitor remote, distant, and inaccessible areas without the need for physical human observers in those locations.</p>
+<p>This section delves into the multifaceted role of satellite systems in wildfire detection. It elucidates the diverse data types they provide and highlights their pivotal contribution to enhancing fire management and response strategies.</p>
+<div id="satellite-systems-for-wildfire-detection" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Satellite systems for wildfire detection<a href="near-real-time-detection-of-wildfires.html#satellite-systems-for-wildfire-detection" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Several key satellite systems are employed for identifying and tracking wildfires. MODIS (Moderate Resolution Imaging Spectroradiometer), an instrument aboard NASA’s Terra and Aqua satellites, provides extensive global coverage and frequent updates <span class="citation">(<a href="#ref-davies2008fire">D. K. Davies et al. 2008</a>)</span>. It captures images in both visible and thermal infrared spectra, which are crucial for detecting wildfires. The thermal infrared data helps identify heat sources, while visible imagery supports tracking the fire’s progression. MODIS’s ability to revisit areas frequently makes it valuable for ongoing wildfire monitoring and management.</p>
+<p>VIIRS (Visible Infrared Imaging Radiometer Suite), located on the S-NPP (Suomi National Polar-orbiting Partnership), NOAA-20, and NOAA-21 satellites, is another platform that enhances fire detection capabilities with its advanced sensors <span class="citation">(<a href="#ref-dalezios2017wildfires">Dalezios et al. 2017</a>)</span>. VIIRS provides high-resolution thermal and visible images, improving our ability to detect and analyze wildfires. Its Day/Night Band (DNB) feature enables it to detect fires at all times of the day, ensuring continuous monitoring. This capability is crucial for capturing fire data during both daylight and night, making VIIRS an essential tool for comprehensive wildfire surveillance.</p>
+<p>The GOES (Geostationary Operational Environmental Satellites) series of satellites, managed by NOAA, are positioned in geostationary orbit to provide real-time, high-frequency imagery of the same area <span class="citation">(<a href="#ref-chuvieco2020satellite">Chuvieco et al. 2020</a>; <a href="#ref-prins2001overview">Prins et al. 2001</a>)</span>. GOES satellites offer continuous updates on wildfire activity through visible and infrared imagery. This real-time data is particularly useful for monitoring rapidly changing fire conditions and issuing timely alerts to response teams, aiding in quick and impactful deployment of resources.</p>
+</div>
+<div id="types-of-data-provided-by-satellites" class="section level3 hasAnchor" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Types of data provided by satellites<a href="near-real-time-detection-of-wildfires.html#types-of-data-provided-by-satellites" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Satellites provide diverse data types that are indispensable for detecting and managing wildfires. Thermal infrared sensors on satellites detect the heat emitted by wildfires. This data enables the precise identification of active fires, particularly in remote areas where alternative methods may be inadequate. Through the analysis of these thermal signatures, satellite data elucidates the intensity and extent of fires, which is crucial for planning firefighting strategies and resource allocation.</p>
+<p>Similarly, optical sensors capture visible light reflected from the Earth’s surface. This imagery aids in identifying smoke plumes and assessing the extent of fire-affected areas. Optical data is especially valuable for visualizing fire boundaries and comprehending the spatial spread of the fire, thereby providing insights into the extent of its environmental impact.</p>
+<p>Certain satellites also provide multispectral or hyperspectral imagery, which captures data across a range of wavelengths. This type of data enables comprehensive analysis of vegetation health, smoke composition, and fire behavior. Multispectral and hyperspectral data significantly enhance the accuracy of fire detection and provide a more detailed understanding of wildfire dynamics.</p>
+</div>
+<div id="applications-in-fire-management" class="section level3 hasAnchor" number="5.1.3">
+<h3><span class="header-section-number">5.1.3</span> Applications in fire management<a href="near-real-time-detection-of-wildfires.html#applications-in-fire-management" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Satellites play a crucial role in the early detection of wildfires by identifying heat anomalies and smoke plumes. Through continuous monitoring via satellite imagery, fire progress can be tracked in real-time, facilitating prompt responses and timely updates for fire management teams. This capability is paramount in preventing the spread of wildfires and mitigating their adverse effects.</p>
+<p>Satellites like GOES provide high-temporal resolution data that supports real-time alerts for fire agencies and responders. This immediate information is crucial for the prompt mobilization of firefighting resources and the coordination of response efforts. Real-time alerts facilitate the timely deployment of response teams to effectively manage and contain wildfires.</p>
+<p>Through continuous data capture spanning multiple years, these satellite systems provide a consistent and comprehensive dataset that illuminates patterns and trends in fire activity. This multi-year repository of data is invaluable for developing detailed analyses, enabling researchers and policymakers to construct precise fire compendia and maps that depict the extent and frequency of fire incidents over time <span class="citation">(<a href="#ref-ankur2018generation">Awadhiya 2018</a>, <a href="#ref-fire-compendium22">2022b</a>)</span>. Such datasets are also indispensable for comprehending the environmental and climatic factors that contribute to fire outbreaks, assessing their impact on ecosystems, and formulating strategies for wildfire management and prevention. Furthermore, the comprehensive temporal and spatial insights provided by these datasets serve as a cornerstone for modeling and predictive analyses, aiding in the anticipation of future fire behavior and mitigating risks in vulnerable regions.</p>
+<p>Similarly, multispectral satellite data plays a pivotal role in the creation of accurate burn area maps, which are indispensable for fire management. By capturing reflective data from various wavelengths, these satellites can effectively differentiate between burned and unburned lands. This data is then processed to generate comprehensive maps that delineate the extent and intensity of the fire-affected regions <span class="citation">(<a href="#ref-burnAtlas22">Awadhiya 2022a</a>)</span>. Such high-resolution maps enable fire management teams to assess damage, formulate rehabilitation strategies, allocate resources effectively, and devise preventive measures to mitigate future fires. Consequently, these efforts contribute to both ecological recovery and public safety.</p>
+</div>
+<div id="challenges-and-limitations" class="section level3 hasAnchor" number="5.1.4">
+<h3><span class="header-section-number">5.1.4</span> Challenges and limitations<a href="near-real-time-detection-of-wildfires.html#challenges-and-limitations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Despite their benefits, satellite-based detection faces several challenges <span class="citation">(<a href="#ref-leblon2001forest">Leblon 2001</a>)</span>. The resolution of satellite imagery significantly impacts the accuracy of fire detection and assessment. While higher-resolution data offers more detailed information, it may not always be feasible or cost-effective. Conversely, lower resolution can hinder the detection of smaller fires or the evaluation of fire behavior in specific environments.</p>
+<p>Cloud cover and atmospheric conditions can impede satellite observations, thereby diminishing the capacity to identify and monitor wildfires. Despite the utilization of sophisticated algorithms and data fusion methodologies, these techniques do not completely mitigate the adverse effects of inclement weather on satellite data.</p>
+<p>The large volume of data generated by satellites requires effective processing and interpretation. Advanced algorithms and machine learning techniques are often employed to analyze this data, but the quality of interpretation nevertheless is dependent on the data’s clarity and the processing system’s capabilities. Accurate interpretation is paramount for making well-informed decisions in wildfire management.</p>
+</div>
+</div>
+<div id="aerial-surveillance" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Aerial surveillance<a href="near-real-time-detection-of-wildfires.html#aerial-surveillance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Aerial surveillance plays a pivotal role in the timely detection and effective management of wildfires. By employing a range of aerial platforms — including manned aircraft, unmanned aerial vehicles (drones), and balloons — fire management teams can gain detailed and localized insights into fire activity. This section delves into the diverse aerial platforms employed for wildfire detection, elucidating the data they furnish and their pivotal role in augmenting fire management and response protocols.</p>
+<div id="aerial-platforms-for-wildfire-detection" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Aerial platforms for wildfire detection<a href="near-real-time-detection-of-wildfires.html#aerial-platforms-for-wildfire-detection" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Aerial platforms offer unique benefits for detecting and monitoring wildfires <span class="citation">(<a href="#ref-allison2016airborne">Allison et al. 2016</a>)</span>. Each aerial platform possesses unique advantages that collectively contribute to effective wildfire management.</p>
+<p>Manned aircraft, particularly reconnaissance planes and water bombers, play a pivotal role in wildfire detection and management. These aircraft are equipped with sophisticated imaging systems and sensors that provide invaluable data for comprehending wildfire dynamics and devising effective responses.</p>
+<p>Specifically engineered for meticulous observation and reconnaissance, these aerial vehicles are equipped with infrared cameras and specialized sensors designed to discern heat signatures and monitor the behavior of wildfires. The high-resolution imagery captured by these sensors enables the assessment of the intensity, extent, and impact of wildfires, providing invaluable data for the formulation of effective firefighting strategies and the efficient allocation of resources.</p>
+<p>Primarily utilized for firefighting operations, water bombers also serve a valuable role in surveillance. Their ability to release substantial quantities of water or fire retardant on active fires is well-known. However, their capabilities extend beyond suppression efforts, enabling concurrent real-time aerial observations. This dual functionality significantly enhances their utility in wildfire management, facilitating adjustments to firefighting strategies based on evolving fire conditions.</p>
+<p>Drones, or unmanned aerial vehicles (UAVs), have become increasingly important in wildfire detection due to their flexibility, affordability, and advanced technology. Drones utilized in wildfire detection are frequently equipped with thermal cameras to identify heat emanating from wildfires. Additionally, drones may be equipped with multispectral or hyperspectral sensors to capture data across a broad spectrum of wavelengths, enabling comprehensive analysis of vegetation health, smoke composition, and fire behavior. Drones possess the capability to operate at lower altitudes and navigate through smoke, thereby providing unobstructed and immediate visualizations of fire activity without compromising human lives. This real-time data is paramount for identifying critical fire locations and directing response efforts effectively.</p>
+<p>Although less common, balloon surveillance is also sometimes used, utilizing high-altitude balloons or tethered balloons. High-altitude balloons, equipped with cameras and sensors, provide extended aerial observation from a stable platform. These balloons can remain aloft for extended periods, capturing high-resolution images and monitoring vast areas. Their ability to offer a comprehensive perspective on wildfire activity is invaluable for tracking the fire’s extent and progression over time.</p>
+<p>Tethered balloons, anchored to the ground, are equipped with cameras and sensors for real-time monitoring. They provide a stable and adjustable platform for observing fire activity from various heights. Tethered balloons are particularly useful for focused surveillance, offering detailed views of specific areas of interest.</p>
+</div>
+<div id="types-of-data-provided-by-aerial-surveillance" class="section level3 hasAnchor" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Types of data provided by aerial surveillance<a href="near-real-time-detection-of-wildfires.html#types-of-data-provided-by-aerial-surveillance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Aerial platforms collect various types of data that are essential for effective wildfire detection and management <span class="citation">(<a href="#ref-allison2016airborne">Allison et al. 2016</a>)</span>. Thermal imaging data is paramount for identifying heat sources associated with wildfires. Manned aircraft, drones, and balloons equipped with thermal sensors acquire this data, enabling the pinpointing of active fires and the assessment of their intensity. This information holds particular significance in conditions of reduced visibility, such as during nighttime or in dense smoke.</p>
+<p>Optical imagery, captured utilizing visible light sensors, offers lucid and detailed representations of wildfires and their surrounding environments. This data type facilitates the visualization of smoke plumes, fire boundaries, and the extent of fire-impacted areas. In conjunction with thermal data, optical images provide a tangible perspective on the fire’s characteristics and progression, thereby supporting comprehensive assessment and response planning.</p>
+<p>Real-time video feeds from aerial platforms, such as drones and tethered balloons, are also highly valuable for immediate decision-making. These live feeds enable fire management teams to observe fire behavior as it evolves, facilitating timely adjustments to response strategies and enhancing overall operational coordination.</p>
+</div>
+<div id="applications-in-fire-management-1" class="section level3 hasAnchor" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> Applications in fire management<a href="near-real-time-detection-of-wildfires.html#applications-in-fire-management-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The data collected through aerial surveillance plays a pivotal role in wildfire management, enabling comprehensive assessments of wildfire conditions. Aerial platforms provide high-resolution imagery and data, enabling fire management teams to comprehend the current state of the fire. This information is paramount for making informed decisions regarding firefighting strategies, resource allocation, and evacuation planning.</p>
+<p>Real-time data from aerial platforms further supports tactical decision-making during wildfire incidents. Immediate insights into fire behavior, location, and intensity empower incident commanders to develop and execute strategic responses. This timely information is crucial for coordinating firefighting efforts and optimizing resource deployment.</p>
+<p>Concurrently, aerial surveillance enhances coordination and communication among firefighting teams. Data collected by aerial platforms is shared with ground crews and other responders, ensuring that all parties have access to the most up-to-date information. This collaborative approach further improves the efficiency of wildfire response efforts and ensures effective resource utilization.</p>
+</div>
+<div id="challenges-and-limitations-1" class="section level3 hasAnchor" number="5.2.4">
+<h3><span class="header-section-number">5.2.4</span> Challenges and limitations<a href="near-real-time-detection-of-wildfires.html#challenges-and-limitations-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Despite their advantages, aerial surveillance systems face several challenges and limitations <span class="citation">(<a href="#ref-allison2016airborne">Allison et al. 2016</a>; <a href="#ref-mohapatra2022early">Mohapatra and Trinh 2022</a>)</span>. Weather conditions, including high winds, smoke, and cloud cover, can significantly impact the efficacy of aerial surveillance. These factors can diminish visibility and compromise the quality of data collected by manned aircraft, drones, and balloons. Adverse weather conditions may also restrict flight operations, thereby affecting the timeliness and accuracy of data acquisition.</p>
+<p>The substantial volume of data generated by aerial platforms necessitates efficient processing and integration. High-resolution imagery and real-time video feeds must be analyzed promptly to provide actionable insights. The complexity of data processing can be particularly challenging, especially during rapidly evolving wildfire scenarios. Therefore, effective data integration becomes paramount for informed decision-making and coordinated response efforts.</p>
+<p>Operating manned aircraft, drones, and balloons also entails substantial financial outlays and logistical complexities. Manned aircraft necessitate extensive resources for maintenance, fuel, and crew support. While drones offer cost-effectiveness, they also demand meticulous management of battery life, maintenance, and operational safety. Balloons, regardless of altitude or tethering, necessitate similar considerations for equipment and deployment. Striking a balance between these factors is paramount for maintaining effective aerial surveillance capabilities.</p>
+</div>
+</div>
+<div id="ground-based-detection-systems" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Ground-based detection systems<a href="near-real-time-detection-of-wildfires.html#ground-based-detection-systems" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ground-based detection systems play a critical role in the near-real-time detection and monitoring of wildfires <span class="citation">(<a href="#ref-mohapatra2022early">Mohapatra and Trinh 2022</a>)</span>. These technologies complement aerial and satellite-based methods by providing localized and detailed observations. These technologies include fire towers, sensor networks, and other specialized equipment that enhance our ability to detect and respond to wildfires effectively. This section provides a comprehensive examination of the various ground-based detection systems, their functionalities, and their contributions to wildfire management.</p>
+<div id="fire-towers" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Fire towers<a href="near-real-time-detection-of-wildfires.html#fire-towers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Historically, fire towers have been pivotal in ground-based wildfire detection. These structures provide elevated vantage points, enabling observation of vast areas for the detection of smoke and heat.</p>
+<p>Traditional fire towers are constructed on elevated terrain, such as hilltops or ridges, providing a broad view of the surrounding landscape <span class="citation">(<a href="#ref-ankur2018generation">Awadhiya 2018</a>; <a href="#ref-berryoung2021little">Berryoung 2021</a>)</span>. These fire towers are staffed by fire lookout personnel who diligently monitor the horizon for any indications of smoke or fire. Lookout personnel utilize telescopes and other optical instruments to visually scan for smoke plumes or flames. This method enables the identification of potential wildfire locations and initial assessments of fire size and behavior. Upon detecting a fire, personnel in fire towers manually report the sighting to fire control centers. This information is subsequently utilized to coordinate further response actions and dispatch additional resources as deemed necessary.</p>
+<p>Modern fire towers have evolved to include advanced technologies that enhance their detection capabilities <span class="citation">(<a href="#ref-ccetin2013video">Çetin et al. 2013</a>)</span>. Contemporary fire towers are frequently equipped with automated detection systems that utilize image analysis to discern smoke and heat signatures. These systems employ algorithms to analyze camera feeds and identify potential fires with exceptional accuracy. Automated alerts are promptly generated upon fire detection, facilitating prompt response. Furthermore, these advanced fire towers are integrated with communication networks that facilitate real-time data transmission to fire management agencies. This integration enhances coordination and ensures the availability of accurate and timely information for decision-making purposes.</p>
+</div>
+<div id="sensor-networks" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Sensor networks<a href="near-real-time-detection-of-wildfires.html#sensor-networks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sensor networks [Figure <a href="near-real-time-detection-of-wildfires.html#fig:InstaAlert">5.1</a>] are distributed systems designed to monitor environmental conditions and detect signs of wildfire activity <span class="citation">(<a href="#ref-dogra2021review">Dogra, Rani, and Sharma 2021</a>)</span>. These networks consist of various types of sensors placed across a landscape to gather data continuously <span class="citation">(<a href="#ref-allison2016airborne">Allison et al. 2016</a>; <a href="#ref-rahman2021computer">Rahman et al. 2021</a>; <a href="#ref-vejmelka2016data">Vejmelka, Kochanski, and Mandel 2016</a>)</span>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:InstaAlert"></span>
+<img src="Figure/InstaAlert.png" alt="InstaAlert --- an example of a fire detection sensor. Fire alerts are sent when smoke is detected, high temperature alerts are sent during hot periods to indicate a high propensity of fire, and error alerts are sent if any sensor goes offline." width="100%" />
+<p class="caption">
+Figure 5.1: InstaAlert — an example of a fire detection sensor. Fire alerts are sent when smoke is detected, high temperature alerts are sent during hot periods to indicate a high propensity of fire, and error alerts are sent if any sensor goes offline.
+</p>
+</div>
+<p>Environmental sensors monitor pivotal variables that influence wildfire risk and detection. Temperature sensors measure ground and air temperatures, offering data on temperature fluctuations that may suggest the presence or propensity of a fire. Sudden temperature surges can prompt alerts for potential wildfire activity.</p>
+<p>Humidity sensors monitor fluctuations in the moisture content of the air and soil. Low humidity levels can increase the risk of wildfires, and abrupt drops in moisture may indicate the presence of a fire or a heightened fire danger.</p>
+<p>Wind sensors measure wind speed and direction, which are crucial for comprehending fire behavior and propagation. Elevated winds can intensify wildfire conditions, and monitoring wind patterns facilitates the prediction of fire movement and potential consequences.</p>
+<p>Ground-based smoke detectors are meticulously engineered to discern the presence of smoke particles suspended in the air. Optical smoke detectors employ laser, ultraviolet, or infrared technology to accomplish this task. Through the analysis of alterations in light intensity or wavelength, optical smoke detectors can effectively identify smoke even at low concentrations.</p>
+<p>Chemical smoke detectors analyze the composition of airborne particles to detect the presence of smoke and other combustion byproducts. These detectors can provide additional information regarding the fire’s intensity and the type of fuel being burned.</p>
+<p>Ionization smoke detectors utilizing radioactive sources like americium-241 (<sup>241</sup>Am) are generally avoided in wild areas due to radiation issues if they get damaged or lost in the environment.</p>
+</div>
+<div id="advantages-of-ground-based-detection-systems" class="section level3 hasAnchor" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Advantages of ground-based detection systems<a href="near-real-time-detection-of-wildfires.html#advantages-of-ground-based-detection-systems" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Ground-based detection systems provide several advantages in wildfire detection and management. They offer localized and detailed observations that complement aerial and satellite-based methods. By focusing on specific areas, these systems can detect smaller fires or early signs of fire activity that might be missed by other methods.</p>
+<p>Numerous ground-based systems, including sensor networks, provide continuous monitoring of environmental conditions with exceptional detail. This is unlike geostationary satellites that provide coarse spatial resolution data owing to their humongous distance from the Earth’s surface, and also unlike the sun-synchronous orbit Earth-observation satellites that have low temporal resolution, and thus cannot provide continuous data. Continuous ground-based surveillance enables the identification of potential changes that may indicate the presence of a wildfire, facilitating prompt detection and response.</p>
+<p>Ground-based detection systems are frequently more cost-effective than aerial or satellite-based methods. Although they may necessitate initial investment and maintenance, the ongoing operational costs are typically lower. This cost-effectiveness renders ground-based systems a practical choice for extensive and long-term wildfire monitoring.</p>
+</div>
+<div id="challenges-and-limitations-2" class="section level3 hasAnchor" number="5.3.4">
+<h3><span class="header-section-number">5.3.4</span> Challenges and limitations<a href="near-real-time-detection-of-wildfires.html#challenges-and-limitations-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Despite their advantages, ground-based detection systems encounter several challenges and limitations. Ground-based systems, particularly fire towers, are constrained by their geographical location and the range of their observations. Their effectiveness is limited to the areas within their line of sight or sensor network coverage. This limitation can be mitigated by deploying multiple systems, but this may result in an increase in overall costs.</p>
+<p>Ground-based systems also necessitate regular maintenance to ensure optimal functionality. Fire towers and sensors must undergo periodic inspections and repairs as required, which can be particularly challenging in remote or inaccessible locations. Furthermore, harsh environmental conditions can compromise the durability and reliability of equipment.</p>
+<p>Although situated closer to the action, ground-based detection systems may sometimes experience longer response times compared to real-time aerial or near-real-time satellite-based methods. While automated systems can promptly generate alerts, the manual observation and reporting of fires from fire towers can introduce delays. Efficient communication and coordination are crucial to mitigate this issue.</p>
+</div>
+</div>
+<div id="social-media-and-citizen-reports" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Social media and citizen reports<a href="near-real-time-detection-of-wildfires.html#social-media-and-citizen-reports" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Social media and citizen reports have become increasingly valuable in the near-real-time detection and monitoring of wildfires <span class="citation">(<a href="#ref-slavkovikj2014review">Slavkovikj et al. 2014</a>)</span>. As wildfires can spread rapidly and impact diverse regions, integrating information from the public and social media platforms can augment conventional detection methods and optimize wildfire response strategies. This section delves into the role of social media and citizen reports in wildfire detection, elucidating their advantages, methodologies, and challenges.</p>
+<div id="role-of-social-media-in-wildfire-detection" class="section level3 hasAnchor" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Role of social media in wildfire detection<a href="near-real-time-detection-of-wildfires.html#role-of-social-media-in-wildfire-detection" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Social media platforms such as X (formerly Twitter), Facebook, Instagram, and others provide a wealth of real-time information that can be utilized for wildfire detection <span class="citation">(<a href="#ref-lei2018can">Lei et al. 2018</a>; <a href="#ref-slavkovikj2014review">Slavkovikj et al. 2014</a>)</span>.</p>
+<p>Social media monitoring entails analyzing posts, images, and other content shared by users to discern indicators of wildfire activity. This approach leverages social media platforms to provide immediate updates on wildfire sightings, conditions, and impacts. Citizens frequently contribute to wildfire awareness by posting about fires they observe, sharing photographs or videos, and providing descriptions of fire activity. This real-time information facilitates the identification of novel wildfire incidents and enhances situational awareness for fire management teams.</p>
+<p>Automated tools and algorithms are frequently utilized due to their ability to process substantial volumes of social media data, thereby facilitating the identification of pertinent posts pertaining to wildfires. Natural language processing (NLP) techniques analyze text for keywords related to fires, while image recognition algorithms assess visual content for signs of smoke or flames <span class="citation">(<a href="#ref-khurana2023natural">Khurana et al. 2023</a>; <a href="#ref-ma2024surveying">Ma et al. 2024</a>)</span>. This automated analysis facilitates the filtering and prioritization of information for further investigation.</p>
+<p>Many social media posts include geotags, which provide location information about where the content was created and/or shared <span class="citation">(<a href="#ref-crampton2013beyond">Crampton et al. 2013</a>)</span>. Geotagged posts provide precise location data that can aid in pinpointing the origin and spread of wildfires. This geographic information enhances the capacity to monitor fire activity and evaluate its impact on specific regions.</p>
+<p>Social media data can also be used to create crowdsourced maps of wildfire activity <span class="citation">(<a href="#ref-bogdos2019crowd">Bogdos and Manolakos 2019</a>; <a href="#ref-zhong2016real">Zhong et al. 2016</a>)</span>. These maps integrate data from multiple sources, including user-generated content and official reports, to offer a comprehensive overview of fire locations and impacted regions. Crowdsourced maps are highly valuable for situational awareness and coordinating response efforts.</p>
+</div>
+<div id="role-of-citizen-reports-in-wildfire-detection" class="section level3 hasAnchor" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> Role of citizen reports in wildfire detection<a href="near-real-time-detection-of-wildfires.html#role-of-citizen-reports-in-wildfire-detection" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Citizen reports provide a direct and immediate source of information regarding wildfire activity, as reported by individuals on the ground. Various mobile applications and online platforms allow citizens to report wildfire sightings and conditions directly to authorities <span class="citation">(<a href="#ref-athanasis2015aegis">Athanasis et al. 2015</a>; <a href="#ref-monedero2019predicting">Monedero, Ramirez, and Cardil 2019</a>; <a href="#ref-nayebi2017crowdsourced">Nayebi et al. 2017</a>)</span>.</p>
+<p>Reporting applications are typically designed with intuitive interfaces that facilitate user submission of information regarding wildfires. These interfaces often incorporate functionalities for clicking and/or uploading photographs, providing detailed descriptions, and marking locations on a map. The user-friendly nature of these applications encourages widespread participation, thereby providing valuable data for fire management agencies. Furthermore, numerous reporting applications are integrated with emergency management systems, facilitating the direct transmission of reports to fire control centers. This integration expedites verification and response to reported incidents, thereby enhancing overall wildfire detection and management capabilities.</p>
+<p>Citizen reports frequently rely on community involvement and local knowledge. This is advantageous because community members often possess comprehensive knowledge of their surroundings and can provide insights into fire activity that may not be detected by other detection methods. Local observations are particularly valuable in remote or rural areas where conventional detection systems may be less effective. Citizen reports are often verified through follow-up by fire management teams or through cross-referencing with other data sources. Validating citizen reports ensures the accuracy of information and helps prevent false alarms.</p>
+</div>
+<div id="benefits-of-social-media-and-citizen-reports" class="section level3 hasAnchor" number="5.4.3">
+<h3><span class="header-section-number">5.4.3</span> Benefits of social media and citizen reports<a href="near-real-time-detection-of-wildfires.html#benefits-of-social-media-and-citizen-reports" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Leveraging social media and citizen reports presents several advantages for wildfire detection and response. Social media and citizen reports provide real-time, on-the-ground perspectives of wildfire activity, augmenting situational awareness. This information enables fire management teams to comprehend the current state of fires, identify emerging threats, and modify response strategies accordingly.</p>
+<p>Social media and citizen reports augment the coverage of wildfire detection beyond conventional methods. By pooling the collective observations of individuals from various locations, fire management agencies can identify fires that might otherwise remain undetected, especially in regions with sparse sensor coverage or remote locations.</p>
+<p>The immediacy of social media and citizen reports facilitates prompt detection and response to wildfire incidents. Real-time updates and direct reports empower fire management teams to act expeditiously, mobilizing resources and implementing response measures in a timely manner.</p>
+</div>
+<div id="challenges-and-limitations-3" class="section level3 hasAnchor" number="5.4.4">
+<h3><span class="header-section-number">5.4.4</span> Challenges and limitations<a href="near-real-time-detection-of-wildfires.html#challenges-and-limitations-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Despite their advantages, social media and citizen reports encounter several challenges and limitations in wildfire detection. The sheer volume of data generated by social media and citizen reports can be overwhelming. Effectively managing and filtering this information to identify relevant and accurate reports requires robust data management and filtering systems. Information overload can result in delays in response and difficulties in prioritizing reports.</p>
+<p>Simultaneously, the veracity and dependability of social media and citizen reports can fluctuate. Posts and reports may contain inaccuracies, misinformation, or exaggerated assertions. Verification procedures are crucial to establish the credibility of reports, thereby preventing false alarms and ensuring the utilization of accurate information for decision-making purposes.</p>
+<p>The use of social media and citizen reports also raises privacy concerns and data management issues <span class="citation">(<a href="#ref-barbier2012maximizing">Barbier et al. 2012</a>; <a href="#ref-li2016crowdsourced">G. Li et al. 2016</a>, <a href="#ref-li2017crowdsourced">2017</a>)</span>. Collecting and analyzing data from individuals necessitates meticulous handling to safeguard privacy and adhere to data protection regulations. Striking a balance between the necessity for information and privacy considerations is a crucial aspect of effectively utilizing social media and citizen reports.</p>
+</div>
+<div id="integration-with-other-detection-methods" class="section level3 hasAnchor" number="5.4.5">
+<h3><span class="header-section-number">5.4.5</span> Integration with other detection methods<a href="near-real-time-detection-of-wildfires.html#integration-with-other-detection-methods" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Social media and citizen reports are most effective when integrated with traditional wildfire detection methods. This data fusion involves combining social media and citizen report data with information from satellite, aerial, and ground-based systems to provide a comprehensive view of wildfire activity. Data fusion techniques integrate diverse datasets to enhance detection accuracy and improve overall situational awareness.</p>
+<p>In conjunction with official detection methods, social media and citizen reports can be utilized to coordinate response efforts. By integrating public information into emergency management systems, fire agencies can enhance their planning and execution of response strategies, thereby achieving a more effective and coordinated approach to wildfire management.</p>
+</div>
+</div>
+<div id="integrated-detection-systems-1" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Integrated detection systems<a href="near-real-time-detection-of-wildfires.html#integrated-detection-systems-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Integrated detection systems represent a sophisticated approach to wildfire monitoring and management, combining multiple technologies and data sources to enhance detection capabilities and response efficiency <span class="citation">(<a href="#ref-ambrosia1998integration">Ambrosia et al. 1998</a>)</span>. By integrating diverse methodologies, including satellite imagery, aerial surveillance, ground-based sensors, machine learning, and social media, these systems offer a more comprehensive perspective on wildfire activity. This section delves into the advantages and disadvantages of integrated detection systems, as well as their practical applications.</p>
+<div id="components-of-integrated-detection-systems" class="section level3 hasAnchor" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Components of integrated detection systems<a href="near-real-time-detection-of-wildfires.html#components-of-integrated-detection-systems" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Integrated detection systems combine a diverse array of technologies and data sources into a comprehensive framework for wildfire detection. Satellite and aerial imagery are pivotal components, providing both extensive and granular coverage of wildfire activity. Satellites offer continuous, global monitoring capabilities through their thermal and optical sensors, capturing extensive fire data and tracking its evolution over time. Aerial surveillance, utilizing drones and manned aircraft, delivers high-resolution, localized observations, enabling detailed insights into fire behavior and facilitating targeted assessments of specific regions.</p>
+<p>Ground-based sensors are another crucial component, encompassing fire towers and distributed sensor networks. Fire towers, equipped with optical and thermal cameras, provide elevated vantage points for detecting smoke and heat. In contrast, sensor networks monitor environmental parameters such as temperature, humidity, and wind speed. This real-time data enables the assessment of fire danger and the early identification of fire activity.</p>
+<p>Social media and citizen reports further enhance the integrated detection system. Social media platforms, such as X (formerly Twitter) and Facebook, provide immediate updates on wildfire sightings and conditions through user-generated content. Geotagged posts and images offer location-specific insights that complement satellite and aerial data. Citizen reporting applications further augment detection capabilities by enabling individuals to report wildfire sightings directly, providing valuable on-the-ground information that aids in tracking and responding to fires, particularly in less monitored or remote areas.</p>
+</div>
+<div id="benefits-of-integrated-detection-systems" class="section level3 hasAnchor" number="5.5.2">
+<h3><span class="header-section-number">5.5.2</span> Benefits of integrated detection systems<a href="near-real-time-detection-of-wildfires.html#benefits-of-integrated-detection-systems" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Integrated detection systems provide several advantages that enhance wildfire detection and management. By combining data from multiple sources, a comprehensive and detailed view of wildfire activity is achieved, leading to improved detection accuracy and a deeper understanding of fire behavior. This approach tends to reduce the likelihood of missed wildfires while simultaneously enhancing the confidence in the detected wildfires.</p>
+<p>Access to real-time information from a multitude of sources also enhances situational awareness, facilitating more informed decision-making and effective response strategies.</p>
+<p>Integrated systems frequently enhance resource management capabilities by accurately predicting fire behavior and evaluating current conditions. This enables strategic deployment of firefighting resources.</p>
+</div>
+<div id="challenges-and-limitations-4" class="section level3 hasAnchor" number="5.5.3">
+<h3><span class="header-section-number">5.5.3</span> Challenges and limitations<a href="near-real-time-detection-of-wildfires.html#challenges-and-limitations-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Despite their advantages, integrated detection systems face several challenges <span class="citation">(<a href="#ref-ambrosia1998integration">Ambrosia et al. 1998</a>; <a href="#ref-lourencco2021integrated">Lourenço et al. 2021</a>)</span>. Integrating data from disparate sources necessitates the application of sophisticated data mining and data fusion methodologies to guarantee the accuracy and uniformity of the resulting system.</p>
+<p>Integrating multiple technologies and data sources presents a complex challenge, necessitating advanced infrastructure and effective coordination. Simultaneously, implementing and maintaining integrated detection systems entails substantial financial outlays for technology, infrastructure, and human resources.</p>
+</div>
+<div id="case-studies-and-examples" class="section level3 hasAnchor" number="5.5.4">
+<h3><span class="header-section-number">5.5.4</span> Case studies and examples<a href="near-real-time-detection-of-wildfires.html#case-studies-and-examples" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Examining real-world implementations highlights the effectiveness of integrated systems. California’s integrated network<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a> combines satellite imagery, aerial surveillance, ground-based sensors, and social media monitoring to enhance wildfire detection and response.</p>
+<p>European countries similarly use integrated systems incorporating satellite data, ground-based sensors, and predictive modeling for cross-border fire management <span class="citation">(<a href="#ref-kutchartt2023fire">Kutchartt et al. 2023</a>)</span>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:SimplyFire3d"></span>
+<img src="Figure/Himachal-hill-fire2.png" alt="Near-real time wildfire alerts in the Himalayas seen on SimplyFire 3D web application. Information about local topography aids planning and preparation for fire-fighting operations." width="100%" />
+<p class="caption">
+Figure 5.2: Near-real time wildfire alerts in the Himalayas seen on SimplyFire 3D web application. Information about local topography aids planning and preparation for fire-fighting operations.
+</p>
+</div>
+<p>India has developed SimplyFire<a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a> [Figure <a href="near-real-time-detection-of-wildfires.html#fig:SimplyFire3d">5.2</a>], a web-based application that integrates various satellite and topographic data. This capability enables the timely detection of wildfires, facilitating the development of efficient and effective fire control strategies by providing access to the three-dimensional topography of the affected area.</p>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-allison2016airborne" class="csl-entry">
+Allison, Robert S, Joshua M Johnston, Gregory Craig, and Sion Jennings. 2016. <span>“Airborne Optical and Thermal Remote Sensing for Wildfire Detection and Monitoring.”</span> <em>Sensors</em> 16 (8): 1310.
+</div>
+<div id="ref-ambrosia1998integration" class="csl-entry">
+Ambrosia, Vincent G, Sally W Buechel, James A Brass, James R Peterson, Richard H Davies, Ronald J Kane, and Steve Spain. 1998. <span>“An Integration of Remote Sensing, GIS, and Information Distribution for Wildfire Detection and Management.”</span> <em>Photogrammetric Engineering and Remote Sensing</em> 64: 977–86.
+</div>
+<div id="ref-athanasis2015aegis" class="csl-entry">
+Athanasis, Nikos, Fotis Karagiannis, Palaiologos Palaiologou, Christos Vasilakos, and Kostas Kalabokidis. 2015. <span>“AEGIS App: Wildfire Information Management for Windows Phone Devices.”</span> <em>Procedia Computer Science</em> 56: 544–49.
+</div>
+<div id="ref-ankur2018generation" class="csl-entry">
+———. 2018. <span>“Generation of Division Level Fire Maps Using Satellite-Derived Fire Data.”</span> <em>Indian Forester</em> 144.
+</div>
+<div id="ref-burnAtlas22" class="csl-entry">
+———. 2022a. <em>Burn Severity Atlas of Madhya Pradesh</em>. Madhya Pradesh Forest Department.
+</div>
+<div id="ref-fire-compendium22" class="csl-entry">
+———. 2022b. <em>Madhya Pradesh Forest Fire Compendium</em>. Madhya Pradesh Forest Department.
+</div>
+<div id="ref-barbier2012maximizing" class="csl-entry">
+Barbier, Geoffrey, Reza Zafarani, Huiji Gao, Gabriel Fung, and Huan Liu. 2012. <span>“Maximizing Benefits from Crowdsourced Data.”</span> <em>Computational and Mathematical Organization Theory</em> 18: 257–79.
+</div>
+<div id="ref-berryoung2021little" class="csl-entry">
+Berryoung, Megan. 2021. <span>“Little Boxes on the Hillside: An Inventory and Analysis of Wildfire Lookout Structures in the Pacific Northwest Region 06 of the United States Forest Service.”</span> Master’s thesis, University of Oregon; University of Oregon.
+</div>
+<div id="ref-bogdos2019crowd" class="csl-entry">
+Bogdos, Nikos, and Elias S Manolakos. 2019. <span>“Crowd-Sourced Wildfire Spread Prediction with Remote Georeferencing Using Smartphones.”</span> <em>IEEE Access</em> 7: 102102–12.
+</div>
+<div id="ref-ccetin2013video" class="csl-entry">
+Çetin, A Enis, Kosmas Dimitropoulos, Benedict Gouverneur, Nikos Grammalidis, Osman Günay, Y Hakan Habiboǧlu, B Uǧur Töreyin, and Steven Verstockt. 2013. <span>“Video Fire Detection–Review.”</span> <em>Digital Signal Processing</em> 23 (6): 1827–43.
+</div>
+<div id="ref-chuvieco2020satellite" class="csl-entry">
+Chuvieco, Emilio, Inmaculada Aguado, Javier Salas, Mariano Garcı́a, Marta Yebra, and Patricia Oliva. 2020. <span>“Satellite Remote Sensing Contributions to Wildland Fire Science and Management.”</span> <em>Current Forestry Reports</em> 6: 81–96.
+</div>
+<div id="ref-crampton2013beyond" class="csl-entry">
+Crampton, Jeremy W, Mark Graham, Ate Poorthuis, Taylor Shelton, Monica Stephens, Matthew W Wilson, and Matthew Zook. 2013. <span>“Beyond the Geotag: Situating ‘Big Data’and Leveraging the Potential of the Geoweb.”</span> <em>Cartography and Geographic Information Science</em> 40 (2): 130–39.
+</div>
+<div id="ref-dalezios2017wildfires" class="csl-entry">
+Dalezios, Nicolas R, Kostas Kalabokidis, Nikos Koutsias, and Christos Vasilakos. 2017. <span>“Wildfires and Remote Sensing: An Overview.”</span> <em>Remote Sensing of Hydrometeorological Hazards</em>, 211–36.
+</div>
+<div id="ref-davies2008fire" class="csl-entry">
+Davies, Diane K, Shriram Ilavajhala, Min Minnie Wong, and Christopher O Justice. 2008. <span>“Fire Information for Resource Management System: Archiving and Distributing MODIS Active Fire Data.”</span> <em>IEEE Transactions on Geoscience and Remote Sensing</em> 47 (1): 72–79.
+</div>
+<div id="ref-dogra2021review" class="csl-entry">
+Dogra, Roopali, Shalli Rani, and Bhisham Sharma. 2021. <span>“A Review to Forest Fires and Its Detection Techniques Using Wireless Sensor Network.”</span> In <em>Advances in Communication and Computational Technology: Select Proceedings of ICACCT 2019</em>, 1339–50. Springer.
+</div>
+<div id="ref-khurana2023natural" class="csl-entry">
+Khurana, Diksha, Aditya Koli, Kiran Khatter, and Sukhdev Singh. 2023. <span>“Natural Language Processing: State of the Art, Current Trends and Challenges.”</span> <em>Multimedia Tools and Applications</em> 82 (3): 3713–44.
+</div>
+<div id="ref-kutchartt2023fire" class="csl-entry">
+Kutchartt, Erico, José Ramón González-Olabarria, Antoni Trasobares, Sergio de-Miguel, Adrian Cardil, Brigite Botequim, Vassil Vassilev, Palaiologos Palaiologou, Martino Rogai, and Francesco Pirotti. 2023. <span>“FIRE-RES Geo-Catch: A Mobile Application to Support Reliable Fuel Mapping at a Pan-European Scale.”</span> <em>iForest-Biogeosciences and Forestry</em> 16 (5): 268.
+</div>
+<div id="ref-leblon2001forest" class="csl-entry">
+Leblon, Brigitte. 2001. <span>“Forest Wildfire Hazard Monitoring Using Remote Sensing: A Review.”</span> <em>Remote Sensing Reviews</em> 20 (1): 1–43.
+</div>
+<div id="ref-lei2018can" class="csl-entry">
+Lei, Philip, Gustavo Marfia, Giovanni Pau, and Rita Tse. 2018. <span>“Can We Monitor the Natural Environment Analyzing Online Social Network Posts? A Literature Review.”</span> <em>Online Social Networks and Media</em> 5: 51–60.
+</div>
+<div id="ref-li2016crowdsourced" class="csl-entry">
+Li, Guoliang, Jiannan Wang, Yudian Zheng, and Michael J Franklin. 2016. <span>“Crowdsourced Data Management: A Survey.”</span> <em>IEEE Transactions on Knowledge and Data Engineering</em> 28 (9): 2296–2319.
+</div>
+<div id="ref-li2017crowdsourced" class="csl-entry">
+Li, Guoliang, Yudian Zheng, Ju Fan, Jiannan Wang, and Reynold Cheng. 2017. <span>“Crowdsourced Data Management: Overview and Challenges.”</span> In <em>Proceedings of the 2017 ACM International Conference on Management of Data</em>, 1711–16.
+</div>
+<div id="ref-lourencco2021integrated" class="csl-entry">
+Lourenço, Miguel, Luı́s B Oliveira, João P Oliveira, André Mora, Henrique Oliveira, and Rui Santos. 2021. <span>“An Integrated Decision Support System for Improving Wildfire Suppression Management.”</span> <em>ISPRS International Journal of Geo-Information</em> 10 (8): 497.
+</div>
+<div id="ref-ma2024surveying" class="csl-entry">
+Ma, Zihui, Lingyao Li, Yujie Mao, Yu Wang, Olivia Grace Patsy, Michelle T Bensi, Libby Hemphill, and Gregory B Baecher. 2024. <span>“Surveying the Use of Social Media Data and Natural Language Processing Techniques to Investigate Natural Disasters.”</span> <em>Natural Hazards Review</em> 25 (4): 03124003.
+</div>
+<div id="ref-mohapatra2022early" class="csl-entry">
+Mohapatra, Ankita, and Timothy Trinh. 2022. <span>“Early Wildfire Detection Technologies in Practice—a Review.”</span> <em>Sustainability</em> 14 (19): 12270.
+</div>
+<div id="ref-monedero2019predicting" class="csl-entry">
+Monedero, Santiago, Joaquin Ramirez, and Adrián Cardil. 2019. <span>“Predicting Fire Spread and Behaviour on the Fireline. Wildfire Analyst Pocket: A Mobile App for Wildland Fire Prediction.”</span> <em>Ecological Modelling</em> 392: 103–7.
+</div>
+<div id="ref-nayebi2017crowdsourced" class="csl-entry">
+Nayebi, Maleknaz, Mahshid Marbouti, Rache Quapp, Frank Maurer, and Guenther Ruhe. 2017. <span>“Crowdsourced Exploration of Mobile App Features: A Case Study of the Fort Mcmurray Wildfire.”</span> In <em>2017 IEEE/ACM 39th International Conference on Software Engineering: Software Engineering in Society Track (ICSE-SEIS)</em>, 57–66. IEEE.
+</div>
+<div id="ref-prins2001overview" class="csl-entry">
+Prins, Elaine M, JOHANNES Schmetz, LUKE P Flynn, DONALD W Hillger, and JOLEEN M Feltz. 2001. <span>“An Overview of Diurnal Active Fire Monitoring Using a Suite of International Geostationary Satellites.”</span> <em>Global and Regional Vegetation Monitoring from Space: Planning a Coordinated International Effort</em> 1: 145–70.
+</div>
+<div id="ref-rahman2021computer" class="csl-entry">
+Rahman, Ehab Ur, Muhammad Asghar Khan, Fahad Algarni, Yihong Zhang, M Irfan Uddin, Insaf Ullah, and Hafiz Ishfaq Ahmad. 2021. <span>“Computer Vision-Based Wildfire Smoke Detection Using UAVs.”</span> <em>Mathematical Problems in Engineering</em> 2021 (1): 9977939.
+</div>
+<div id="ref-slavkovikj2014review" class="csl-entry">
+Slavkovikj, Viktor, Steven Verstockt, Sofie Van Hoecke, and Rik Van de Walle. 2014. <span>“Review of Wildfire Detection Using Social Media.”</span> <em>Fire Safety Journal</em> 68: 109–18.
+</div>
+<div id="ref-vejmelka2016data" class="csl-entry">
+Vejmelka, Martin, Adam K Kochanski, and Jan Mandel. 2016. <span>“Data Assimilation of Dead Fuel Moisture Observations from Remote Automated Weather Stations.”</span> <em>International Journal of Wildland Fire</em> 25 (5): 558–68.
+</div>
+<div id="ref-wooster2021satellite" class="csl-entry">
+Wooster, Martin J, Gareth J Roberts, Louis Giglio, David P Roy, Patrick H Freeborn, Luigi Boschetti, Chris Justice, et al. 2021. <span>“Satellite Remote Sensing of Active Fires: History and Current Status, Applications and Future Requirements.”</span> <em>Remote Sensing of Environment</em> 267: 112694.
+</div>
+<div id="ref-zhong2016real" class="csl-entry">
+Zhong, Xu, Matt Duckham, Derek Chong, and Kevin Tolhurst. 2016. <span>“Real-Time Estimation of Wildfire Perimeters from Curated Crowdsourcing.”</span> <em>Scientific Reports</em> 6 (1): 24206.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="34">
+<li id="fn34"><p><a href="https://hub.wftiic.ca.gov" class="uri">https://hub.wftiic.ca.gov</a><a href="near-real-time-detection-of-wildfires.html#fnref34" class="footnote-back">↩︎</a></p></li>
+<li id="fn35"><p><a href="https://mpforest.gov.in/publicdomain/atlas/Index.html" class="uri">https://mpforest.gov.in/publicdomain/atlas/Index.html</a><a href="near-real-time-detection-of-wildfires.html#fnref35" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="wildfire-prevention.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="wildfire-suppression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": null,
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

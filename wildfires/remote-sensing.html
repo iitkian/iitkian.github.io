@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 Remote Sensing | Wildfires</title>
+  <meta name="description" content="This book provides an easy introduction to the causes, principles, management strategies, and best practices in wildfires." />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 Remote Sensing | Wildfires" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This book provides an easy introduction to the causes, principles, management strategies, and best practices in wildfires." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 Remote Sensing | Wildfires" />
+  
+  <meta name="twitter:description" content="This book provides an easy introduction to the causes, principles, management strategies, and best practices in wildfires." />
+  
+
+<meta name="author" content="Ankur Awadhiya" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="post-fire-management.html"/>
+<link rel="next" href="comp-systems.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Wildfires</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Links to procure the book</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the author</a></li>
+<li class="part"><span><b>I Wildfire principles</b></span></li>
+<li class="chapter" data-level="1" data-path="wildfires-an-introduction.html"><a href="wildfires-an-introduction.html"><i class="fa fa-check"></i><b>1</b> Wildfires: An introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="wildfires-an-introduction.html"><a href="wildfires-an-introduction.html#what-is-a-wildfire"><i class="fa fa-check"></i><b>1.1</b> What is a wildfire?</a></li>
+<li class="chapter" data-level="1.2" data-path="wildfires-an-introduction.html"><a href="wildfires-an-introduction.html#distribution-of-wildfires"><i class="fa fa-check"></i><b>1.2</b> Distribution of wildfires</a></li>
+<li class="chapter" data-level="1.3" data-path="wildfires-an-introduction.html"><a href="wildfires-an-introduction.html#types-and-causes-of-wildfires"><i class="fa fa-check"></i><b>1.3</b> Types and causes of wildfires</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="wildfires-an-introduction.html"><a href="wildfires-an-introduction.html#classification-based-on-the-parts-of-forests-consumed-by-the-wildfire"><i class="fa fa-check"></i><b>1.3.1</b> Classification based on the parts of forests consumed by the wildfire</a></li>
+<li class="chapter" data-level="1.3.2" data-path="wildfires-an-introduction.html"><a href="wildfires-an-introduction.html#classification-based-on-energy-released-by-the-wildfire"><i class="fa fa-check"></i><b>1.3.2</b> Classification based on energy released by the wildfire</a></li>
+<li class="chapter" data-level="1.3.3" data-path="wildfires-an-introduction.html"><a href="wildfires-an-introduction.html#classification-based-on-location-and-fuel-type"><i class="fa fa-check"></i><b>1.3.3</b> Classification based on location and fuel type</a></li>
+<li class="chapter" data-level="1.3.4" data-path="wildfires-an-introduction.html"><a href="wildfires-an-introduction.html#classification-based-on-the-origin-of-wildfire"><i class="fa fa-check"></i><b>1.3.4</b> Classification based on the origin of wildfire</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="wildfires-an-introduction.html"><a href="wildfires-an-introduction.html#the-fire-triangle"><i class="fa fa-check"></i><b>1.4</b> The fire triangle</a></li>
+<li class="chapter" data-level="1.5" data-path="wildfires-an-introduction.html"><a href="wildfires-an-introduction.html#trends-in-wildfires"><i class="fa fa-check"></i><b>1.5</b> Trends in wildfires</a></li>
+<li class="chapter" data-level="1.6" data-path="wildfires-an-introduction.html"><a href="wildfires-an-introduction.html#wildfires-and-society"><i class="fa fa-check"></i><b>1.6</b> Wildfires and society</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html"><i class="fa fa-check"></i><b>2</b> Effects of wildfires</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#classification-of-wildfire-effects"><i class="fa fa-check"></i><b>2.1</b> Classification of wildfire effects</a></li>
+<li class="chapter" data-level="2.2" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#physical-effects"><i class="fa fa-check"></i><b>2.2</b> Physical effects</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#changes-in-temperature"><i class="fa fa-check"></i><b>2.2.1</b> Changes in temperature</a></li>
+<li class="chapter" data-level="2.2.2" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#changes-in-soil"><i class="fa fa-check"></i><b>2.2.2</b> Changes in soil</a></li>
+<li class="chapter" data-level="2.2.3" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#changes-in-hydrology"><i class="fa fa-check"></i><b>2.2.3</b> Changes in hydrology</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#chemical-effects"><i class="fa fa-check"></i><b>2.3</b> Chemical effects</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#release-of-hazardous-substances"><i class="fa fa-check"></i><b>2.3.1</b> Release of hazardous substances</a></li>
+<li class="chapter" data-level="2.3.2" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#degradation-of-air-and-water-quality"><i class="fa fa-check"></i><b>2.3.2</b> Degradation of air and water quality</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#biological-effects"><i class="fa fa-check"></i><b>2.4</b> Biological effects</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#changes-in-habitat"><i class="fa fa-check"></i><b>2.4.1</b> Changes in habitat</a></li>
+<li class="chapter" data-level="2.4.2" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#death-and-displacement-of-organisms"><i class="fa fa-check"></i><b>2.4.2</b> Death and displacement of organisms</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#effects-on-society"><i class="fa fa-check"></i><b>2.5</b> Effects on society</a></li>
+<li class="chapter" data-level="2.6" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html#effects-on-weather-and-climate"><i class="fa fa-check"></i><b>2.6</b> Effects on weather and climate</a></li>
+</ul></li>
+<li class="part"><span><b>II Wildfire management strategies</b></span></li>
+<li class="chapter" data-level="3" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html"><i class="fa fa-check"></i><b>3</b> Strategies for wildfire management</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#what-is-management"><i class="fa fa-check"></i><b>3.1</b> What is management?</a></li>
+<li class="chapter" data-level="3.2" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#the-deming-cycle-in-wildfire-management"><i class="fa fa-check"></i><b>3.2</b> The Deming cycle in wildfire management</a></li>
+<li class="chapter" data-level="3.3" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#prevention"><i class="fa fa-check"></i><b>3.3</b> Prevention</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#education-and-awareness"><i class="fa fa-check"></i><b>3.3.1</b> Education and awareness</a></li>
+<li class="chapter" data-level="3.3.2" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#fuel-management"><i class="fa fa-check"></i><b>3.3.2</b> Fuel management</a></li>
+<li class="chapter" data-level="3.3.3" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#building-codes-and-design"><i class="fa fa-check"></i><b>3.3.3</b> Building codes and design</a></li>
+<li class="chapter" data-level="3.3.4" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#firebreaks-and-barriers"><i class="fa fa-check"></i><b>3.3.4</b> Firebreaks and barriers</a></li>
+<li class="chapter" data-level="3.3.5" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#community-planning"><i class="fa fa-check"></i><b>3.3.5</b> Community planning</a></li>
+<li class="chapter" data-level="3.3.6" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#fire-detection-and-monitoring"><i class="fa fa-check"></i><b>3.3.6</b> Fire detection and monitoring</a></li>
+<li class="chapter" data-level="3.3.7" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#burn-bans-and-other-regulations"><i class="fa fa-check"></i><b>3.3.7</b> Burn bans and other regulations</a></li>
+<li class="chapter" data-level="3.3.8" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#research-and-innovation"><i class="fa fa-check"></i><b>3.3.8</b> Research and innovation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#detection"><i class="fa fa-check"></i><b>3.4</b> Detection</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#traditional-detection-methods"><i class="fa fa-check"></i><b>3.4.1</b> Traditional detection methods</a></li>
+<li class="chapter" data-level="3.4.2" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#technological-advances-in-detection"><i class="fa fa-check"></i><b>3.4.2</b> Technological advances in detection</a></li>
+<li class="chapter" data-level="3.4.3" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#advanced-monitoring-systems"><i class="fa fa-check"></i><b>3.4.3</b> Advanced monitoring systems</a></li>
+<li class="chapter" data-level="3.4.4" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#machine-learning-and-artificial-intelligence"><i class="fa fa-check"></i><b>3.4.4</b> Machine Learning and Artificial Intelligence</a></li>
+<li class="chapter" data-level="3.4.5" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#community-and-crowd-sourced-reporting"><i class="fa fa-check"></i><b>3.4.5</b> Community and crowd-Sourced reporting</a></li>
+<li class="chapter" data-level="3.4.6" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#integrated-detection-systems"><i class="fa fa-check"></i><b>3.4.6</b> Integrated detection systems</a></li>
+<li class="chapter" data-level="3.4.7" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#challenges-and-future-directions"><i class="fa fa-check"></i><b>3.4.7</b> Challenges and future directions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#suppression"><i class="fa fa-check"></i><b>3.5</b> Suppression</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#fundamental-suppression-strategies"><i class="fa fa-check"></i><b>3.5.1</b> Fundamental suppression strategies</a></li>
+<li class="chapter" data-level="3.5.2" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#technological-innovations-in-suppression"><i class="fa fa-check"></i><b>3.5.2</b> Technological innovations in suppression</a></li>
+<li class="chapter" data-level="3.5.3" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#firefighting-equipment"><i class="fa fa-check"></i><b>3.5.3</b> Firefighting equipment</a></li>
+<li class="chapter" data-level="3.5.4" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#coordination-and-communication"><i class="fa fa-check"></i><b>3.5.4</b> Coordination and communication</a></li>
+<li class="chapter" data-level="3.5.5" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#challenges-and-future-directions-1"><i class="fa fa-check"></i><b>3.5.5</b> Challenges and future directions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#post-wildfire-management"><i class="fa fa-check"></i><b>3.6</b> Post-wildfire management</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#ecological-restoration"><i class="fa fa-check"></i><b>3.6.1</b> Ecological restoration</a></li>
+<li class="chapter" data-level="3.6.2" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#community-recovery"><i class="fa fa-check"></i><b>3.6.2</b> Community recovery</a></li>
+<li class="chapter" data-level="3.6.3" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#infrastructure-restoration"><i class="fa fa-check"></i><b>3.6.3</b> Infrastructure restoration</a></li>
+<li class="chapter" data-level="3.6.4" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#monitoring-and-evaluation"><i class="fa fa-check"></i><b>3.6.4</b> Monitoring and evaluation</a></li>
+<li class="chapter" data-level="3.6.5" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html#challenges-and-future-directions-2"><i class="fa fa-check"></i><b>3.6.5</b> Challenges and future directions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html"><i class="fa fa-check"></i><b>4</b> Wildfire prevention</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#need-for-data-and-data-analysis"><i class="fa fa-check"></i><b>4.1</b> Need for data and data analysis</a></li>
+<li class="chapter" data-level="4.2" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#from-data-to-information"><i class="fa fa-check"></i><b>4.2</b> From data to information</a></li>
+<li class="chapter" data-level="4.3" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#wildfire-hazard-indices"><i class="fa fa-check"></i><b>4.3</b> Wildfire hazard indices</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#components-of-wildfire-hazard-indices"><i class="fa fa-check"></i><b>4.3.1</b> Components of wildfire hazard indices</a></li>
+<li class="chapter" data-level="4.3.2" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#types-of-wildfire-hazard-indices"><i class="fa fa-check"></i><b>4.3.2</b> Types of wildfire hazard indices</a></li>
+<li class="chapter" data-level="4.3.3" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#applications-of-wildfire-hazard-indices"><i class="fa fa-check"></i><b>4.3.3</b> Applications of wildfire hazard indices</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#identifying-wildfire-prone-areas"><i class="fa fa-check"></i><b>4.4</b> Identifying wildfire-prone areas</a></li>
+<li class="chapter" data-level="4.5" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#dissemination-of-information"><i class="fa fa-check"></i><b>4.5</b> Dissemination of information</a></li>
+<li class="chapter" data-level="4.6" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#community-involvement-and-cooperation"><i class="fa fa-check"></i><b>4.6</b> Community involvement and cooperation</a></li>
+<li class="chapter" data-level="4.7" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#use-of-fire-lines-and-fire-breakers"><i class="fa fa-check"></i><b>4.7</b> Use of fire lines and fire breakers</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#purpose-and-function-of-fire-lines"><i class="fa fa-check"></i><b>4.7.1</b> Purpose and function of fire lines</a></li>
+<li class="chapter" data-level="4.7.2" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#types-of-fire-lines"><i class="fa fa-check"></i><b>4.7.2</b> Types of fire lines</a></li>
+<li class="chapter" data-level="4.7.3" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#site-selection-and-preparation"><i class="fa fa-check"></i><b>4.7.3</b> Site selection and preparation</a></li>
+<li class="chapter" data-level="4.7.4" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#implementation-of-fire-lines"><i class="fa fa-check"></i><b>4.7.4</b> Implementation of fire lines</a></li>
+<li class="chapter" data-level="4.7.5" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#case-study-from-madhya-pradesh"><i class="fa fa-check"></i><b>4.7.5</b> Case study from Madhya Pradesh</a></li>
+<li class="chapter" data-level="4.7.6" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#limitations-of-traditional-fire-lines"><i class="fa fa-check"></i><b>4.7.6</b> Limitations of traditional fire lines</a></li>
+<li class="chapter" data-level="4.7.7" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#construction-of-fire-breakers"><i class="fa fa-check"></i><b>4.7.7</b> Construction of fire breakers</a></li>
+<li class="chapter" data-level="4.7.8" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#effectiveness-of-fire-breakers"><i class="fa fa-check"></i><b>4.7.8</b> Effectiveness of fire breakers</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#reduction-of-fuel-load"><i class="fa fa-check"></i><b>4.8</b> Reduction of fuel load</a></li>
+<li class="chapter" data-level="4.9" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#cold-burning"><i class="fa fa-check"></i><b>4.9</b> Cold burning</a></li>
+<li class="chapter" data-level="4.10" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#species-selection-for-wildfire-prevention"><i class="fa fa-check"></i><b>4.10</b> Species-selection for wildfire prevention</a>
+<ul>
+<li class="chapter" data-level="4.10.1" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#characteristics-of-fire-resistant-plants"><i class="fa fa-check"></i><b>4.10.1</b> Characteristics of fire-resistant plants</a></li>
+<li class="chapter" data-level="4.10.2" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#recommended-plant-species"><i class="fa fa-check"></i><b>4.10.2</b> Recommended plant species</a></li>
+<li class="chapter" data-level="4.10.3" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html#landscaping-practices"><i class="fa fa-check"></i><b>4.10.3</b> Landscaping practices</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html"><i class="fa fa-check"></i><b>5</b> Near-real-time detection of wildfires</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#satellite-based-detection"><i class="fa fa-check"></i><b>5.1</b> Satellite-based detection</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#satellite-systems-for-wildfire-detection"><i class="fa fa-check"></i><b>5.1.1</b> Satellite systems for wildfire detection</a></li>
+<li class="chapter" data-level="5.1.2" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#types-of-data-provided-by-satellites"><i class="fa fa-check"></i><b>5.1.2</b> Types of data provided by satellites</a></li>
+<li class="chapter" data-level="5.1.3" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#applications-in-fire-management"><i class="fa fa-check"></i><b>5.1.3</b> Applications in fire management</a></li>
+<li class="chapter" data-level="5.1.4" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#challenges-and-limitations"><i class="fa fa-check"></i><b>5.1.4</b> Challenges and limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#aerial-surveillance"><i class="fa fa-check"></i><b>5.2</b> Aerial surveillance</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#aerial-platforms-for-wildfire-detection"><i class="fa fa-check"></i><b>5.2.1</b> Aerial platforms for wildfire detection</a></li>
+<li class="chapter" data-level="5.2.2" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#types-of-data-provided-by-aerial-surveillance"><i class="fa fa-check"></i><b>5.2.2</b> Types of data provided by aerial surveillance</a></li>
+<li class="chapter" data-level="5.2.3" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#applications-in-fire-management-1"><i class="fa fa-check"></i><b>5.2.3</b> Applications in fire management</a></li>
+<li class="chapter" data-level="5.2.4" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#challenges-and-limitations-1"><i class="fa fa-check"></i><b>5.2.4</b> Challenges and limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#ground-based-detection-systems"><i class="fa fa-check"></i><b>5.3</b> Ground-based detection systems</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#fire-towers"><i class="fa fa-check"></i><b>5.3.1</b> Fire towers</a></li>
+<li class="chapter" data-level="5.3.2" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#sensor-networks"><i class="fa fa-check"></i><b>5.3.2</b> Sensor networks</a></li>
+<li class="chapter" data-level="5.3.3" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#advantages-of-ground-based-detection-systems"><i class="fa fa-check"></i><b>5.3.3</b> Advantages of ground-based detection systems</a></li>
+<li class="chapter" data-level="5.3.4" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#challenges-and-limitations-2"><i class="fa fa-check"></i><b>5.3.4</b> Challenges and limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#social-media-and-citizen-reports"><i class="fa fa-check"></i><b>5.4</b> Social media and citizen reports</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#role-of-social-media-in-wildfire-detection"><i class="fa fa-check"></i><b>5.4.1</b> Role of social media in wildfire detection</a></li>
+<li class="chapter" data-level="5.4.2" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#role-of-citizen-reports-in-wildfire-detection"><i class="fa fa-check"></i><b>5.4.2</b> Role of citizen reports in wildfire detection</a></li>
+<li class="chapter" data-level="5.4.3" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#benefits-of-social-media-and-citizen-reports"><i class="fa fa-check"></i><b>5.4.3</b> Benefits of social media and citizen reports</a></li>
+<li class="chapter" data-level="5.4.4" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#challenges-and-limitations-3"><i class="fa fa-check"></i><b>5.4.4</b> Challenges and limitations</a></li>
+<li class="chapter" data-level="5.4.5" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#integration-with-other-detection-methods"><i class="fa fa-check"></i><b>5.4.5</b> Integration with other detection methods</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#integrated-detection-systems-1"><i class="fa fa-check"></i><b>5.5</b> Integrated detection systems</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#components-of-integrated-detection-systems"><i class="fa fa-check"></i><b>5.5.1</b> Components of integrated detection systems</a></li>
+<li class="chapter" data-level="5.5.2" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#benefits-of-integrated-detection-systems"><i class="fa fa-check"></i><b>5.5.2</b> Benefits of integrated detection systems</a></li>
+<li class="chapter" data-level="5.5.3" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#challenges-and-limitations-4"><i class="fa fa-check"></i><b>5.5.3</b> Challenges and limitations</a></li>
+<li class="chapter" data-level="5.5.4" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html#case-studies-and-examples"><i class="fa fa-check"></i><b>5.5.4</b> Case studies and examples</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html"><i class="fa fa-check"></i><b>6</b> Wildfire suppression</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#principles-of-wildfire-suppression"><i class="fa fa-check"></i><b>6.1</b> Principles of wildfire suppression</a></li>
+<li class="chapter" data-level="6.2" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#wildfire-suppression-methods"><i class="fa fa-check"></i><b>6.2</b> Wildfire suppression methods</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#firebreaks"><i class="fa fa-check"></i><b>6.2.1</b> Firebreaks</a></li>
+<li class="chapter" data-level="6.2.2" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#use-of-explosives"><i class="fa fa-check"></i><b>6.2.2</b> Use of explosives</a></li>
+<li class="chapter" data-level="6.2.3" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#beating-of-fires"><i class="fa fa-check"></i><b>6.2.3</b> Beating of fires</a></li>
+<li class="chapter" data-level="6.2.4" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#water-and-fire-retardants"><i class="fa fa-check"></i><b>6.2.4</b> Water and fire retardants</a></li>
+<li class="chapter" data-level="6.2.5" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#aerial-suppression-and-water-bombing"><i class="fa fa-check"></i><b>6.2.5</b> Aerial suppression and water bombing</a></li>
+<li class="chapter" data-level="6.2.6" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#fire-suppression-teams"><i class="fa fa-check"></i><b>6.2.6</b> Fire suppression teams</a></li>
+<li class="chapter" data-level="6.2.7" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#monitoring-of-wildfire-suppression"><i class="fa fa-check"></i><b>6.2.7</b> Monitoring of wildfire suppression</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#data-and-wildfire-suppression"><i class="fa fa-check"></i><b>6.3</b> Data and wildfire suppression</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#types-of-data-used-in-wildfire-suppression"><i class="fa fa-check"></i><b>6.3.1</b> Types of data used in wildfire suppression</a></li>
+<li class="chapter" data-level="6.3.2" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#integration-of-data-into-suppression-strategies"><i class="fa fa-check"></i><b>6.3.2</b> Integration of data into suppression strategies</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#factors-determining-the-choice-of-methods"><i class="fa fa-check"></i><b>6.4</b> Factors determining the choice of methods</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#fire-behavior"><i class="fa fa-check"></i><b>6.4.1</b> Fire behavior</a></li>
+<li class="chapter" data-level="6.4.2" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#environmental-conditions"><i class="fa fa-check"></i><b>6.4.2</b> Environmental conditions</a></li>
+<li class="chapter" data-level="6.4.3" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#resource-availability"><i class="fa fa-check"></i><b>6.4.3</b> Resource availability</a></li>
+<li class="chapter" data-level="6.4.4" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#objectives-of-suppression"><i class="fa fa-check"></i><b>6.4.4</b> Objectives of suppression</a></li>
+<li class="chapter" data-level="6.4.5" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html#safety-considerations"><i class="fa fa-check"></i><b>6.4.5</b> Safety considerations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="post-fire-management.html"><a href="post-fire-management.html"><i class="fa fa-check"></i><b>7</b> Post-fire management</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="post-fire-management.html"><a href="post-fire-management.html#lid-and-biological-communities"><i class="fa fa-check"></i><b>7.1</b> LID and biological communities</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="post-fire-management.html"><a href="post-fire-management.html#characteristics-of-lid"><i class="fa fa-check"></i><b>7.1.1</b> Characteristics of LID</a></li>
+<li class="chapter" data-level="7.1.2" data-path="post-fire-management.html"><a href="post-fire-management.html#effects-on-biological-communities"><i class="fa fa-check"></i><b>7.1.2</b> Effects on biological communities</a></li>
+<li class="chapter" data-level="7.1.3" data-path="post-fire-management.html"><a href="post-fire-management.html#ecological-succession-and-recovery"><i class="fa fa-check"></i><b>7.1.3</b> Ecological succession and recovery</a></li>
+<li class="chapter" data-level="7.1.4" data-path="post-fire-management.html"><a href="post-fire-management.html#implications-for-ecosystem-management"><i class="fa fa-check"></i><b>7.1.4</b> Implications for ecosystem management</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="post-fire-management.html"><a href="post-fire-management.html#post-fire-management-options"><i class="fa fa-check"></i><b>7.2</b> Post-fire management options</a></li>
+<li class="chapter" data-level="7.3" data-path="post-fire-management.html"><a href="post-fire-management.html#post-wildfire-management-steps"><i class="fa fa-check"></i><b>7.3</b> Post-wildfire management steps</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="post-fire-management.html"><a href="post-fire-management.html#damage-assessment"><i class="fa fa-check"></i><b>7.3.1</b> Damage assessment</a></li>
+<li class="chapter" data-level="7.3.2" data-path="post-fire-management.html"><a href="post-fire-management.html#hazard-mitigation"><i class="fa fa-check"></i><b>7.3.2</b> Hazard mitigation</a></li>
+<li class="chapter" data-level="7.3.3" data-path="post-fire-management.html"><a href="post-fire-management.html#burned-area-emergency-response-baer"><i class="fa fa-check"></i><b>7.3.3</b> Burned Area Emergency Response (BAER)</a></li>
+<li class="chapter" data-level="7.3.4" data-path="post-fire-management.html"><a href="post-fire-management.html#ecosystem-restoration"><i class="fa fa-check"></i><b>7.3.4</b> Ecosystem restoration</a></li>
+<li class="chapter" data-level="7.3.5" data-path="post-fire-management.html"><a href="post-fire-management.html#community-support"><i class="fa fa-check"></i><b>7.3.5</b> Community support</a></li>
+<li class="chapter" data-level="7.3.6" data-path="post-fire-management.html"><a href="post-fire-management.html#long-term-recovery-planning"><i class="fa fa-check"></i><b>7.3.6</b> Long-term recovery planning</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="post-fire-management.html"><a href="post-fire-management.html#time-and-cost-of-restoration"><i class="fa fa-check"></i><b>7.4</b> Time and cost of restoration</a></li>
+<li class="chapter" data-level="7.5" data-path="post-fire-management.html"><a href="post-fire-management.html#data-and-post-fire-management"><i class="fa fa-check"></i><b>7.5</b> Data and post-fire management</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="post-fire-management.html"><a href="post-fire-management.html#assessment-of-fire-impact"><i class="fa fa-check"></i><b>7.5.1</b> Assessment of fire impact</a></li>
+<li class="chapter" data-level="7.5.2" data-path="post-fire-management.html"><a href="post-fire-management.html#resource-allocation-and-management"><i class="fa fa-check"></i><b>7.5.2</b> Resource allocation and management</a></li>
+<li class="chapter" data-level="7.5.3" data-path="post-fire-management.html"><a href="post-fire-management.html#planning-and-implementation-of-restoration-strategies"><i class="fa fa-check"></i><b>7.5.3</b> Planning and implementation of restoration strategies</a></li>
+<li class="chapter" data-level="7.5.4" data-path="post-fire-management.html"><a href="post-fire-management.html#monitoring-and-evaluation-1"><i class="fa fa-check"></i><b>7.5.4</b> Monitoring and evaluation</a></li>
+<li class="chapter" data-level="7.5.5" data-path="post-fire-management.html"><a href="post-fire-management.html#risk-reduction-and-preparedness"><i class="fa fa-check"></i><b>7.5.5</b> Risk reduction and preparedness</a></li>
+<li class="chapter" data-level="7.5.6" data-path="post-fire-management.html"><a href="post-fire-management.html#policy-and-decision-making"><i class="fa fa-check"></i><b>7.5.6</b> Policy and Decision-Making</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="post-fire-management.html"><a href="post-fire-management.html#case-study-yellowstone-national-park-wildfire-of-1988"><i class="fa fa-check"></i><b>7.6</b> Case Study: Yellowstone National Park Wildfire of 1988</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="post-fire-management.html"><a href="post-fire-management.html#the-1988-fire-event"><i class="fa fa-check"></i><b>7.6.1</b> The 1988 fire event</a></li>
+<li class="chapter" data-level="7.6.2" data-path="post-fire-management.html"><a href="post-fire-management.html#response-and-management"><i class="fa fa-check"></i><b>7.6.2</b> Response and management</a></li>
+<li class="chapter" data-level="7.6.3" data-path="post-fire-management.html"><a href="post-fire-management.html#recovery-and-long-term-impact"><i class="fa fa-check"></i><b>7.6.3</b> Recovery and long-term impact</a></li>
+<li class="chapter" data-level="7.6.4" data-path="post-fire-management.html"><a href="post-fire-management.html#conclusion"><i class="fa fa-check"></i><b>7.6.4</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="post-fire-management.html"><a href="post-fire-management.html#case-study-bandhavgarh-tiger-reserve-wildfire-of-2021"><i class="fa fa-check"></i><b>7.7</b> Case Study: Bandhavgarh Tiger Reserve Wildfire of 2021</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="post-fire-management.html"><a href="post-fire-management.html#the-wildfire-event"><i class="fa fa-check"></i><b>7.7.1</b> The wildfire event</a></li>
+<li class="chapter" data-level="7.7.2" data-path="post-fire-management.html"><a href="post-fire-management.html#response-and-challenges"><i class="fa fa-check"></i><b>7.7.2</b> Response and challenges</a></li>
+<li class="chapter" data-level="7.7.3" data-path="post-fire-management.html"><a href="post-fire-management.html#restoration-and-recovery"><i class="fa fa-check"></i><b>7.7.3</b> Restoration and recovery</a></li>
+<li class="chapter" data-level="7.7.4" data-path="post-fire-management.html"><a href="post-fire-management.html#conclusion-1"><i class="fa fa-check"></i><b>7.7.4</b> Conclusion</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>III Technologies &amp; best practices</b></span></li>
+<li class="chapter" data-level="8" data-path="remote-sensing.html"><a href="remote-sensing.html"><i class="fa fa-check"></i><b>8</b> Remote Sensing</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="remote-sensing.html"><a href="remote-sensing.html#fundamentals"><i class="fa fa-check"></i><b>8.1</b> Fundamentals</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="remote-sensing.html"><a href="remote-sensing.html#what-is-remote-sensing"><i class="fa fa-check"></i><b>8.1.1</b> What is Remote Sensing?</a></li>
+<li class="chapter" data-level="8.1.2" data-path="remote-sensing.html"><a href="remote-sensing.html#electromagnetic-spectrum"><i class="fa fa-check"></i><b>8.1.2</b> Electromagnetic spectrum</a></li>
+<li class="chapter" data-level="8.1.3" data-path="remote-sensing.html"><a href="remote-sensing.html#interaction-of-waves-with-matter"><i class="fa fa-check"></i><b>8.1.3</b> Interaction of waves with matter</a></li>
+<li class="chapter" data-level="8.1.4" data-path="remote-sensing.html"><a href="remote-sensing.html#atm-window"><i class="fa fa-check"></i><b>8.1.4</b> Atmospheric interactions and atmospheric window</a></li>
+<li class="chapter" data-level="8.1.5" data-path="remote-sensing.html"><a href="remote-sensing.html#passive-and-active-remote-sensing"><i class="fa fa-check"></i><b>8.1.5</b> Passive and active remote sensing</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="remote-sensing.html"><a href="remote-sensing.html#earth-observation-satellites"><i class="fa fa-check"></i><b>8.2</b> Earth-observation satellites</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="remote-sensing.html"><a href="remote-sensing.html#historical-development"><i class="fa fa-check"></i><b>8.2.1</b> Historical development</a></li>
+<li class="chapter" data-level="8.2.2" data-path="remote-sensing.html"><a href="remote-sensing.html#satellite-orbits"><i class="fa fa-check"></i><b>8.2.2</b> Satellite orbits</a></li>
+<li class="chapter" data-level="8.2.3" data-path="remote-sensing.html"><a href="remote-sensing.html#time-period-of-a-satellite"><i class="fa fa-check"></i><b>8.2.3</b> Time period of a satellite</a></li>
+<li class="chapter" data-level="8.2.4" data-path="remote-sensing.html"><a href="remote-sensing.html#types-of-satellite-orbits"><i class="fa fa-check"></i><b>8.2.4</b> Types of satellite orbits</a></li>
+<li class="chapter" data-level="8.2.5" data-path="remote-sensing.html"><a href="remote-sensing.html#sat-data"><i class="fa fa-check"></i><b>8.2.5</b> Satellite data</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="remote-sensing.html"><a href="remote-sensing.html#radar"><i class="fa fa-check"></i><b>8.3</b> RADAR</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="remote-sensing.html"><a href="remote-sensing.html#sar"><i class="fa fa-check"></i><b>8.3.1</b> SAR</a></li>
+<li class="chapter" data-level="8.3.2" data-path="remote-sensing.html"><a href="remote-sensing.html#distance-of-the-target-from-the-satellite"><i class="fa fa-check"></i><b>8.3.2</b> Distance of the target from the satellite</a></li>
+<li class="chapter" data-level="8.3.3" data-path="remote-sensing.html"><a href="remote-sensing.html#polsar"><i class="fa fa-check"></i><b>8.3.3</b> PolSAR</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="remote-sensing.html"><a href="remote-sensing.html#lidar"><i class="fa fa-check"></i><b>8.4</b> LiDAR</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="remote-sensing.html"><a href="remote-sensing.html#features-of-lidar"><i class="fa fa-check"></i><b>8.4.1</b> Features of LiDAR</a></li>
+<li class="chapter" data-level="8.4.2" data-path="remote-sensing.html"><a href="remote-sensing.html#fundamental-components"><i class="fa fa-check"></i><b>8.4.2</b> Fundamental components</a></li>
+<li class="chapter" data-level="8.4.3" data-path="remote-sensing.html"><a href="remote-sensing.html#modes-of-operation"><i class="fa fa-check"></i><b>8.4.3</b> Modes of operation</a></li>
+<li class="chapter" data-level="8.4.4" data-path="remote-sensing.html"><a href="remote-sensing.html#applications-in-forestry"><i class="fa fa-check"></i><b>8.4.4</b> Applications in forestry</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="remote-sensing.html"><a href="remote-sensing.html#geographic-information-systems-gis"><i class="fa fa-check"></i><b>8.5</b> Geographic Information Systems (GIS)</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="remote-sensing.html"><a href="remote-sensing.html#core-components-of-gis"><i class="fa fa-check"></i><b>8.5.1</b> Core components of GIS</a></li>
+<li class="chapter" data-level="8.5.2" data-path="remote-sensing.html"><a href="remote-sensing.html#data-integration-in-gis"><i class="fa fa-check"></i><b>8.5.2</b> Data Integration in GIS</a></li>
+<li class="chapter" data-level="8.5.3" data-path="remote-sensing.html"><a href="remote-sensing.html#applications-in-forestry-and-wildfire-management"><i class="fa fa-check"></i><b>8.5.3</b> Applications in forestry and wildfire management</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="remote-sensing.html"><a href="remote-sensing.html#drones"><i class="fa fa-check"></i><b>8.6</b> Drones</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="remote-sensing.html"><a href="remote-sensing.html#working-of-drones"><i class="fa fa-check"></i><b>8.6.1</b> Working of drones</a></li>
+<li class="chapter" data-level="8.6.2" data-path="remote-sensing.html"><a href="remote-sensing.html#advantages-of-drones"><i class="fa fa-check"></i><b>8.6.2</b> Advantages of drones</a></li>
+<li class="chapter" data-level="8.6.3" data-path="remote-sensing.html"><a href="remote-sensing.html#applications-of-drones"><i class="fa fa-check"></i><b>8.6.3</b> Applications of drones</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="comp-systems.html"><a href="comp-systems.html"><i class="fa fa-check"></i><b>9</b> Computational systems in wildfire management</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="comp-systems.html"><a href="comp-systems.html#fire-behavior-modeling"><i class="fa fa-check"></i><b>9.1</b> Fire behavior modeling</a></li>
+<li class="chapter" data-level="9.2" data-path="comp-systems.html"><a href="comp-systems.html#computational-systems-for-remote-sensing-and-gis-data-analyses"><i class="fa fa-check"></i><b>9.2</b> Computational systems for Remote Sensing and GIS data analyses</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="comp-systems.html"><a href="comp-systems.html#remote-sensing-integration"><i class="fa fa-check"></i><b>9.2.1</b> Remote Sensing integration</a></li>
+<li class="chapter" data-level="9.2.2" data-path="comp-systems.html"><a href="comp-systems.html#gis-data-analyses"><i class="fa fa-check"></i><b>9.2.2</b> GIS data analyses</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="comp-systems.html"><a href="comp-systems.html#predictive-analytics"><i class="fa fa-check"></i><b>9.3</b> Predictive analytics</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="comp-systems.html"><a href="comp-systems.html#forecasting"><i class="fa fa-check"></i><b>9.3.1</b> Forecasting</a></li>
+<li class="chapter" data-level="9.3.2" data-path="comp-systems.html"><a href="comp-systems.html#risk-identification"><i class="fa fa-check"></i><b>9.3.2</b> Risk identification</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="comp-systems.html"><a href="comp-systems.html#decision-support-systems-dss"><i class="fa fa-check"></i><b>9.4</b> Decision Support Systems (DSS)</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="comp-systems.html"><a href="comp-systems.html#scenario-analysis"><i class="fa fa-check"></i><b>9.4.1</b> Scenario analysis</a></li>
+<li class="chapter" data-level="9.4.2" data-path="comp-systems.html"><a href="comp-systems.html#resource-management"><i class="fa fa-check"></i><b>9.4.2</b> Resource management</a></li>
+<li class="chapter" data-level="9.4.3" data-path="comp-systems.html"><a href="comp-systems.html#evacuation-planning"><i class="fa fa-check"></i><b>9.4.3</b> Evacuation planning</a></li>
+<li class="chapter" data-level="9.4.4" data-path="comp-systems.html"><a href="comp-systems.html#incident-coordination"><i class="fa fa-check"></i><b>9.4.4</b> Incident coordination</a></li>
+<li class="chapter" data-level="9.4.5" data-path="comp-systems.html"><a href="comp-systems.html#public-communication"><i class="fa fa-check"></i><b>9.4.5</b> Public communication</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="comp-systems.html"><a href="comp-systems.html#internet-of-things-iot-and-sensor-networks"><i class="fa fa-check"></i><b>9.5</b> Internet of Things (IoT) and sensor networks</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="comp-systems.html"><a href="comp-systems.html#environmental-sensors"><i class="fa fa-check"></i><b>9.5.1</b> Environmental sensors</a></li>
+<li class="chapter" data-level="9.5.2" data-path="comp-systems.html"><a href="comp-systems.html#fire-detection-sensors"><i class="fa fa-check"></i><b>9.5.2</b> Fire detection sensors</a></li>
+<li class="chapter" data-level="9.5.3" data-path="comp-systems.html"><a href="comp-systems.html#networked-systems"><i class="fa fa-check"></i><b>9.5.3</b> Networked systems</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="comp-systems.html"><a href="comp-systems.html#artificial-intelligence-ai-and-machine-learning-ml"><i class="fa fa-check"></i><b>9.6</b> Artificial Intelligence (AI) and Machine Learning (ML)</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="comp-systems.html"><a href="comp-systems.html#fire-behavior-prediction"><i class="fa fa-check"></i><b>9.6.1</b> Fire behavior prediction</a></li>
+<li class="chapter" data-level="9.6.2" data-path="comp-systems.html"><a href="comp-systems.html#pattern-recognition"><i class="fa fa-check"></i><b>9.6.2</b> Pattern recognition</a></li>
+<li class="chapter" data-level="9.6.3" data-path="comp-systems.html"><a href="comp-systems.html#adaptive-learning"><i class="fa fa-check"></i><b>9.6.3</b> Adaptive learning</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="comp-systems.html"><a href="comp-systems.html#cloud-computing"><i class="fa fa-check"></i><b>9.7</b> Cloud computing</a>
+<ul>
+<li class="chapter" data-level="9.7.1" data-path="comp-systems.html"><a href="comp-systems.html#data-storage-and-processing"><i class="fa fa-check"></i><b>9.7.1</b> Data storage and processing</a></li>
+<li class="chapter" data-level="9.7.2" data-path="comp-systems.html"><a href="comp-systems.html#real-time-data-access"><i class="fa fa-check"></i><b>9.7.2</b> Real-time data access</a></li>
+<li class="chapter" data-level="9.7.3" data-path="comp-systems.html"><a href="comp-systems.html#collaboration"><i class="fa fa-check"></i><b>9.7.3</b> Collaboration</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html"><i class="fa fa-check"></i><b>10</b> Research and Development (R&amp;D) in wildfire management</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#advancements-in-fire-behavior-modeling"><i class="fa fa-check"></i><b>10.1</b> Advancements in fire behavior modeling</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#enhanced-computational-techniques"><i class="fa fa-check"></i><b>10.1.1</b> Enhanced computational techniques</a></li>
+<li class="chapter" data-level="10.1.2" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#integration-of-multi-source-data"><i class="fa fa-check"></i><b>10.1.2</b> Integration of multi-source data</a></li>
+<li class="chapter" data-level="10.1.3" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#real-time-modeling-and-simulation"><i class="fa fa-check"></i><b>10.1.3</b> Real-time modeling and simulation</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#development-of-new-technologies"><i class="fa fa-check"></i><b>10.2</b> Development of new technologies</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#advanced-sensor-networks"><i class="fa fa-check"></i><b>10.2.1</b> Advanced sensor networks</a></li>
+<li class="chapter" data-level="10.2.2" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#remote-sensing-technologies"><i class="fa fa-check"></i><b>10.2.2</b> Remote sensing technologies</a></li>
+<li class="chapter" data-level="10.2.3" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#autonomous-systems"><i class="fa fa-check"></i><b>10.2.3</b> Autonomous systems</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#enhancements-in-fire-detection-and-monitoring"><i class="fa fa-check"></i><b>10.3</b> Enhancements in fire detection and monitoring</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#improved-detection-algorithms"><i class="fa fa-check"></i><b>10.3.1</b> Improved detection algorithms</a></li>
+<li class="chapter" data-level="10.3.2" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#integration-of-iot-and-cloud-computing"><i class="fa fa-check"></i><b>10.3.2</b> Integration of IoT and cloud computing</a></li>
+<li class="chapter" data-level="10.3.3" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#enhanced-data-visualization-and-analysis"><i class="fa fa-check"></i><b>10.3.3</b> Enhanced data visualization and analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#new-materials"><i class="fa fa-check"></i><b>10.4</b> New materials</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#fire-resistant-materials"><i class="fa fa-check"></i><b>10.4.1</b> Fire-resistant materials</a></li>
+<li class="chapter" data-level="10.4.2" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#fire-resistant-foams-and-gels"><i class="fa fa-check"></i><b>10.4.2</b> Fire-resistant foams and gels</a></li>
+<li class="chapter" data-level="10.4.3" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#innovative-fire-retardants"><i class="fa fa-check"></i><b>10.4.3</b> Innovative fire retardants</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#modern-vehicles"><i class="fa fa-check"></i><b>10.5</b> Modern vehicles</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#all-terrain-firefighting-vehicles"><i class="fa fa-check"></i><b>10.5.1</b> All-terrain firefighting vehicles</a></li>
+<li class="chapter" data-level="10.5.2" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#amphibious-firefighting-vehicles"><i class="fa fa-check"></i><b>10.5.2</b> Amphibious firefighting vehicles</a></li>
+<li class="chapter" data-level="10.5.3" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#drone-based-firefighting-systems"><i class="fa fa-check"></i><b>10.5.3</b> Drone-based firefighting systems</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#firefighting-safety-and-efficiency"><i class="fa fa-check"></i><b>10.6</b> Firefighting safety and efficiency</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#advanced-personal-protective-equipment-ppe"><i class="fa fa-check"></i><b>10.6.1</b> Advanced personal protective equipment (PPE)</a></li>
+<li class="chapter" data-level="10.6.2" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#wearable-technology"><i class="fa fa-check"></i><b>10.6.2</b> Wearable technology</a></li>
+<li class="chapter" data-level="10.6.3" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#firefighting-equipment-innovations"><i class="fa fa-check"></i><b>10.6.3</b> Firefighting equipment innovations</a></li>
+<li class="chapter" data-level="10.6.4" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#enhanced-training-and-simulation"><i class="fa fa-check"></i><b>10.6.4</b> Enhanced training and simulation</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#integrating-climate-change"><i class="fa fa-check"></i><b>10.7</b> Integrating climate change</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#modeling-climate-change-impacts"><i class="fa fa-check"></i><b>10.7.1</b> Modeling climate change impacts</a></li>
+<li class="chapter" data-level="10.7.2" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html#developing-adaptive-management-strategies"><i class="fa fa-check"></i><b>10.7.2</b> Developing adaptive management strategies</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>IV Appendix</b></span></li>
+<li class="chapter" data-level="11" data-path="wind-movement.html"><a href="wind-movement.html"><i class="fa fa-check"></i><b>11</b> Wind movement</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="wind-movement.html"><a href="wind-movement.html#bernoulli-equation"><i class="fa fa-check"></i><b>11.1</b> Bernoulli equation</a></li>
+<li class="chapter" data-level="11.2" data-path="wind-movement.html"><a href="wind-movement.html#principles-of-air-movement"><i class="fa fa-check"></i><b>11.2</b> Principles of air movement</a></li>
+<li class="chapter" data-level="11.3" data-path="wind-movement.html"><a href="wind-movement.html#general-circulation"><i class="fa fa-check"></i><b>11.3</b> General circulation</a></li>
+<li class="chapter" data-level="11.4" data-path="wind-movement.html"><a href="wind-movement.html#local-winds"><i class="fa fa-check"></i><b>11.4</b> Local winds</a>
+<ul>
+<li class="chapter" data-level="11.4.1" data-path="wind-movement.html"><a href="wind-movement.html#periodical-winds"><i class="fa fa-check"></i><b>11.4.1</b> Periodical winds</a></li>
+<li class="chapter" data-level="11.4.2" data-path="wind-movement.html"><a href="wind-movement.html#non-periodical-winds"><i class="fa fa-check"></i><b>11.4.2</b> Non-periodical winds</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="wind-movement.html"><a href="wind-movement.html#other-wind-phenomena"><i class="fa fa-check"></i><b>11.5</b> Other wind phenomena</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Wildfires</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="remote-sensing" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Remote Sensing<a href="remote-sensing.html#remote-sensing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Human impact on ecosystems and the environment has been growing over time, as shown by the equation <span class="citation">(<a href="#ref-awadhiya2021principles">Awadhiya 2021</a>)</span>:</p>
+<p><span class="math display">\[I = P \times A \times T\]</span></p>
+<p>In this equation, <span class="math inline">\(I\)</span> stands for the impact humans have on the environment, <span class="math inline">\(P\)</span> is the human population (or population density if we’re considering impact per unit area), <span class="math inline">\(A\)</span> represents human affluence (the amount of resources we consume), and <span class="math inline">\(T\)</span> indicates the level of technology that helps us shape our surroundings and extract resources from our environment.</p>
+<p>It is clear that human impact increases with the increasing number of people, growing resource needs, and advancement of technology. Over time, all three of these factors have risen: our population has grown, our demand for resources has increased as we have become wealthier, and our technology has advanced, allowing us to extract more resources more quickly and more efficiently. And so our impact on our environment has also ballooned over time.</p>
+<p>One significant consequence of these growing impacts is the increase in wildfires. Most wildfires around the world are caused by human activities <span class="citation">(<a href="#ref-robinne2021impacts">Robinne and Secretariat 2021</a>)</span>. Some wildfires are intentionally set, such as to drive animals into traps, clear land for farming, or divert authorities from crime scenes. Others are more accidental and less intentional, including fires spreading from campsites or agricultural fields, sparks from electrical lines, or even the effects of climate change. As the global population expands and our resource demands increase, the frequency and intensity of human-caused fires, both intentional and accidental, also rise.</p>
+<p>While we can’t quickly reduce the human population or stop progress, we can use technology to address these issues. The problems created by technology can often be solved with more technology. Green technologies, for example, help us reduce environmental impacts while still enjoying the benefits of development. Similarly, new technologies can help manage and reduce wildfires. Improved firefighting techniques and better resource allocation can make our efforts more effective. This chapter, along with the next ones, will explore some of these innovative technologies and their potential benefits.</p>
+<div id="fundamentals" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Fundamentals<a href="remote-sensing.html#fundamentals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the previous chapters, we have seen how the use of satellite imagery has revolutionized wildfire management. Satellites provide repeated measurements in a cost-effective manner, even in challenging terrains and inaccessible areas. Over time, satellite imagery has enabled us to identify trends, forecast, and model wildfires. This capability falls under the realm of ‘remote sensing,’ defined as sensing from a distance. Let us now delve deeper into remote sensing.</p>
+<div id="what-is-remote-sensing" class="section level3 hasAnchor" number="8.1.1">
+<h3><span class="header-section-number">8.1.1</span> What is Remote Sensing?<a href="remote-sensing.html#what-is-remote-sensing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Remote sensing is the process of acquiring information about objects or phenomena without directly being in physical contact with them <span class="citation">(<a href="#ref-ankur-rs">Awadhiya 2016</a>)</span>. The term ‘remote’ refers to the distance from which the information is gathered, and ‘sensing’ pertains to the process of collecting data about the target.</p>
+<p>Remote sensing comprises three fundamental components:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Target object:</strong> The entity or phenomenon whose information is to be acquired.</li>
+<li><strong>Sensor:</strong> A device capable of detecting and recording data from a distance, typically storing it for subsequent analysis.</li>
+<li><strong>Transmission method:</strong> The mechanism through which information is transmitted from the target to the sensor.</li>
+</ol>
+<p>Remote sensing is a widely utilized technology in both natural and technological domains. Within the biological realm, numerous organisms, including humans, rely on remote sensing to perceive and respond to their surroundings. For instance, animals may detect a predator through the rustling of leaves or locate a branch to jump without direct physical contact with either the predator or the branch. Similarly, our sensory organs are designed to gather information from a distance. When we perceive a friend approaching, we utilize light waves to discern their presence without physical contact. In this scenario, the target is the friend, the sensor is the eye, and the transmission medium is light waves. Similarly, when we hear a bee buzzing, sound waves convey information to our ears, enabling us to detect the bee’s presence without physical contact. In this instance, the target is the bee, the sensor is the ear, and the transmission medium is sound waves.</p>
+<p>Through technological advancements, we have developed numerous remote sensors. For instance, a microphone functions similarly to our ears, capturing sound. A camera mimics the eye, with its diaphragm resembling the iris and its lens akin to the eye’s lens. A camera’s film or electronic sensor parallels the retina. Satellite sensors operate on analogous principles to a camera, albeit designed to gather information from space. While they cannot detect sound waves (as sound necessitates a medium for transmission), they utilize electromagnetic waves, which can traverse the vacuum of space.</p>
+</div>
+<div id="electromagnetic-spectrum" class="section level3 hasAnchor" number="8.1.2">
+<h3><span class="header-section-number">8.1.2</span> Electromagnetic spectrum<a href="remote-sensing.html#electromagnetic-spectrum" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Satellite remote sensing utilizes electromagnetic waves to transmit information from the target to the sensor. Electromagnetic waves are generated when an electric field oscillates in conjunction with a magnetic field, resulting in a wave that carries energy perpendicular to both fields. Unlike sound waves, electromagnetic waves do not necessitate a medium and can traverse a vacuum.</p>
+<p>Electromagnetic waves are characterized by their wavelength (<span class="math inline">\(\lambda\)</span>) and frequency (<span class="math inline">\(\nu\)</span>). Wavelength is the distance over which the wave’s shape repeats, or the distance between corresponding points of consecutive waves. It is measured in units of length such as meters, centimeters, or millimeters.</p>
+<p>Frequency is the number of waves that pass a given point in a fixed period of time. It is measured in units of per time, with the SI unit being hertz (Hz). One hertz equals one event per second, or <span class="math inline">\(s^{-1}\)</span> in SI base units.</p>
+<p>The relationship between wavelength, frequency, and the speed of light in a vacuum (<span class="math inline">\(c\)</span>) — defined as exactly 299,792,458 meters per second — is given by:</p>
+<p><span class="math display">\[c = \lambda \nu\]</span></p>
+<p>Rearranging this equation yields:</p>
+<p><span class="math display">\[\lambda = \frac{c}{\nu}\]</span></p>
+<p><span class="math display">\[\nu = \frac{c}{\lambda}\]</span></p>
+<p>Thus, wavelength and frequency are inversely related — as one increases, the other decreases.</p>
+<p>When we look at Sun’s light through a prism, we can observe a spectrum where differently colored lights get separated based on their wavelengths. The electromagnetic spectrum includes this, and also other wavelengths that we cannot see through our eyes. It is categorized based on wavelength into various types of waves, including radio waves, microwaves, infrared, optical light, ultraviolet light, X-rays, and gamma rays [Table <a href="remote-sensing.html#tab:emspectrum">8.1</a>]<span class="citation">(<a href="#ref-NASAem">Center 2013b</a>)</span>. Each type of wave has unique properties and applications, generally related to its energy and its ability to penetrate different materials.</p>
+<table>
+<caption><span id="tab:emspectrum">Table 8.1: </span>Wavelength, frequency, and energy in the electromagnetic spectrum</caption>
+<colgroup>
+<col width="7%" />
+<col width="30%" />
+<col width="31%" />
+<col width="31%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Region</th>
+<th align="left">Wavelength (m)</th>
+<th align="left">Frequency (Hz)</th>
+<th align="left">Energy (J)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Radio</td>
+<td align="left"><span class="math inline">\(&gt; 1 \times 10^{-1}\)</span></td>
+<td align="left"><span class="math inline">\(&lt; 3 \times 10^{9}\)</span></td>
+<td align="left"><span class="math inline">\(&lt; 2 \times 10^{-24}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Microwave</td>
+<td align="left"><span class="math inline">\(1 \times 10^{-3} - 1 \times 10^{-1}\)</span></td>
+<td align="left"><span class="math inline">\(3 \times 10^{9} - 3 \times 10^{11}\)</span></td>
+<td align="left"><span class="math inline">\(2 \times 10^{-24} - 2 \times 10^{-22}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Infrared</td>
+<td align="left"><span class="math inline">\(7 \times 10^{-7} - 1 \times 10^{-3}\)</span></td>
+<td align="left"><span class="math inline">\(3 \times 10^{11} - 4 \times 10^{14}\)</span></td>
+<td align="left"><span class="math inline">\(2 \times 10^{-22} - 3 \times 10^{-19}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Optical</td>
+<td align="left"><span class="math inline">\(4 \times 10^{-7} - 7 \times 10^{-7}\)</span></td>
+<td align="left"><span class="math inline">\(4 \times 10^{14} - 7.5 \times 10^{14}\)</span></td>
+<td align="left"><span class="math inline">\(3 \times 10^{-19} - 5 \times 10^{-19}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">UV</td>
+<td align="left"><span class="math inline">\(1 \times 10^{-8} - 4 \times 10^{-7}\)</span></td>
+<td align="left"><span class="math inline">\(7.5 \times 10^{14} - 3 \times 10^{16}\)</span></td>
+<td align="left"><span class="math inline">\(5 \times 10^{-19} - 2 \times 10^{-17}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">X-ray</td>
+<td align="left"><span class="math inline">\(1 \times 10^{-11} - 1 \times 10^{-8}\)</span></td>
+<td align="left"><span class="math inline">\(3 \times 10^{16} - 3 \times 10^{19}\)</span></td>
+<td align="left"><span class="math inline">\(2 \times 10^{-17} - 2 \times 10^{-14}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Gamma-ray</td>
+<td align="left"><span class="math inline">\(&lt; 1 \times 10^{-11}\)</span></td>
+<td align="left"><span class="math inline">\(&gt; 3 \times 10^{19}\)</span></td>
+<td align="left"><span class="math inline">\(&gt; 2 \times 10^{-14}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The energy <span class="math inline">\(E\)</span> of a photon in an electromagnetic wave is governed by the equation:</p>
+<p><span class="math display">\[E = h \nu = \frac{h c}{\lambda}\]</span></p>
+<p>where <span class="math inline">\(h\)</span> denotes Planck’s constant (<span class="math inline">\(6.62607015 \times 10^{-34}\)</span> Joule-second), <span class="math inline">\(\nu\)</span> is the frequency of the wave, <span class="math inline">\(c\)</span> is the speed of light in a vacuum (<span class="math inline">\(299,792,458\)</span> meters per second), and <span class="math inline">\(\lambda\)</span> represents the wavelength. This relationship shows that photon energy is directly proportional to the frequency of the electromagnetic wave and inversely proportional to its wavelength. As the frequency increases (or the wavelength decreases), the energy of the photon increases correspondingly. This principle is crucial in understanding the behavior of different types of electromagnetic waves across the spectrum.</p>
+</div>
+<div id="interaction-of-waves-with-matter" class="section level3 hasAnchor" number="8.1.3">
+<h3><span class="header-section-number">8.1.3</span> Interaction of waves with matter<a href="remote-sensing.html#interaction-of-waves-with-matter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Electromagnetic waves interact with materials through several fundamental processes. These interactions play a crucial role in determining how we perceive objects and how sensors detect these waves:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Reflection</strong>: Reflection is a phenomenon that occurs when electromagnetic waves encounter a surface and are redirected back into the medium from which they originated. The fundamental principle governing reflection is the law of reflection, which establishes that the angle of incidence (the angle formed between the incoming wave and the normal to the surface) is equal to the angle of reflection (the angle formed between the reflected wave and the normal). Reflection plays a crucial role in the visibility of objects and is an essential component of optical devices such as mirrors and telescopes.</p></li>
+<li><p><strong>Absorption</strong>: Absorption is the process through which the energy of an electromagnetic wave is absorbed by the material it encounters. This energy is frequently converted into heat or other forms of energy. The extent of absorption is influenced by the material’s properties, including its color, molecular composition, and electronic structure. Black surfaces exhibit greater absorption of visible light compared to white or reflective surfaces. Absorption plays a pivotal role in applications such as spectroscopy, wherein the material’s interaction with specific wavelengths provides insights into its composition and temperature.</p></li>
+<li><p><strong>Refraction</strong>: Refraction involves the bending of electromagnetic waves as they pass through materials of different optical densities. When waves enter a medium with a different optical density, their speed changes, causing the waves to bend. This bending is described by Snell’s law, which relates the angles of incidence and refraction to the indices of refraction of the two media. Refraction is responsible for phenomena such as the distortion of objects under water and the focusing of light in lenses and microscopes.</p></li>
+<li><p><strong>Transmission</strong>: Transmission is the passage of electromagnetic waves through a medium. The transmission capability of a medium for electromagnetic waves is contingent upon its transparency and the specific wavelengths involved. For instance, glass exhibits transparency to visible light but opacity to ultraviolet and infrared radiation. Transmission is paramount for communication technologies such as optical fibers and radio waves, which rely on the ability of materials to convey signals over extended distances. Furthermore, the transmission of electromagnetic waves through the atmosphere (and even through a vacuum) is the enabler of satellite remote sensing.</p></li>
+</ol>
+</div>
+<div id="atm-window" class="section level3 hasAnchor" number="8.1.4">
+<h3><span class="header-section-number">8.1.4</span> Atmospheric interactions and atmospheric window<a href="remote-sensing.html#atm-window" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Electromagnetic waves traversing the Earth’s atmosphere undergo intricate interactions. The atmosphere selectively absorbs and scatters specific wavelengths of radiation, permitting others to pass through. This phenomenon results in the formation of the “atmospheric window,” a range of wavelengths minimally impacted by atmospheric interference. This window holds paramount importance for remote sensing applications, as it delineates the wavelengths suitable for observing the Earth’s surface from space or aerial platforms.</p>
+<p>The atmospheric window enables electromagnetic waves to penetrate the Earth’s atmosphere and return to the sensor with minimal distortion. This phenomenon is crucial for accurate data collection and interpretation in remote sensing applications. Variations within this electromagnetic wave spectrum can provide valuable insights into surface properties, including temperature, vegetation cover, and urban development.</p>
+</div>
+<div id="passive-and-active-remote-sensing" class="section level3 hasAnchor" number="8.1.5">
+<h3><span class="header-section-number">8.1.5</span> Passive and active remote sensing<a href="remote-sensing.html#passive-and-active-remote-sensing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Remote sensing relies on the generation, detection, and analysis of electromagnetic waves. Based on the source of electromagnetic radiation, remote sensing is classified into two primary categories — passive and active remote sensing.</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Passive Remote Sensing</strong>: Passive remote sensing employs natural sources of electromagnetic radiation, such as sunlight. The Sun’s energy traverses the vacuum of space and the Earth’s atmosphere, ultimately reaching the Earth’s surface and interacting with it. The reflected or emitted radiation from the surface subsequently traverses back through the atmosphere to a sensor, such as an eye, photographic plate, or satellite sensor. This process is akin to observing an object during daylight using the Sun’s energy. Instruments for passive remote sensing are typically simpler and less expensive because they do not necessitate an active source of radiation. Notable examples include the Landsat satellites operated by NASA and the Sentinel-2 series of satellites operated by the European Space Agency. These instruments rely on the inherent variations in reflected sunlight to provide data on land cover, vegetation health, and other surface characteristics.</p></li>
+<li><p><strong>Active Remote Sensing</strong>: Active remote sensing involves the emission of electromagnetic radiation by the sensor, which subsequently interacts with the target and is returned to the sensor. This process is analogous to using a flashlight to illuminate an object in darkness. Active remote sensing systems necessitate a power source to generate the radiation and are generally more intricate and costly. Notable examples include NASA’s GEDI LiDAR mission, which measures forest canopy heights, and the European Space Agency’s Sentinel-1 RADAR mission, which provides detailed information on surface deformations and land cover changes. Active remote sensing enables detailed observations even in low-light or no-light conditions or through obscured or cloudy atmospheres (when employing non-optical wavelengths such as radio waves). Consequently, it holds significant value in applications such as environmental monitoring, disaster management, and infrastructure assessment.</p></li>
+</ol>
+<p>Both passive and active remote sensing play pivotal roles in data collection and environmental monitoring. Each method possesses distinct advantages and is selected based on the specific requirements of observation and the characteristics of the target area.</p>
+</div>
+</div>
+<div id="earth-observation-satellites" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Earth-observation satellites<a href="remote-sensing.html#earth-observation-satellites" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Earth-observation satellites are advanced spacecraft positioned in orbit around our planet to provide continuous and comprehensive monitoring. These satellites are instrumental in a range of applications including weather forecasting, environmental monitoring, resource management, cartography, and even military surveillance. Their ability to observe and collect data from space has revolutionized our understanding of Earth and its processes.</p>
+<div id="historical-development" class="section level3 hasAnchor" number="8.2.1">
+<h3><span class="header-section-number">8.2.1</span> Historical development<a href="remote-sensing.html#historical-development" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The concept of capturing images of Earth from above has evolved significantly over the centuries. Early attempts at aerial photography included the use of balloons, which, in the mid-19th century, allowed for the collection of images from elevated positions. By the early 20th century, pigeon cameras, which were mounted on pigeons, provided a novel approach to capturing aerial imagery. During the World Wars, aircraft-mounted cameras played a critical role in reconnaissance, offering a strategic advantage. The dawn of space-based remote sensing began in 1946 with a sub-orbital V-2 rocket equipped with a camera. This marked the first step towards the extensive satellite imagery we rely on today. The Landsat program, initiated in 1972, represents a significant milestone in Earth observation, providing the first systematic satellite imagery.</p>
+</div>
+<div id="satellite-orbits" class="section level3 hasAnchor" number="8.2.2">
+<h3><span class="header-section-number">8.2.2</span> Satellite orbits<a href="remote-sensing.html#satellite-orbits" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Satellites are positioned at various altitudes, which impacts their observational capabilities and operational characteristics. Satellites in low Earth orbit (LEO) operate at altitudes ranging from about 200 km to 2,000 km. These satellites provide high-resolution images and cover small areas in great detail. However, they experience significant atmospheric drag, which requires more fuel for orbit maintenance and regular re-boost operations. Conversely, satellites in higher orbits, such as those in a geostationary orbit, can observe larger portions of the Earth but with less detail. These higher orbits, located at approximately 35,786 km above the Earth, require substantial energy for launch and orbital insertion. Geostationary satellites appear fixed relative to a specific point on the Earth’s surface, which is ideal for continuous monitoring of weather patterns, fire spread, and communications.</p>
+</div>
+<div id="time-period-of-a-satellite" class="section level3 hasAnchor" number="8.2.3">
+<h3><span class="header-section-number">8.2.3</span> Time period of a satellite<a href="remote-sensing.html#time-period-of-a-satellite" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Satellites typically move in elliptical orbits. However, to better understand satellite orbits, we can simplify the scenario by considering a satellite moving in a circular orbit. Let <span class="math inline">\(m\)</span> represent the mass of the satellite, and <span class="math inline">\(r\)</span> its distance from the center of the Earth. The gravitational force acting on the satellite is given by:</p>
+<p><span class="math display">\[
+F = \frac{G \times M \times m}{r^2}
+\]</span></p>
+<p>where <span class="math inline">\(G\)</span> is the gravitational constant (<span class="math inline">\(6.674 \times 10^{-11} \, \text{m}^3 \text{kg}^{-1} \text{s}^{-2}\)</span>), and <span class="math inline">\(M\)</span> is the mass of the Earth. This gravitational force provides the centripetal acceleration necessary for the satellite’s circular motion. Thus,</p>
+<p><span class="math display">\[
+\frac{G \times M \times m}{r^2} = m \times \frac{v^2}{r}
+\]</span></p>
+<p>where <span class="math inline">\(v\)</span> is the satellite’s linear speed. Solving for <span class="math inline">\(v\)</span>, we get</p>
+<p><span class="math display">\[
+v = \sqrt{\frac{G \times M}{r}}
+\]</span></p>
+<p>During one complete orbit, the satellite travels a distance of <span class="math inline">\(2 \pi r\)</span>. Therefore, its speed <span class="math inline">\(v\)</span> can be expressed as:</p>
+<p><span class="math display">\[
+v = \frac{2 \pi r}{T}
+\]</span></p>
+<p>where <span class="math inline">\(T\)</span> is the orbital period. Rearranging to solve for <span class="math inline">\(T\)</span>:</p>
+<p><span class="math display">\[
+T = \frac{2 \pi r}{v} = 2 \pi \sqrt{\frac{r^3}{G \times M}}
+\]</span></p>
+<p>This relationship indicates that as the distance <span class="math inline">\(r\)</span> from the center of the Earth increases, the orbital period <span class="math inline">\(T\)</span> also increases. Satellites in higher orbits take longer to complete a single orbit compared to those in lower orbits.</p>
+<p>To compute the height of a geostationary satellite, we set <span class="math inline">\(T\)</span> as 24 hours, to get an orbital radius of 42,164 kilometers. Subtracting the radius of the Earth, 6,378 kilometers gives the altitude of 35,786 kilometers relative to the Earth’s surface.</p>
+</div>
+<div id="types-of-satellite-orbits" class="section level3 hasAnchor" number="8.2.4">
+<h3><span class="header-section-number">8.2.4</span> Types of satellite orbits<a href="remote-sensing.html#types-of-satellite-orbits" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Earth-observation satellites typically operate in one of two primary types of orbits, each serving specific observational needs:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Sun-Synchronous Orbit</strong>: Also known as a heliosynchronous orbit, this is a near-polar orbit where the satellite passes over the same point on Earth at the same local solar time each day. This consistency allows for observations under similar lighting conditions, which is valuable for monitoring changes over time. Sun-synchronous orbits are typically located at altitudes between 700 and 800 km, resulting in an orbital period of about 100 minutes.</p></li>
+<li><p><strong>Geostationary Orbit</strong>: Satellites in this orbit are positioned 35,786 km above the Earth’s equator, where their orbital period matches the Earth’s rotational period. This synchronization allows the satellite to remain fixed relative to a specific point on the Earth’s surface. Geostationary orbits are particularly advantageous for continuous monitoring of weather patterns, communications, and broadcasting.</p></li>
+</ol>
+</div>
+<div id="sat-data" class="section level3 hasAnchor" number="8.2.5">
+<h3><span class="header-section-number">8.2.5</span> Satellite data<a href="remote-sensing.html#sat-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Satellite data is collected and stored in digital raster formats. A raster file represents data in a grid format, with information stored in a matrix of rows and columns. Each cell in this matrix is known as a pixel, and each pixel has a value called its digital number (DN). The DN represents the information captured by the pixel, and can include:</p>
+<ul>
+<li><strong>Photographic images</strong>: RGB values from a photograph or scanned map.</li>
+<li><strong>Continuous data</strong>: Measurements such as elevation, temperature, or spectral information collected by remote sensors.</li>
+<li><strong>Discrete data</strong>: Categorical information such as land use classification or vegetation types.</li>
+</ul>
+<p>Raster images are characterized by several key resolution parameters:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Spatial resolution</strong>: This refers to the sensor’s capacity to discern between closely proximate objects on the Earth’s surface. Enhanced spatial resolution facilitates the capture of finer details and more precise identification of features. For instance, a high spatial resolution may enable the detection of individual trees or even leaves, whereas lower resolution may only reveal broader forested areas. Factors that influence spatial resolution encompass the sensor’s optical characteristics, its distance from the target, and atmospheric conditions. Higher spatial resolution yields more detailed images but also entails larger file sizes.</p></li>
+<li><p><strong>Spectral resolution</strong>: This indicates the sensor’s capability to discern and record diverse electromagnetic radiation bands. For instance, a monochrome camera captures only brightness values across a broad spectrum, rendering various colors as the same shade of gray. Incorporating color filters enables the detection of specific wavelengths, resulting in images with distinct color bands. Higher spectral resolution entails employing additional filters, thereby capturing more detailed spectral information at the expense of larger file sizes.</p></li>
+<li><p><strong>Radiometric resolution</strong>: This describes the sensor’s ability to discern differences in radiance or brightness levels. For example, a sensor with a 1-bit radiometric resolution might classify pixels as either black (0) or white (1), while a 2-bit resolution can differentiate four levels of brightness (00, 01, 10, and 11). Modern sensors typically use 8-bit or higher radiometric resolution, allowing for a greater range of brightness levels at the cost of larger file sizes.</p></li>
+<li><p><strong>Temporal resolution</strong>: This refers to the frequency at which a satellite revisits the same area of the Earth’s surface. Higher temporal resolution enables more frequent observations, facilitating the detection of rapid temporal changes. However, this increased frequency necessitates a substantial volume of data storage and processing. Temporal resolution for an orbit can be enhanced by deploying multiple satellites within the same orbital configuration.</p></li>
+</ol>
+<p>As an example, Landsat 7 satellite captures images with eight spectral bands, in spatial resolutions ranging from 15 to 60 meters, a temporal resolution of 16 days, and an 8-bit radiometric resolution. The detailed band information for Landsat 7 is summarized in table <a href="remote-sensing.html#tab:landsat7">8.2</a> <span class="citation">(<a href="#ref-NASAl7">Center 2013a</a>)</span>.</p>
+<table>
+<caption><span id="tab:landsat7">Table 8.2: </span>Band information for Landsat 7</caption>
+<thead>
+<tr class="header">
+<th align="left">Band</th>
+<th align="left">Wavelength (µm)</th>
+<th align="right">Resolution (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Band 1 - Blue</td>
+<td align="left">0.45-0.52</td>
+<td align="right">30</td>
+</tr>
+<tr class="even">
+<td align="left">Band 2 - Green</td>
+<td align="left">0.52-0.60</td>
+<td align="right">30</td>
+</tr>
+<tr class="odd">
+<td align="left">Band 3 - Red</td>
+<td align="left">0.63-0.69</td>
+<td align="right">30</td>
+</tr>
+<tr class="even">
+<td align="left">Band 4 - Near Infrared (NIR)</td>
+<td align="left">0.77-0.90</td>
+<td align="right">30</td>
+</tr>
+<tr class="odd">
+<td align="left">Band 5 - Shortwave Infrared (SWIR) 1</td>
+<td align="left">1.55-1.75</td>
+<td align="right">30</td>
+</tr>
+<tr class="even">
+<td align="left">Band 6 - Thermal</td>
+<td align="left">10.40-12.50</td>
+<td align="right">60</td>
+</tr>
+<tr class="odd">
+<td align="left">Band 7 - Shortwave Infrared (SWIR) 2</td>
+<td align="left">2.09-2.35</td>
+<td align="right">30</td>
+</tr>
+<tr class="even">
+<td align="left">Band 8 - Panchromatic</td>
+<td align="left">0.52-0.90</td>
+<td align="right">15</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="radar" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> RADAR<a href="remote-sensing.html#radar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>RADAR, an acronym for “RAdio Detection And Ranging,” is a sophisticated active remote sensing technology that employs radio waves to detect and analyze objects. It entails emitting radio waves towards a target. Upon encountering the target, a portion of the signal is reflected back to the RADAR system, which subsequently detects and processes this return signal. The elapsed time between the emission and reception of the signal, coupled with any variations in the signal’s properties, furnishes comprehensive information regarding the target’s distance, size, shape, and other pertinent characteristics.</p>
+<p>In Section <a href="remote-sensing.html#atm-window">8.1.4</a>, we explored the concept of the atmospheric window, which refers to the range of wavelengths that can pass through the Earth’s atmosphere with minimal absorption and scattering. RADAR technology significantly benefits from this concept. Unlike optical sensors that rely on visible light and can be severely impacted by atmospheric conditions such as clouds, rain, or fog, RADAR systems operate effectively unhindered across a broad range of microwave and radio frequencies. These frequencies experience minimal attenuation as they travel through the atmosphere, making RADAR particularly advantageous for continuous monitoring under adverse weather conditions. This capability is especially crucial for applications where persistent cloud cover is common, such as in certain rainforests and maritime / polar regions.</p>
+<p>Furthermore, while passive optical remote sensing systems dependent on sunlight are rendered ineffective during the nighttime, RADAR systems can function continuously. This capability enables the acquisition of continuous data irrespective of the time of day, providing a significant advantage for monitoring and managing natural resources, environmental changes, and other phenomena that require regular observations.</p>
+<div id="sar" class="section level3 hasAnchor" number="8.3.1">
+<h3><span class="header-section-number">8.3.1</span> SAR<a href="remote-sensing.html#sar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Synthetic Aperture Radar (SAR) is an advanced form of RADAR technology that significantly enhances spatial resolution. As discussed in Section <a href="remote-sensing.html#sat-data">8.2.5</a>, high spatial resolution is crucial for capturing fine details in remote sensing imagery. SAR achieves this through a technique called synthetic aperture, which circumvents the limitations of the physical antenna size that can be deployed on satellites or aircraft.</p>
+<p>In traditional RADAR systems, spatial resolution is directly proportional to the antenna’s size: larger antennas yield finer resolution. However, practical constraints dictate the size of antennas that can be launched and maintained on satellites, spacecraft, and aircraft. To address this, SAR employs a method where a small antenna is utilized to collect data over the Earth. Each pass generates a segment of data for a specific ground area. By combining these segments computationally, SAR simulates the effect of a much larger antenna, effectively increasing the spatial resolution of the resulting imagery. This approach enables SAR to produce high-resolution images that reveal intricate features of the Earth’s surface.</p>
+<p>SAR operates across various frequency bands, each with distinct characteristics and applications. These bands are categorized based on their wavelength, and their detailed descriptions are provided in Table <a href="remote-sensing.html#tab:sar-bands">8.3</a>, courtesy of NASA Earth Data<a href="#fn37" class="footnote-ref" id="fnref37"><sup>37</sup></a>. The selection of band influences the penetration depth, resolution, and the types of surfaces or materials that can be effectively analyzed. For instance, different bands may be more suitable for detecting vegetation, soil moisture, or urban infrastructure, and thus a combination of bands may enhance the versatility of SAR in environmental and scientific applications.</p>
+<table>
+<caption><span id="tab:sar-bands">Table 8.3: </span>Band information for SAR</caption>
+<colgroup>
+<col width="7%" />
+<col width="14%" />
+<col width="15%" />
+<col width="63%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Band</th>
+<th align="left">Frequency</th>
+<th align="left">Wavelength</th>
+<th align="left">Typical Application</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Ka</td>
+<td align="left">27-40 GHz</td>
+<td align="left">1.1-0.8 cm</td>
+<td align="left">Airport surveillance</td>
+</tr>
+<tr class="even">
+<td align="left">K</td>
+<td align="left">18-27 GHz</td>
+<td align="left">1.7-1.1 cm</td>
+<td align="left">Short-range applications</td>
+</tr>
+<tr class="odd">
+<td align="left">Ku</td>
+<td align="left">12-18 GHz</td>
+<td align="left">2.4-1.7 cm</td>
+<td align="left">Satellite altimetry</td>
+</tr>
+<tr class="even">
+<td align="left">X</td>
+<td align="left">8-12 GHz</td>
+<td align="left">3.8-2.4 cm</td>
+<td align="left">Urban monitoring, snow cover</td>
+</tr>
+<tr class="odd">
+<td align="left">C</td>
+<td align="left">4-8 GHz</td>
+<td align="left">7.5-3.8 cm</td>
+<td align="left">Mapping, change detection</td>
+</tr>
+<tr class="even">
+<td align="left">S</td>
+<td align="left">2-4 GHz</td>
+<td align="left">15-7.5 cm</td>
+<td align="left">Agriculture monitoring</td>
+</tr>
+<tr class="odd">
+<td align="left">L</td>
+<td align="left">1-2 GHz</td>
+<td align="left">30-15 cm</td>
+<td align="left">Geophysical and vegetation monitoring, InSAR</td>
+</tr>
+<tr class="even">
+<td align="left">P</td>
+<td align="left">0.3-1 GHz</td>
+<td align="left">100-30 cm</td>
+<td align="left">Biomass monitoring</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="distance-of-the-target-from-the-satellite" class="section level3 hasAnchor" number="8.3.2">
+<h3><span class="header-section-number">8.3.2</span> Distance of the target from the satellite<a href="remote-sensing.html#distance-of-the-target-from-the-satellite" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When using RADAR systems to measure the distance to a target, the fundamental quantity is the time delay of the radio wave’s round trip. If a target is located at a distance <span class="math inline">\(d\)</span> from the RADAR system, and the radio wave travels to the target and back in <span class="math inline">\(t\)</span> seconds, the total distance traveled by the beam is <span class="math inline">\(2d\)</span>. The speed of the radio wave, <span class="math inline">\(c\)</span>, is essentially the speed of light, since minor reductions in speed due to atmospheric effects are generally negligible for most practical applications. Therefore, the relationship between these variables can be expressed as:</p>
+<p><span class="math display">\[ c \times t = 2 \times d \]</span></p>
+<p>Solving for <span class="math inline">\(d\)</span> gives:</p>
+<p><span class="math display">\[ d = \frac{c \times t}{2} \]</span></p>
+<p>This equation allows us to accurately compute the distance between the RADAR and the target. Beyond simple distance measurement, RADAR systems can also exploit other characteristics of the reflected signal, such as changes in polarization, to gain more detailed information about the target. This is where advanced RADAR techniques like Polarimetric SAR (PolSAR) and Interferometric SAR (InSAR) come into play.</p>
+</div>
+<div id="polsar" class="section level3 hasAnchor" number="8.3.3">
+<h3><span class="header-section-number">8.3.3</span> PolSAR<a href="remote-sensing.html#polsar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>PolSAR, or Polarimetric Synthetic Aperture RADAR, is an advanced RADAR technique that leverages the polarization properties of electromagnetic waves. Electromagnetic waves are transverse waves, meaning that their electric field oscillates perpendicular to the direction of propagation. When these waves are produced such that all oscillations are confined to a specific plane, the waves are said to be polarized. The orientation of polarization can be manipulated by a RADAR system’s signal generator to create oriented polarized waves.</p>
+<p>When a polarized wave interacts with a target, the polarization state of the reflected wave may remain the same, or may change. The occurrence and amount of change can provide significant insights into the target’s properties. PolSAR systems can generate waves and capture returning waves in various polarization configurations, typically represented as two alphabets:</p>
+<ol style="list-style-type: decimal">
+<li><strong>VV (Vertical-Vertical)</strong>: The incident wave is vertically polarized, and the vertical component of the reflected wave is recorded.</li>
+<li><strong>VH (Vertical-Horizontal)</strong>: The incident wave is vertically polarized, and the horizontal component of the reflected wave is recorded.</li>
+<li><strong>HV (Horizontal-Vertical)</strong>: The incident wave is horizontally polarized, and the vertical component of the reflected wave is recorded.</li>
+<li><strong>HH (Horizontal-Horizontal)</strong>: The incident wave is horizontally polarized, and the horizontal component of the reflected wave is recorded.</li>
+</ol>
+<p>These configurations can provide a comprehensive view of the target’s scattering properties, of which there are three main types [Figure <a href="remote-sensing.html#fig:SARdeforestation">8.1</a>a]:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Rough-surface scattering</strong>: This occurs when the surface texture is rough relative to the wavelength of the incident beam. A surface is considered rough if it meets the Fraunhofer criterion:</p>
+<p><span class="math display">\[ sd_h &gt; \frac{\lambda}{32 \times \cos(\theta_i)} \]</span></p>
+<p>where <span class="math inline">\(sd_h\)</span> represents the standard deviation of the surface height from its mean, <span class="math inline">\(\lambda\)</span> is the wavelength of the incident beam, and <span class="math inline">\(\theta_i\)</span> is the incident angle. For rough-surface scattering, the relative scattering strengths are typically:</p>
+<p><span class="math display">\[ |S_{VV}| &gt; |S_{HH}| &gt; |S_{VH}| \text{ or } |S_{HV}| \]</span></p>
+<p>Examples of rough scatterers include agricultural fields with low vegetation, bare soil, and paved surfaces such as roads. As a surface becomes smoother relative to the wavelength, it may transition from rough-surface scattering to a smooth specular reflector (like reflection from a mirror), in which case minimal or no scattering is detected by the RADAR (since little or no radio wave is received back).</p></li>
+<li><p><strong>Double-bounce scattering</strong>: This type of scattering is associated with tall and vertical structures, such as buildings, tall trees, and utility poles. The incident beam undergoes two reflections before returning to the sensor. For double-bounce scattering, the relative scattering strengths are generally:</p>
+<p><span class="math display">\[ |S_{HH}| &gt; |S_{VV}| &gt; |S_{VH}| \text{ or } |S_{HV}| \]</span></p>
+<p>This type of scattering is particularly useful for identifying vertical structures and understanding their spatial orientation.</p></li>
+<li><p><strong>Volume scattering</strong>: This type of scattering occurs in areas with complex structures such as vegetation canopies. The incident beam scatters multiple times within the volume of the target before returning to the detector. In volume scattering, a significant amount of the reflected signal becomes cross-polarized, making <span class="math inline">\(|S_{HV}|\)</span> and <span class="math inline">\(|S_{VH}|\)</span> dominant. This scattering mode is particularly useful for distinguishing between different types of vegetation and monitoring changes in forested areas [Figure <a href="remote-sensing.html#fig:SARdeforestation">8.1</a>b–f].</p></li>
+</ol>
+<p>PolSAR’s ability to analyze and interpret changes in polarization offers a powerful tool for remote sensing. By examining the reflected waves’ polarization characteristics, PolSAR can provide valuable insights into the physical properties and conditions of various surface features, enhancing our capability to monitor and analyze environmental and man-made structures.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:SARdeforestation"></span>
+<img src="Figure/scattering_types.png" alt="Use of SAR to detect forests and changes in forests. Data courtesy ESA and OSM. Visualized on geemap using Google Earth Engine." width="60%" /><img src="Figure/meghalaya_jhum.png" alt="Use of SAR to detect forests and changes in forests. Data courtesy ESA and OSM. Visualized on geemap using Google Earth Engine." width="60%" /><img src="Figure/meghalaya_change.png" alt="Use of SAR to detect forests and changes in forests. Data courtesy ESA and OSM. Visualized on geemap using Google Earth Engine." width="38%" /><img src="Figure/meghalaya_2021.png" alt="Use of SAR to detect forests and changes in forests. Data courtesy ESA and OSM. Visualized on geemap using Google Earth Engine." width="38%" /><img src="Figure/meghalaya_2022.png" alt="Use of SAR to detect forests and changes in forests. Data courtesy ESA and OSM. Visualized on geemap using Google Earth Engine." width="38%" /><img src="Figure/meghalaya_2023.png" alt="Use of SAR to detect forests and changes in forests. Data courtesy ESA and OSM. Visualized on geemap using Google Earth Engine." width="38%" />
+<p class="caption">
+Figure 8.1: Use of SAR to detect forests and changes in forests. Data courtesy ESA and OSM. Visualized on geemap using Google Earth Engine.
+</p>
+</div>
+</div>
+</div>
+<div id="lidar" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> LiDAR<a href="remote-sensing.html#lidar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>LiDAR, which stands for “Light Detection and Ranging,” represents a sophisticated active remote sensing technology that utilizes LASER light to measure distances with exceptional accuracy. The term itself reflects the integration of LASER and RADAR principles, highlighting its ability to detect and measure distances using light. Developed by Hughes Aircraft, Inc. in the 1960s, LiDAR has evolved into a critical tool in remote sensing, offering capabilities far beyond traditional optical and RADAR methods.</p>
+<div id="features-of-lidar" class="section level3 hasAnchor" number="8.4.1">
+<h3><span class="header-section-number">8.4.1</span> Features of LiDAR<a href="remote-sensing.html#features-of-lidar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>LiDAR utilizes monochromatic light. Lasers emit light at a singular, precise wavelength, conferring LiDAR with exceptionally high spectral resolution. This attribute enables the system to discern subtle variations in surface materials based on their interaction with the LASER light. In topographic LiDAR applications, near-infrared lasers are employed to penetrate vegetation and capture intricate land surface features. In bathymetric LiDAR, green lasers are utilized to measure underwater features, such as seafloor and riverbed elevations, owing to their ability to penetrate water.</p>
+<p>The LASER beam within a LiDAR system possesses remarkable directionality, maintaining its strength and focus over extended distances. This characteristic facilitates the detection and measurement of reflected signals from considerable distances, ensuring high-quality data acquisition. The narrow beam width also contributes to the reduction of measurement errors and enhances spatial resolution, rendering LiDAR highly effective for comprehensive and detailed surveys.</p>
+<p>LiDAR systems exhibit exceptional precision and resolution, which are paramount in applications necessitating precise measurements. This precision is achieved through the meticulous measurement of time intervals between the emission and reception of LASER pulses, in conjunction with precise positional data obtained from Global Positioning System (GPS) and inertial measurement systems. The culmination of these efforts yields highly accurate spatial data, which can be utilized for a diverse range of applications, including topographic mapping and vegetation analysis.</p>
+</div>
+<div id="fundamental-components" class="section level3 hasAnchor" number="8.4.2">
+<h3><span class="header-section-number">8.4.2</span> Fundamental components<a href="remote-sensing.html#fundamental-components" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To get information about a target, we require three measurements — the position of the LiDAR instrument and the distance and angular measurements of the target from the LiDAR instrument’s position. The exact location of the LiDAR platform — whether mounted on an aircraft, UAV, or a ground-based system — is determined using Differential GPS (DGPS) and an Inertial Measurement Unit (IMU). DGPS provides accurate geographic coordinates, while the IMU measures orientation and movement. Together, these systems ensure that the LiDAR data is accurately georeferenced, allowing for precise spatial analysis.</p>
+<p>The distance from the LiDAR instrument to the target is computed using the same formula that we discussed in RADAR distance measurement:</p>
+<p><span class="math display">\[ d = \frac{c \times t}{2} \]</span></p>
+<p>In this formula, <span class="math inline">\(d\)</span> is the distance to the target, <span class="math inline">\(c\)</span> represents the speed of light (<span class="math inline">\(299,792,458\)</span> meters per second in a vacuum, with a slight reduction in refractive media like air), and <span class="math inline">\(t\)</span> is the time it takes for the LASER pulse to travel to the target and return. The factor of 2 accounts for the round-trip distance traveled by the LASER beam.</p>
+<p>The angle at which the LASER beam is emitted and received is also crucial for creating three-dimensional (3D) models of the target area. By measuring these angles, LiDAR systems can generate detailed 3D representations of landscapes and structures, capturing intricate details that are essential for accurate spatial analysis.</p>
+</div>
+<div id="modes-of-operation" class="section level3 hasAnchor" number="8.4.3">
+<h3><span class="header-section-number">8.4.3</span> Modes of operation<a href="remote-sensing.html#modes-of-operation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>LiDAR systems can be operated in various modes to capture different types of data:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>First Pulse (FP) Mode</strong>: In FP mode, the LiDAR system detects the initial pulse of the reflected LASER beam. This pulse typically corresponds to the elevation of the highest surfaces within the target area, such as tree canopies or building rooftops. FP mode is particularly advantageous for capturing the uppermost features and provides valuable information for applications such as vegetation mapping and urban planning.</p></li>
+<li><p><strong>Last Pulse (LP) Mode</strong>: LP mode detects the last pulse of the reflected LASER beam, which typically corresponds to the ground surface elevation. This mode provides a comprehensive view of the terrain, enabling the generation of essential data for topographic mapping and ground surface analysis. LP mode effectively mitigates the influence of overlying vegetation or structures, thereby offering a more accurate representation of the underlying terrain.</p></li>
+</ol>
+<p>These modes can be employed individually or in conjunction to generate distinct data models:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Digital Elevation Model (DEM)</strong>: The DEM represents the elevation of the tallest surfaces detected by the first pulse. DEMs are valuable for applications such as flood modeling, land use planning, and environmental assessment.</p></li>
+<li><p><strong>Digital Terrain Model (DTM)</strong>: The DTM depicts the ground surface elevation, derived from the last pulse mode. It provides an accurate representation of the terrain without interference from vegetation or structures. DTMs are used for applications such as engineering design, infrastructure development, and geospatial analysis.</p></li>
+<li><p><strong>Digital Canopy Height Model (DCHM)</strong>: The DCHM is calculated by subtracting the DTM from the DEM, representing the height of vegetation or other objects above the ground. This model is useful for analyzing forest canopy height, assessing vegetation density, and studying habitat structure. DCHMs provide insights into forest health, biomass, carbon sequestration, and ecological dynamics.</p></li>
+</ol>
+</div>
+<div id="applications-in-forestry" class="section level3 hasAnchor" number="8.4.4">
+<h3><span class="header-section-number">8.4.4</span> Applications in forestry<a href="remote-sensing.html#applications-in-forestry" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>LiDAR technology has proven to be exceptionally versatile and valuable in forestry and ecological studies, offering numerous applications.</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Aerial and space-based surveys</strong>: LiDAR systems are deployed on various platforms, including aircraft, UAVs, and space-based missions such as NASA’s GEDI (Global Ecosystem Dynamics Investigation) aboard the International Space Station [Figure <a href="remote-sensing.html#fig:LiDARforestry">8.2</a>a]. This deployment option allows for data collection at both local and global scales, enabling comprehensive forest monitoring and analysis.</p></li>
+<li><p><strong>Topographic mapping</strong>: By utilizing FP and LP modes, LiDAR generates highly accurate DEMs and DTMs, providing detailed information on ground topography and forest canopy heights [Figure <a href="remote-sensing.html#fig:LiDARforestry">8.2</a>b, c]. This capability is crucial for understanding the structure and dynamics of forest ecosystems, assessing landform changes, and supporting sustainable land management practices.</p></li>
+<li><p><strong>Biomass estimation</strong>: LiDAR data can be used to estimate biomass density in forest stands by analyzing canopy-penetrating LASER beams [Figure <a href="remote-sensing.html#fig:LiDARforestry">8.2</a>d–g]. This information supports the creation of detailed canopy structure models, offering insights into forest carbon storage, productivity, and ecological health. Accurate biomass estimates are essential for carbon accounting and forest conservation efforts.</p></li>
+<li><p><strong>Monitoring changes in forests</strong>: LiDAR’s ability to provide continuous, high-resolution measurements enables the monitoring of changes in forests over time. This capability is valuable for tracking the effects of disturbances such as wildfires, logging, and disease outbreaks. LiDAR data helps researchers and policymakers assess forest recovery, evaluate the impacts of environmental changes, and plan effective conservation strategies.</p></li>
+<li><p><strong>Terrestrial Laser Scanning (TLS)</strong>: LiDAR systems can also be used in a horizontal manner as Terrestrial Laser Scanners (TLS), which are either mounted on tripods or UAVs for deployment in dense forest areas. TLS provides detailed, high-resolution information about forest attributes at a more localized scale, enhancing our understanding of forest structure, species composition, and habitat characteristics [Figure <a href="remote-sensing.html#fig:LiDARforestry">8.2</a>h].</p></li>
+</ol>
+<p>In this way, LiDAR technology has revolutionized the field of remote sensing by providing precise, high-resolution spatial data. Its applications span a wide range of fields, from forestry and environmental monitoring to urban planning and infrastructure development. The ability to deliver detailed 3D models and accurate measurements makes LiDAR an indispensable tool for advancing our understanding of natural and built environments, supporting informed decision-making, and fostering sustainable resource management.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:LiDARforestry"></span>
+<img src="Figure/lidar1.png" alt="Some uses of LiDAR in forestry." width="38%" /><img src="Figure/lidar2.png" alt="Some uses of LiDAR in forestry." width="38%" /><img src="Figure/lidar3.png" alt="Some uses of LiDAR in forestry." width="38%" /><img src="Figure/lidar4.png" alt="Some uses of LiDAR in forestry." width="38%" /><img src="Figure/lidar5.png" alt="Some uses of LiDAR in forestry." width="38%" /><img src="Figure/lidar6.png" alt="Some uses of LiDAR in forestry." width="38%" /><img src="Figure/lidar7.png" alt="Some uses of LiDAR in forestry." width="38%" /><img src="Figure/lidar8.png" alt="Some uses of LiDAR in forestry." width="38%" />
+<p class="caption">
+Figure 8.2: Some uses of LiDAR in forestry.
+</p>
+</div>
+</div>
+</div>
+<div id="geographic-information-systems-gis" class="section level2 hasAnchor" number="8.5">
+<h2><span class="header-section-number">8.5</span> Geographic Information Systems (GIS)<a href="remote-sensing.html#geographic-information-systems-gis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Geographic Information Systems (GIS) are sophisticated frameworks that integrate hardware, software, and human expertise to capture, store, manipulate, analyze, manage, and present spatial data. Unlike traditional methods of analyzing geographic data, which involved physical maps and manual overlays, modern GIS employs digital technology to create layered digital representations of spatial information. This digital approach allows for more precise analysis and visualization of geographic phenomena.</p>
+<p>In the contemporary era of technological advancement, they have become indispensable tools for managing and analyzing spatial data. The rise of GIS technology has revolutionized how we interact with and understand geographic information, providing profound insights across a multitude of fields including urban planning, environmental management, and disaster response.</p>
+<div id="core-components-of-gis" class="section level3 hasAnchor" number="8.5.1">
+<h3><span class="header-section-number">8.5.1</span> Core components of GIS<a href="remote-sensing.html#core-components-of-gis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Hardware</strong> comprises:
+<ul>
+<li><strong>Computers</strong>: High-performance systems designed to handle extensive datasets and complex analytical tasks.</li>
+<li><strong>GPS devices</strong>: Instruments used to acquire accurate geographic coordinates.</li>
+<li><strong>Sensors</strong>: Devices that collect environmental data, such as satellite and ground-based sensors, crucial for gathering spatial information.</li>
+<li><strong>Servers</strong>: Systems that store and manage GIS data, facilitating processing and access.</li>
+</ul></li>
+<li><strong>Software</strong> includes:
+<ul>
+<li><strong>QGIS</strong>: An open-source GIS software known for its comprehensive functionality and user-friendly interface. QGIS supports various spatial analysis tasks and is highly extensible through plugins.</li>
+<li><strong>GRASS GIS</strong>: Another open-source GIS tool, valued for its advanced geospatial analysis capabilities and data modeling support.</li>
+<li><strong>ArcGIS</strong>: A commercial GIS software suite developed by Esri, providing a broad range of tools for spatial analysis, mapping, and data management. It is widely utilized in various industries for its extensive features and robust support.</li>
+<li><strong>Erdas Imagine</strong>: A commercial GIS software suite developed by Hexagon Geospatial, used for processing and analyzing geospatial data such as satellite imagery. It offers tools for image classification, terrain modeling, and spatial analysis, widely used in fields like environmental monitoring and urban planning.</li>
+</ul></li>
+<li><strong>Humanware</strong> encompasses:
+<ul>
+<li><strong>GIS professionals</strong>: Specialists who design, implement, and manage GIS projects, ensuring effective data integration and analysis.</li>
+<li><strong>Data analysts</strong>: Individuals who interpret GIS data to derive meaningful insights and support decision-making processes.</li>
+<li><strong>Decision-makers</strong>: Stakeholders who utilize GIS outputs to make informed decisions in fields such as urban planning, environmental conservation, and disaster management.</li>
+</ul></li>
+</ol>
+</div>
+<div id="data-integration-in-gis" class="section level3 hasAnchor" number="8.5.2">
+<h3><span class="header-section-number">8.5.2</span> Data Integration in GIS<a href="remote-sensing.html#data-integration-in-gis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Modern GIS operates through a layered digital framework where geographic data is represented in discrete layers. Each layer may represent different types of data, such as land use, elevation, or infrastructure. By integrating and analyzing these layers, GIS enables the exploration of complex spatial relationships and patterns. For instance, combining land use data with demographic information can provide insights into urban growth and infrastructure needs.</p>
+<p>A key strength of GIS is its ability to integrate diverse data sources, enhancing spatial analysis. Sources of data include:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Satellite imagery</strong>: Provides extensive coverage and detailed information on land cover and land use. GIS integrates satellite images with ground-truth data from field surveys to create accurate and comprehensive maps.</p></li>
+<li><p><strong>Aerial photographs</strong>: Offer high-resolution views of specific areas, useful for updating and refining GIS data layers.</p></li>
+<li><p><strong>Field surveys</strong>: Provide on-the-ground data to validate and enhance remote sensing information, including vegetation assessments, soil sampling, and infrastructure inspections.</p></li>
+<li><p><strong>Scanned maps and toposheets</strong>: Historical maps and topographic sheets offer valuable context and historical data.</p></li>
+<li><p><strong>GPS coordinates</strong>: Precise location data collected through Global Positioning System technology.</p></li>
+<li><p><strong>Photographs and documents</strong>: Historical photographs and documents provide additional contextual information.</p></li>
+</ol>
+</div>
+<div id="applications-in-forestry-and-wildfire-management" class="section level3 hasAnchor" number="8.5.3">
+<h3><span class="header-section-number">8.5.3</span> Applications in forestry and wildfire management<a href="remote-sensing.html#applications-in-forestry-and-wildfire-management" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Geographic Information Systems play a pivotal role in both forestry management and wildfire detection and response. In forestry management, GIS facilitates the creation of comprehensive maps of forested areas, encompassing tree species, age classes, and health conditions. These maps serve as indispensable tools for effective forest management and conservation planning. Furthermore, the integration of LiDAR data with GIS provides precise estimates of forest biomass, which is crucial for carbon accounting, ecological assessment, and resource management. GIS also supports the analysis and mapping of wildlife habitats within forests, facilitating conservation efforts by identifying critical habitats and monitoring changes over time.</p>
+<p>In the realm of wildfire detection and management, GIS assists in analyzing factors that contribute to wildfire risk, such as vegetation types, slope, and historical fire patterns. This analysis enables the identification of high-risk areas and the development of targeted mitigation strategies. During a wildfire, GIS integrates data from satellite sensors, weather stations, and ground reports to provide real-time updates on fire behavior, spread, and containment efforts. This information is pivotal for coordinating emergency responses and resource allocation. Post-wildfire, GIS is utilized to assess damage, evaluate the effectiveness of fire management strategies, and plan recovery and rehabilitation efforts. It assists in mapping affected areas, tracking recovery progress, and supporting long-term ecological monitoring.</p>
+</div>
+</div>
+<div id="drones" class="section level2 hasAnchor" number="8.6">
+<h2><span class="header-section-number">8.6</span> Drones<a href="remote-sensing.html#drones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Drones, also known as Unmanned Aerial Vehicles (UAVs), are aircraft that operate without a human pilot onboard. These autonomous or remotely controlled devices represent a substantial advancement in remote sensing technology, providing a novel platform for capturing aerial data. In contrast to conventional methods that entail the utilization of large aircraft, balloons, or satellites, drones possess the capability to operate at considerably lower altitudes, thereby enabling the acquisition of imagery with enhanced spatial resolution.</p>
+<div id="working-of-drones" class="section level3 hasAnchor" number="8.6.1">
+<h3><span class="header-section-number">8.6.1</span> Working of drones<a href="remote-sensing.html#working-of-drones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Drones function through a harmonious integration of hardware and software components, meticulously designed to efficiently capture and transmit data. The foundational elements of this system encompass the airframe, flight control system, navigation and communication protocols, sensors and cameras, and power supply.</p>
+<p>The airframe is the structural framework of the drone, typically made from lightweight yet durable materials such as carbon fiber or plastic. It supports the drone’s propulsion system, which consists of rotors or propellers that generate lift and enable flight. Fixed-wing drones utilize aerodynamic surfaces to maintain flight over longer distances.</p>
+<p>The flight control system acts as the drone’s brain, processing input from various sensors and executing control commands to ensure stability and precise navigation. It includes gyroscopes and accelerometers that measure orientation and movement to maintain smooth and controlled flight.</p>
+<p>Navigation and communication are critical for drone operation. Global Positioning System (GPS) technology provides location data, allowing the drone to follow predefined flight paths and maintain altitude. The communication system utilizes radio frequency (RF) to facilitate data exchange between the drone and the operator, encompassing control commands and telemetry information. Additionally, certain drones provide live video streaming capabilities, which are crucial for real-time monitoring and visualization.</p>
+<p>Drones can be equipped with a variety of sensors and cameras, including high-resolution optical cameras, LiDAR sensors, and thermal imaging cameras.</p>
+<p>The primary power source for drones is usually rechargeable batteries that provide power to the motors, sensors, and communication systems. Battery life is a crucial factor in determining the drone’s operational range and flight duration.</p>
+<p>Software plays a crucial role in drone operations. Flight planning and control software allows operators to program flight paths, set waypoints, and manage the drone’s movements [Figure <a href="remote-sensing.html#fig:drone">8.3</a>b]. Advanced software may offer autonomous flight capabilities and real-time data processing. Data processing software is used to analyze and interpret the data collected by the drone’s sensors, including stitching images together and generating maps or models.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:drone"></span>
+<img src="Figure/drone1.png" alt="Some uses of drones in forest remote sensing." width="38%" /><img src="Figure/drone2.png" alt="Some uses of drones in forest remote sensing." width="38%" /><img src="Figure/drone3.png" alt="Some uses of drones in forest remote sensing." width="38%" /><img src="Figure/drone4.png" alt="Some uses of drones in forest remote sensing." width="38%" /><img src="Figure/drone5.png" alt="Some uses of drones in forest remote sensing." width="38%" /><img src="Figure/drone6.png" alt="Some uses of drones in forest remote sensing." width="38%" /><img src="Figure/drone7.png" alt="Some uses of drones in forest remote sensing." width="38%" /><img src="Figure/drone8.png" alt="Some uses of drones in forest remote sensing." width="38%" />
+<p class="caption">
+Figure 8.3: Some uses of drones in forest remote sensing.
+</p>
+</div>
+</div>
+<div id="advantages-of-drones" class="section level3 hasAnchor" number="8.6.2">
+<h3><span class="header-section-number">8.6.2</span> Advantages of drones<a href="remote-sensing.html#advantages-of-drones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Drones offer several advantages over conventional aerial data collection techniques. Their ability to operate at low altitudes allows for the acquisition of high-resolution imagery, revealing finer details than satellite imagery. This enhanced spatial resolution is particularly beneficial for comprehensive forest inventory and mapping.</p>
+<p>Drones provide flexibility in flight altitude, which directly influences spatial resolution and areal coverage. Flying at higher altitudes results in lower spatial resolution but covers a larger area [Figure <a href="remote-sensing.html#fig:drone">8.3</a>c], while lower altitudes offer higher resolution but cover a smaller area [Figure <a href="remote-sensing.html#fig:drone">8.3</a>d]. This flexibility allows for targeted data collection based on specific needs. At very low heights, drones can capture detailed imagery that is essential for applications such as distinguishing individual leaves and assessing fine-scale vegetation changes [Figure <a href="remote-sensing.html#fig:drone">8.3</a>d].</p>
+<p>One of the key advantages of drones is their ability to capture and stitch together multiple images into a seamless, geo-referenced map [Figure <a href="remote-sensing.html#fig:drone">8.3</a>e]. This process involves programming sufficient overlap between adjacent images, which is then used by computer software to create a continuous map. The stitched image not only confirms that the images are from the same location but also allows for the assessment of changes over time, such as detecting alterations in forest cover or infrastructure [Figure <a href="remote-sensing.html#fig:drone">8.3</a>f].</p>
+<p>Automated analysis of stitched images can further enhance the utility of drone data. For example, contrast-enhanced images can be processed by artificial intelligence algorithms to identify and quantify specific features, such as planting pits [Figure <a href="remote-sensing.html#fig:drone">8.3</a>g–h]. These techniques can also be applied to wildfire management, where drones help delineate affected areas and evaluate the effectiveness of response measures.</p>
+</div>
+<div id="applications-of-drones" class="section level3 hasAnchor" number="8.6.3">
+<h3><span class="header-section-number">8.6.3</span> Applications of drones<a href="remote-sensing.html#applications-of-drones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In the field of forestry, drones serve as indispensable tools for a wide range of applications. They offer high-resolution imagery, facilitating the meticulous mapping of forest areas. This imagery facilitates the inventory of tree species, their age, and distribution. Furthermore, the utilization of LiDAR sensors enables the generation of three-dimensional data on forest structure, encompassing canopy height and tree density. This data is crucial for evaluating forest biomass and volume.</p>
+<p>Drones equipped with multispectral sensors are frequently utilized for monitoring vegetation health. These sensors analyze reflectance in various spectral bands, enabling the identification of stress, diseases, or pest infestations in trees. Indices such as the Normalized Difference Vegetation Index (NDVI), derived from drone imagery, are used to assess vegetation vigor and productivity, supporting effective forest management and conservation efforts.</p>
+<p>In the realm of wildlife monitoring, drones provide a non-invasive method for tracking animal movements, nesting sites, and population densities. They facilitate habitat assessment by mapping critical areas and monitoring changes over time. In wildlife management, drones are employed for animal herding and darting operations.</p>
+<p>Drones also play a pivotal role in forest health assessment. They facilitate rapid damage assessments following storms or fires, aiding in recovery planning and evaluating the efficacy of response strategies. Regular drone flights enable the timely detection of early indications of diseases or pests, facilitating prompt intervention.</p>
+<p>Drones are particularly useful in wildfire management, offering capabilities that enhance pre-fire risk assessments, real-time detection and monitoring, and post-fire recovery. Prior to a wildfire, drones can conduct risk assessments by mapping areas vulnerable to fire and identifying potential hazards, aiding in wildfire prevention efforts.</p>
+<p>During a wildfire, drones equipped with thermal and optical sensors can provide real-time data on fire spread, intensity, and behavior. Live video streaming from drones enhances situational awareness and coordination among firefighting teams, while thermal imaging helps detect hotspots and smoldering areas, guiding firefighting efforts.</p>
+<p>After a wildfire, drones are used to map burned areas and assess damage. This information is paramount for recovery planning and assessing the efficacy of fire management strategies. Drones also support post-fire rehabilitation by evaluating soil erosion, monitoring vegetation recovery, and ensuring that recovery efforts are successful.</p>
+<p>Furthermore, drones contribute to public safety by providing aerial perspectives of hazardous areas, safeguarding first responders, and disseminating information regarding fire safety and recovery initiatives to the public.</p>
+<p>In this manner, drones have revolutionized the domains of forestry and wildfire management by offering high-resolution imagery, real-time monitoring capabilities, and sophisticated data collection methodologies. Their capacity to operate at low altitudes and capture detailed data enhances our comprehension and management of forest resources and wildfire incidents. As drone technology advances, its applications are anticipated to expand, providing even greater opportunities for enhancing forest management and wildfire response.</p>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-ankur-rs" class="csl-entry">
+Awadhiya, Ankur. 2016. <em>RS-GIS with Free Software</em>. Indira Gandhi National Forest Academy, Dehradun.
+</div>
+<div id="ref-awadhiya2021principles" class="csl-entry">
+———. 2021. <em>Principles of Wildlife Conservation</em>. CRC Press.
+</div>
+<div id="ref-NASAl7" class="csl-entry">
+Center, NASA Goddard Space Flight. 2013a. <span>“BandpassesL7vL8-Jul2013.jpg.”</span> <a href="https://landsat.gsfc.nasa.gov/wp-content/uploads/2013/01/BandpassesL7vL8-Jul20131.pdf" class="uri">https://landsat.gsfc.nasa.gov/wp-content/uploads/2013/01/BandpassesL7vL8-Jul20131.pdf</a>.
+</div>
+<div id="ref-NASAem" class="csl-entry">
+———. 2013b. <span>“Wavelength, Frequency, and Energy.”</span> <a href="https://imagine.gsfc.nasa.gov/science/toolbox/spectrum_chart.html" class="uri">https://imagine.gsfc.nasa.gov/science/toolbox/spectrum_chart.html</a>.
+</div>
+<div id="ref-robinne2021impacts" class="csl-entry">
+Robinne, François-Nicolas, and Forests Secretariat. 2021. <span>“Impacts of Disasters on Forests, in Particular Forest Fires.”</span> <em>UNFFS Background Paper</em>.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="37">
+<li id="fn37"><p><a href="https://www.earthdata.nasa.gov/learn/backgrounders/what-is-sar" class="uri">https://www.earthdata.nasa.gov/learn/backgrounders/what-is-sar</a><a href="remote-sensing.html#fnref37" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="post-fire-management.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="comp-systems.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": null,
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
