@@ -1,5 +1,9 @@
 ---
-title: "About This Website"
+title: "About me"
 ---
 
-More about this website.
+I am Dr. Ankur Awadhiya, an IFS officer borne on the Madhya Pradesh Cadre.
+
+You can find details about me in my [CV](Resume_Dr_Ankur_Awadhiya_IFS.pdf).
+
+Some of the projects that I've been working on are located at the [MP Forest website](http://intranet.mpforest.gov.in/Publicdomain/atlas/index.html).
