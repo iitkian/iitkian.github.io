@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>8.2 Earth-observation satellites | Wildfires</title>
+  <meta name="description" content="This book provides an easy introduction to the causes, principles, management strategies, and best practices in wildfires." />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="8.2 Earth-observation satellites | Wildfires" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This book provides an easy introduction to the causes, principles, management strategies, and best practices in wildfires." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="8.2 Earth-observation satellites | Wildfires" />
+  
+  <meta name="twitter:description" content="This book provides an easy introduction to the causes, principles, management strategies, and best practices in wildfires." />
+  
+
+<meta name="author" content="Ankur Awadhiya" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="fundamentals.html"/>
+<link rel="next" href="radar.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Wildfires</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Links to procure the book</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the author</a></li>
+<li class="part"><span><b>I Wildfire principles</b></span></li>
+<li class="chapter" data-level="1" data-path="wildfires-an-introduction.html"><a href="wildfires-an-introduction.html"><i class="fa fa-check"></i><b>1</b> Wildfires: An introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="what-is-a-wildfire.html"><a href="what-is-a-wildfire.html"><i class="fa fa-check"></i><b>1.1</b> What is a wildfire?</a></li>
+<li class="chapter" data-level="1.2" data-path="distribution-of-wildfires.html"><a href="distribution-of-wildfires.html"><i class="fa fa-check"></i><b>1.2</b> Distribution of wildfires</a></li>
+<li class="chapter" data-level="1.3" data-path="types-and-causes-of-wildfires.html"><a href="types-and-causes-of-wildfires.html"><i class="fa fa-check"></i><b>1.3</b> Types and causes of wildfires</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="types-and-causes-of-wildfires.html"><a href="types-and-causes-of-wildfires.html#classification-based-on-the-parts-of-forests-consumed-by-the-wildfire"><i class="fa fa-check"></i><b>1.3.1</b> Classification based on the parts of forests consumed by the wildfire</a></li>
+<li class="chapter" data-level="1.3.2" data-path="types-and-causes-of-wildfires.html"><a href="types-and-causes-of-wildfires.html#classification-based-on-energy-released-by-the-wildfire"><i class="fa fa-check"></i><b>1.3.2</b> Classification based on energy released by the wildfire</a></li>
+<li class="chapter" data-level="1.3.3" data-path="types-and-causes-of-wildfires.html"><a href="types-and-causes-of-wildfires.html#classification-based-on-location-and-fuel-type"><i class="fa fa-check"></i><b>1.3.3</b> Classification based on location and fuel type</a></li>
+<li class="chapter" data-level="1.3.4" data-path="types-and-causes-of-wildfires.html"><a href="types-and-causes-of-wildfires.html#classification-based-on-the-origin-of-wildfire"><i class="fa fa-check"></i><b>1.3.4</b> Classification based on the origin of wildfire</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="the-fire-triangle.html"><a href="the-fire-triangle.html"><i class="fa fa-check"></i><b>1.4</b> The fire triangle</a></li>
+<li class="chapter" data-level="1.5" data-path="trends-in-wildfires.html"><a href="trends-in-wildfires.html"><i class="fa fa-check"></i><b>1.5</b> Trends in wildfires</a></li>
+<li class="chapter" data-level="1.6" data-path="wildfires-and-society.html"><a href="wildfires-and-society.html"><i class="fa fa-check"></i><b>1.6</b> Wildfires and society</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="effects-of-wildfires.html"><a href="effects-of-wildfires.html"><i class="fa fa-check"></i><b>2</b> Effects of wildfires</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="classification-of-wildfire-effects.html"><a href="classification-of-wildfire-effects.html"><i class="fa fa-check"></i><b>2.1</b> Classification of wildfire effects</a></li>
+<li class="chapter" data-level="2.2" data-path="physical-effects.html"><a href="physical-effects.html"><i class="fa fa-check"></i><b>2.2</b> Physical effects</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="physical-effects.html"><a href="physical-effects.html#changes-in-temperature"><i class="fa fa-check"></i><b>2.2.1</b> Changes in temperature</a></li>
+<li class="chapter" data-level="2.2.2" data-path="physical-effects.html"><a href="physical-effects.html#changes-in-soil"><i class="fa fa-check"></i><b>2.2.2</b> Changes in soil</a></li>
+<li class="chapter" data-level="2.2.3" data-path="physical-effects.html"><a href="physical-effects.html#changes-in-hydrology"><i class="fa fa-check"></i><b>2.2.3</b> Changes in hydrology</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="chemical-effects.html"><a href="chemical-effects.html"><i class="fa fa-check"></i><b>2.3</b> Chemical effects</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="chemical-effects.html"><a href="chemical-effects.html#release-of-hazardous-substances"><i class="fa fa-check"></i><b>2.3.1</b> Release of hazardous substances</a></li>
+<li class="chapter" data-level="2.3.2" data-path="chemical-effects.html"><a href="chemical-effects.html#degradation-of-air-and-water-quality"><i class="fa fa-check"></i><b>2.3.2</b> Degradation of air and water quality</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="biological-effects.html"><a href="biological-effects.html"><i class="fa fa-check"></i><b>2.4</b> Biological effects</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="biological-effects.html"><a href="biological-effects.html#changes-in-habitat"><i class="fa fa-check"></i><b>2.4.1</b> Changes in habitat</a></li>
+<li class="chapter" data-level="2.4.2" data-path="biological-effects.html"><a href="biological-effects.html#death-and-displacement-of-organisms"><i class="fa fa-check"></i><b>2.4.2</b> Death and displacement of organisms</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="effects-on-society.html"><a href="effects-on-society.html"><i class="fa fa-check"></i><b>2.5</b> Effects on society</a></li>
+<li class="chapter" data-level="2.6" data-path="effects-on-weather-and-climate.html"><a href="effects-on-weather-and-climate.html"><i class="fa fa-check"></i><b>2.6</b> Effects on weather and climate</a></li>
+</ul></li>
+<li class="part"><span><b>II Wildfire management strategies</b></span></li>
+<li class="chapter" data-level="3" data-path="strategies-for-wildfire-management.html"><a href="strategies-for-wildfire-management.html"><i class="fa fa-check"></i><b>3</b> Strategies for wildfire management</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="what-is-management.html"><a href="what-is-management.html"><i class="fa fa-check"></i><b>3.1</b> What is management?</a></li>
+<li class="chapter" data-level="3.2" data-path="the-deming-cycle-in-wildfire-management.html"><a href="the-deming-cycle-in-wildfire-management.html"><i class="fa fa-check"></i><b>3.2</b> The Deming cycle in wildfire management</a></li>
+<li class="chapter" data-level="3.3" data-path="prevention.html"><a href="prevention.html"><i class="fa fa-check"></i><b>3.3</b> Prevention</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="prevention.html"><a href="prevention.html#education-and-awareness"><i class="fa fa-check"></i><b>3.3.1</b> Education and awareness</a></li>
+<li class="chapter" data-level="3.3.2" data-path="prevention.html"><a href="prevention.html#fuel-management"><i class="fa fa-check"></i><b>3.3.2</b> Fuel management</a></li>
+<li class="chapter" data-level="3.3.3" data-path="prevention.html"><a href="prevention.html#building-codes-and-design"><i class="fa fa-check"></i><b>3.3.3</b> Building codes and design</a></li>
+<li class="chapter" data-level="3.3.4" data-path="prevention.html"><a href="prevention.html#firebreaks-and-barriers"><i class="fa fa-check"></i><b>3.3.4</b> Firebreaks and barriers</a></li>
+<li class="chapter" data-level="3.3.5" data-path="prevention.html"><a href="prevention.html#community-planning"><i class="fa fa-check"></i><b>3.3.5</b> Community planning</a></li>
+<li class="chapter" data-level="3.3.6" data-path="prevention.html"><a href="prevention.html#fire-detection-and-monitoring"><i class="fa fa-check"></i><b>3.3.6</b> Fire detection and monitoring</a></li>
+<li class="chapter" data-level="3.3.7" data-path="prevention.html"><a href="prevention.html#burn-bans-and-other-regulations"><i class="fa fa-check"></i><b>3.3.7</b> Burn bans and other regulations</a></li>
+<li class="chapter" data-level="3.3.8" data-path="prevention.html"><a href="prevention.html#research-and-innovation"><i class="fa fa-check"></i><b>3.3.8</b> Research and innovation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="detection.html"><a href="detection.html"><i class="fa fa-check"></i><b>3.4</b> Detection</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="detection.html"><a href="detection.html#traditional-detection-methods"><i class="fa fa-check"></i><b>3.4.1</b> Traditional detection methods</a></li>
+<li class="chapter" data-level="3.4.2" data-path="detection.html"><a href="detection.html#technological-advances-in-detection"><i class="fa fa-check"></i><b>3.4.2</b> Technological advances in detection</a></li>
+<li class="chapter" data-level="3.4.3" data-path="detection.html"><a href="detection.html#advanced-monitoring-systems"><i class="fa fa-check"></i><b>3.4.3</b> Advanced monitoring systems</a></li>
+<li class="chapter" data-level="3.4.4" data-path="detection.html"><a href="detection.html#machine-learning-and-artificial-intelligence"><i class="fa fa-check"></i><b>3.4.4</b> Machine Learning and Artificial Intelligence</a></li>
+<li class="chapter" data-level="3.4.5" data-path="detection.html"><a href="detection.html#community-and-crowd-sourced-reporting"><i class="fa fa-check"></i><b>3.4.5</b> Community and crowd-Sourced reporting</a></li>
+<li class="chapter" data-level="3.4.6" data-path="detection.html"><a href="detection.html#integrated-detection-systems"><i class="fa fa-check"></i><b>3.4.6</b> Integrated detection systems</a></li>
+<li class="chapter" data-level="3.4.7" data-path="detection.html"><a href="detection.html#challenges-and-future-directions"><i class="fa fa-check"></i><b>3.4.7</b> Challenges and future directions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="suppression.html"><a href="suppression.html"><i class="fa fa-check"></i><b>3.5</b> Suppression</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="suppression.html"><a href="suppression.html#fundamental-suppression-strategies"><i class="fa fa-check"></i><b>3.5.1</b> Fundamental suppression strategies</a></li>
+<li class="chapter" data-level="3.5.2" data-path="suppression.html"><a href="suppression.html#technological-innovations-in-suppression"><i class="fa fa-check"></i><b>3.5.2</b> Technological innovations in suppression</a></li>
+<li class="chapter" data-level="3.5.3" data-path="suppression.html"><a href="suppression.html#firefighting-equipment"><i class="fa fa-check"></i><b>3.5.3</b> Firefighting equipment</a></li>
+<li class="chapter" data-level="3.5.4" data-path="suppression.html"><a href="suppression.html#coordination-and-communication"><i class="fa fa-check"></i><b>3.5.4</b> Coordination and communication</a></li>
+<li class="chapter" data-level="3.5.5" data-path="suppression.html"><a href="suppression.html#challenges-and-future-directions-1"><i class="fa fa-check"></i><b>3.5.5</b> Challenges and future directions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="post-wildfire-management.html"><a href="post-wildfire-management.html"><i class="fa fa-check"></i><b>3.6</b> Post-wildfire management</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="post-wildfire-management.html"><a href="post-wildfire-management.html#ecological-restoration"><i class="fa fa-check"></i><b>3.6.1</b> Ecological restoration</a></li>
+<li class="chapter" data-level="3.6.2" data-path="post-wildfire-management.html"><a href="post-wildfire-management.html#community-recovery"><i class="fa fa-check"></i><b>3.6.2</b> Community recovery</a></li>
+<li class="chapter" data-level="3.6.3" data-path="post-wildfire-management.html"><a href="post-wildfire-management.html#infrastructure-restoration"><i class="fa fa-check"></i><b>3.6.3</b> Infrastructure restoration</a></li>
+<li class="chapter" data-level="3.6.4" data-path="post-wildfire-management.html"><a href="post-wildfire-management.html#monitoring-and-evaluation"><i class="fa fa-check"></i><b>3.6.4</b> Monitoring and evaluation</a></li>
+<li class="chapter" data-level="3.6.5" data-path="post-wildfire-management.html"><a href="post-wildfire-management.html#challenges-and-future-directions-2"><i class="fa fa-check"></i><b>3.6.5</b> Challenges and future directions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="wildfire-prevention.html"><a href="wildfire-prevention.html"><i class="fa fa-check"></i><b>4</b> Wildfire prevention</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="need-for-data-and-data-analysis.html"><a href="need-for-data-and-data-analysis.html"><i class="fa fa-check"></i><b>4.1</b> Need for data and data analysis</a></li>
+<li class="chapter" data-level="4.2" data-path="from-data-to-information.html"><a href="from-data-to-information.html"><i class="fa fa-check"></i><b>4.2</b> From data to information</a></li>
+<li class="chapter" data-level="4.3" data-path="wildfire-hazard-indices.html"><a href="wildfire-hazard-indices.html"><i class="fa fa-check"></i><b>4.3</b> Wildfire hazard indices</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="wildfire-hazard-indices.html"><a href="wildfire-hazard-indices.html#components-of-wildfire-hazard-indices"><i class="fa fa-check"></i><b>4.3.1</b> Components of wildfire hazard indices</a></li>
+<li class="chapter" data-level="4.3.2" data-path="wildfire-hazard-indices.html"><a href="wildfire-hazard-indices.html#types-of-wildfire-hazard-indices"><i class="fa fa-check"></i><b>4.3.2</b> Types of wildfire hazard indices</a></li>
+<li class="chapter" data-level="4.3.3" data-path="wildfire-hazard-indices.html"><a href="wildfire-hazard-indices.html#applications-of-wildfire-hazard-indices"><i class="fa fa-check"></i><b>4.3.3</b> Applications of wildfire hazard indices</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="identifying-wildfire-prone-areas.html"><a href="identifying-wildfire-prone-areas.html"><i class="fa fa-check"></i><b>4.4</b> Identifying wildfire-prone areas</a></li>
+<li class="chapter" data-level="4.5" data-path="dissemination-of-information.html"><a href="dissemination-of-information.html"><i class="fa fa-check"></i><b>4.5</b> Dissemination of information</a></li>
+<li class="chapter" data-level="4.6" data-path="community-involvement-and-cooperation.html"><a href="community-involvement-and-cooperation.html"><i class="fa fa-check"></i><b>4.6</b> Community involvement and cooperation</a></li>
+<li class="chapter" data-level="4.7" data-path="use-of-fire-lines-and-fire-breakers.html"><a href="use-of-fire-lines-and-fire-breakers.html"><i class="fa fa-check"></i><b>4.7</b> Use of fire lines and fire breakers</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="use-of-fire-lines-and-fire-breakers.html"><a href="use-of-fire-lines-and-fire-breakers.html#purpose-and-function-of-fire-lines"><i class="fa fa-check"></i><b>4.7.1</b> Purpose and function of fire lines</a></li>
+<li class="chapter" data-level="4.7.2" data-path="use-of-fire-lines-and-fire-breakers.html"><a href="use-of-fire-lines-and-fire-breakers.html#types-of-fire-lines"><i class="fa fa-check"></i><b>4.7.2</b> Types of fire lines</a></li>
+<li class="chapter" data-level="4.7.3" data-path="use-of-fire-lines-and-fire-breakers.html"><a href="use-of-fire-lines-and-fire-breakers.html#site-selection-and-preparation"><i class="fa fa-check"></i><b>4.7.3</b> Site selection and preparation</a></li>
+<li class="chapter" data-level="4.7.4" data-path="use-of-fire-lines-and-fire-breakers.html"><a href="use-of-fire-lines-and-fire-breakers.html#implementation-of-fire-lines"><i class="fa fa-check"></i><b>4.7.4</b> Implementation of fire lines</a></li>
+<li class="chapter" data-level="4.7.5" data-path="use-of-fire-lines-and-fire-breakers.html"><a href="use-of-fire-lines-and-fire-breakers.html#case-study-from-madhya-pradesh"><i class="fa fa-check"></i><b>4.7.5</b> Case study from Madhya Pradesh</a></li>
+<li class="chapter" data-level="4.7.6" data-path="use-of-fire-lines-and-fire-breakers.html"><a href="use-of-fire-lines-and-fire-breakers.html#limitations-of-traditional-fire-lines"><i class="fa fa-check"></i><b>4.7.6</b> Limitations of traditional fire lines</a></li>
+<li class="chapter" data-level="4.7.7" data-path="use-of-fire-lines-and-fire-breakers.html"><a href="use-of-fire-lines-and-fire-breakers.html#construction-of-fire-breakers"><i class="fa fa-check"></i><b>4.7.7</b> Construction of fire breakers</a></li>
+<li class="chapter" data-level="4.7.8" data-path="use-of-fire-lines-and-fire-breakers.html"><a href="use-of-fire-lines-and-fire-breakers.html#effectiveness-of-fire-breakers"><i class="fa fa-check"></i><b>4.7.8</b> Effectiveness of fire breakers</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="reduction-of-fuel-load.html"><a href="reduction-of-fuel-load.html"><i class="fa fa-check"></i><b>4.8</b> Reduction of fuel load</a></li>
+<li class="chapter" data-level="4.9" data-path="cold-burning.html"><a href="cold-burning.html"><i class="fa fa-check"></i><b>4.9</b> Cold burning</a></li>
+<li class="chapter" data-level="4.10" data-path="species-selection-for-wildfire-prevention.html"><a href="species-selection-for-wildfire-prevention.html"><i class="fa fa-check"></i><b>4.10</b> Species-selection for wildfire prevention</a>
+<ul>
+<li class="chapter" data-level="4.10.1" data-path="species-selection-for-wildfire-prevention.html"><a href="species-selection-for-wildfire-prevention.html#characteristics-of-fire-resistant-plants"><i class="fa fa-check"></i><b>4.10.1</b> Characteristics of fire-resistant plants</a></li>
+<li class="chapter" data-level="4.10.2" data-path="species-selection-for-wildfire-prevention.html"><a href="species-selection-for-wildfire-prevention.html#recommended-plant-species"><i class="fa fa-check"></i><b>4.10.2</b> Recommended plant species</a></li>
+<li class="chapter" data-level="4.10.3" data-path="species-selection-for-wildfire-prevention.html"><a href="species-selection-for-wildfire-prevention.html#landscaping-practices"><i class="fa fa-check"></i><b>4.10.3</b> Landscaping practices</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="near-real-time-detection-of-wildfires.html"><a href="near-real-time-detection-of-wildfires.html"><i class="fa fa-check"></i><b>5</b> Near-real-time detection of wildfires</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="satellite-based-detection.html"><a href="satellite-based-detection.html"><i class="fa fa-check"></i><b>5.1</b> Satellite-based detection</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="satellite-based-detection.html"><a href="satellite-based-detection.html#satellite-systems-for-wildfire-detection"><i class="fa fa-check"></i><b>5.1.1</b> Satellite systems for wildfire detection</a></li>
+<li class="chapter" data-level="5.1.2" data-path="satellite-based-detection.html"><a href="satellite-based-detection.html#types-of-data-provided-by-satellites"><i class="fa fa-check"></i><b>5.1.2</b> Types of data provided by satellites</a></li>
+<li class="chapter" data-level="5.1.3" data-path="satellite-based-detection.html"><a href="satellite-based-detection.html#applications-in-fire-management"><i class="fa fa-check"></i><b>5.1.3</b> Applications in fire management</a></li>
+<li class="chapter" data-level="5.1.4" data-path="satellite-based-detection.html"><a href="satellite-based-detection.html#challenges-and-limitations"><i class="fa fa-check"></i><b>5.1.4</b> Challenges and limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="aerial-surveillance.html"><a href="aerial-surveillance.html"><i class="fa fa-check"></i><b>5.2</b> Aerial surveillance</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="aerial-surveillance.html"><a href="aerial-surveillance.html#aerial-platforms-for-wildfire-detection"><i class="fa fa-check"></i><b>5.2.1</b> Aerial platforms for wildfire detection</a></li>
+<li class="chapter" data-level="5.2.2" data-path="aerial-surveillance.html"><a href="aerial-surveillance.html#types-of-data-provided-by-aerial-surveillance"><i class="fa fa-check"></i><b>5.2.2</b> Types of data provided by aerial surveillance</a></li>
+<li class="chapter" data-level="5.2.3" data-path="aerial-surveillance.html"><a href="aerial-surveillance.html#applications-in-fire-management-1"><i class="fa fa-check"></i><b>5.2.3</b> Applications in fire management</a></li>
+<li class="chapter" data-level="5.2.4" data-path="aerial-surveillance.html"><a href="aerial-surveillance.html#challenges-and-limitations-1"><i class="fa fa-check"></i><b>5.2.4</b> Challenges and limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="ground-based-detection-systems.html"><a href="ground-based-detection-systems.html"><i class="fa fa-check"></i><b>5.3</b> Ground-based detection systems</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="ground-based-detection-systems.html"><a href="ground-based-detection-systems.html#fire-towers"><i class="fa fa-check"></i><b>5.3.1</b> Fire towers</a></li>
+<li class="chapter" data-level="5.3.2" data-path="ground-based-detection-systems.html"><a href="ground-based-detection-systems.html#sensor-networks"><i class="fa fa-check"></i><b>5.3.2</b> Sensor networks</a></li>
+<li class="chapter" data-level="5.3.3" data-path="ground-based-detection-systems.html"><a href="ground-based-detection-systems.html#advantages-of-ground-based-detection-systems"><i class="fa fa-check"></i><b>5.3.3</b> Advantages of ground-based detection systems</a></li>
+<li class="chapter" data-level="5.3.4" data-path="ground-based-detection-systems.html"><a href="ground-based-detection-systems.html#challenges-and-limitations-2"><i class="fa fa-check"></i><b>5.3.4</b> Challenges and limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="social-media-and-citizen-reports.html"><a href="social-media-and-citizen-reports.html"><i class="fa fa-check"></i><b>5.4</b> Social media and citizen reports</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="social-media-and-citizen-reports.html"><a href="social-media-and-citizen-reports.html#role-of-social-media-in-wildfire-detection"><i class="fa fa-check"></i><b>5.4.1</b> Role of social media in wildfire detection</a></li>
+<li class="chapter" data-level="5.4.2" data-path="social-media-and-citizen-reports.html"><a href="social-media-and-citizen-reports.html#role-of-citizen-reports-in-wildfire-detection"><i class="fa fa-check"></i><b>5.4.2</b> Role of citizen reports in wildfire detection</a></li>
+<li class="chapter" data-level="5.4.3" data-path="social-media-and-citizen-reports.html"><a href="social-media-and-citizen-reports.html#benefits-of-social-media-and-citizen-reports"><i class="fa fa-check"></i><b>5.4.3</b> Benefits of social media and citizen reports</a></li>
+<li class="chapter" data-level="5.4.4" data-path="social-media-and-citizen-reports.html"><a href="social-media-and-citizen-reports.html#challenges-and-limitations-3"><i class="fa fa-check"></i><b>5.4.4</b> Challenges and limitations</a></li>
+<li class="chapter" data-level="5.4.5" data-path="social-media-and-citizen-reports.html"><a href="social-media-and-citizen-reports.html#integration-with-other-detection-methods"><i class="fa fa-check"></i><b>5.4.5</b> Integration with other detection methods</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="integrated-detection-systems-1.html"><a href="integrated-detection-systems-1.html"><i class="fa fa-check"></i><b>5.5</b> Integrated detection systems</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="integrated-detection-systems-1.html"><a href="integrated-detection-systems-1.html#components-of-integrated-detection-systems"><i class="fa fa-check"></i><b>5.5.1</b> Components of integrated detection systems</a></li>
+<li class="chapter" data-level="5.5.2" data-path="integrated-detection-systems-1.html"><a href="integrated-detection-systems-1.html#benefits-of-integrated-detection-systems"><i class="fa fa-check"></i><b>5.5.2</b> Benefits of integrated detection systems</a></li>
+<li class="chapter" data-level="5.5.3" data-path="integrated-detection-systems-1.html"><a href="integrated-detection-systems-1.html#challenges-and-limitations-4"><i class="fa fa-check"></i><b>5.5.3</b> Challenges and limitations</a></li>
+<li class="chapter" data-level="5.5.4" data-path="integrated-detection-systems-1.html"><a href="integrated-detection-systems-1.html#case-studies-and-examples"><i class="fa fa-check"></i><b>5.5.4</b> Case studies and examples</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="wildfire-suppression.html"><a href="wildfire-suppression.html"><i class="fa fa-check"></i><b>6</b> Wildfire suppression</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="principles-of-wildfire-suppression.html"><a href="principles-of-wildfire-suppression.html"><i class="fa fa-check"></i><b>6.1</b> Principles of wildfire suppression</a></li>
+<li class="chapter" data-level="6.2" data-path="wildfire-suppression-methods.html"><a href="wildfire-suppression-methods.html"><i class="fa fa-check"></i><b>6.2</b> Wildfire suppression methods</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="wildfire-suppression-methods.html"><a href="wildfire-suppression-methods.html#firebreaks"><i class="fa fa-check"></i><b>6.2.1</b> Firebreaks</a></li>
+<li class="chapter" data-level="6.2.2" data-path="wildfire-suppression-methods.html"><a href="wildfire-suppression-methods.html#use-of-explosives"><i class="fa fa-check"></i><b>6.2.2</b> Use of explosives</a></li>
+<li class="chapter" data-level="6.2.3" data-path="wildfire-suppression-methods.html"><a href="wildfire-suppression-methods.html#beating-of-fires"><i class="fa fa-check"></i><b>6.2.3</b> Beating of fires</a></li>
+<li class="chapter" data-level="6.2.4" data-path="wildfire-suppression-methods.html"><a href="wildfire-suppression-methods.html#water-and-fire-retardants"><i class="fa fa-check"></i><b>6.2.4</b> Water and fire retardants</a></li>
+<li class="chapter" data-level="6.2.5" data-path="wildfire-suppression-methods.html"><a href="wildfire-suppression-methods.html#aerial-suppression-and-water-bombing"><i class="fa fa-check"></i><b>6.2.5</b> Aerial suppression and water bombing</a></li>
+<li class="chapter" data-level="6.2.6" data-path="wildfire-suppression-methods.html"><a href="wildfire-suppression-methods.html#fire-suppression-teams"><i class="fa fa-check"></i><b>6.2.6</b> Fire suppression teams</a></li>
+<li class="chapter" data-level="6.2.7" data-path="wildfire-suppression-methods.html"><a href="wildfire-suppression-methods.html#monitoring-of-wildfire-suppression"><i class="fa fa-check"></i><b>6.2.7</b> Monitoring of wildfire suppression</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="data-and-wildfire-suppression.html"><a href="data-and-wildfire-suppression.html"><i class="fa fa-check"></i><b>6.3</b> Data and wildfire suppression</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="data-and-wildfire-suppression.html"><a href="data-and-wildfire-suppression.html#types-of-data-used-in-wildfire-suppression"><i class="fa fa-check"></i><b>6.3.1</b> Types of data used in wildfire suppression</a></li>
+<li class="chapter" data-level="6.3.2" data-path="data-and-wildfire-suppression.html"><a href="data-and-wildfire-suppression.html#integration-of-data-into-suppression-strategies"><i class="fa fa-check"></i><b>6.3.2</b> Integration of data into suppression strategies</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="factors-determining-the-choice-of-methods.html"><a href="factors-determining-the-choice-of-methods.html"><i class="fa fa-check"></i><b>6.4</b> Factors determining the choice of methods</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="factors-determining-the-choice-of-methods.html"><a href="factors-determining-the-choice-of-methods.html#fire-behavior"><i class="fa fa-check"></i><b>6.4.1</b> Fire behavior</a></li>
+<li class="chapter" data-level="6.4.2" data-path="factors-determining-the-choice-of-methods.html"><a href="factors-determining-the-choice-of-methods.html#environmental-conditions"><i class="fa fa-check"></i><b>6.4.2</b> Environmental conditions</a></li>
+<li class="chapter" data-level="6.4.3" data-path="factors-determining-the-choice-of-methods.html"><a href="factors-determining-the-choice-of-methods.html#resource-availability"><i class="fa fa-check"></i><b>6.4.3</b> Resource availability</a></li>
+<li class="chapter" data-level="6.4.4" data-path="factors-determining-the-choice-of-methods.html"><a href="factors-determining-the-choice-of-methods.html#objectives-of-suppression"><i class="fa fa-check"></i><b>6.4.4</b> Objectives of suppression</a></li>
+<li class="chapter" data-level="6.4.5" data-path="factors-determining-the-choice-of-methods.html"><a href="factors-determining-the-choice-of-methods.html#safety-considerations"><i class="fa fa-check"></i><b>6.4.5</b> Safety considerations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="post-fire-management.html"><a href="post-fire-management.html"><i class="fa fa-check"></i><b>7</b> Post-fire management</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="lid-and-biological-communities.html"><a href="lid-and-biological-communities.html"><i class="fa fa-check"></i><b>7.1</b> LID and biological communities</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="lid-and-biological-communities.html"><a href="lid-and-biological-communities.html#characteristics-of-lid"><i class="fa fa-check"></i><b>7.1.1</b> Characteristics of LID</a></li>
+<li class="chapter" data-level="7.1.2" data-path="lid-and-biological-communities.html"><a href="lid-and-biological-communities.html#effects-on-biological-communities"><i class="fa fa-check"></i><b>7.1.2</b> Effects on biological communities</a></li>
+<li class="chapter" data-level="7.1.3" data-path="lid-and-biological-communities.html"><a href="lid-and-biological-communities.html#ecological-succession-and-recovery"><i class="fa fa-check"></i><b>7.1.3</b> Ecological succession and recovery</a></li>
+<li class="chapter" data-level="7.1.4" data-path="lid-and-biological-communities.html"><a href="lid-and-biological-communities.html#implications-for-ecosystem-management"><i class="fa fa-check"></i><b>7.1.4</b> Implications for ecosystem management</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="post-fire-management-options.html"><a href="post-fire-management-options.html"><i class="fa fa-check"></i><b>7.2</b> Post-fire management options</a></li>
+<li class="chapter" data-level="7.3" data-path="post-wildfire-management-steps.html"><a href="post-wildfire-management-steps.html"><i class="fa fa-check"></i><b>7.3</b> Post-wildfire management steps</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="post-wildfire-management-steps.html"><a href="post-wildfire-management-steps.html#damage-assessment"><i class="fa fa-check"></i><b>7.3.1</b> Damage assessment</a></li>
+<li class="chapter" data-level="7.3.2" data-path="post-wildfire-management-steps.html"><a href="post-wildfire-management-steps.html#hazard-mitigation"><i class="fa fa-check"></i><b>7.3.2</b> Hazard mitigation</a></li>
+<li class="chapter" data-level="7.3.3" data-path="post-wildfire-management-steps.html"><a href="post-wildfire-management-steps.html#burned-area-emergency-response-baer"><i class="fa fa-check"></i><b>7.3.3</b> Burned Area Emergency Response (BAER)</a></li>
+<li class="chapter" data-level="7.3.4" data-path="post-wildfire-management-steps.html"><a href="post-wildfire-management-steps.html#ecosystem-restoration"><i class="fa fa-check"></i><b>7.3.4</b> Ecosystem restoration</a></li>
+<li class="chapter" data-level="7.3.5" data-path="post-wildfire-management-steps.html"><a href="post-wildfire-management-steps.html#community-support"><i class="fa fa-check"></i><b>7.3.5</b> Community support</a></li>
+<li class="chapter" data-level="7.3.6" data-path="post-wildfire-management-steps.html"><a href="post-wildfire-management-steps.html#long-term-recovery-planning"><i class="fa fa-check"></i><b>7.3.6</b> Long-term recovery planning</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="time-and-cost-of-restoration.html"><a href="time-and-cost-of-restoration.html"><i class="fa fa-check"></i><b>7.4</b> Time and cost of restoration</a></li>
+<li class="chapter" data-level="7.5" data-path="data-and-post-fire-management.html"><a href="data-and-post-fire-management.html"><i class="fa fa-check"></i><b>7.5</b> Data and post-fire management</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="data-and-post-fire-management.html"><a href="data-and-post-fire-management.html#assessment-of-fire-impact"><i class="fa fa-check"></i><b>7.5.1</b> Assessment of fire impact</a></li>
+<li class="chapter" data-level="7.5.2" data-path="data-and-post-fire-management.html"><a href="data-and-post-fire-management.html#resource-allocation-and-management"><i class="fa fa-check"></i><b>7.5.2</b> Resource allocation and management</a></li>
+<li class="chapter" data-level="7.5.3" data-path="data-and-post-fire-management.html"><a href="data-and-post-fire-management.html#planning-and-implementation-of-restoration-strategies"><i class="fa fa-check"></i><b>7.5.3</b> Planning and implementation of restoration strategies</a></li>
+<li class="chapter" data-level="7.5.4" data-path="data-and-post-fire-management.html"><a href="data-and-post-fire-management.html#monitoring-and-evaluation-1"><i class="fa fa-check"></i><b>7.5.4</b> Monitoring and evaluation</a></li>
+<li class="chapter" data-level="7.5.5" data-path="data-and-post-fire-management.html"><a href="data-and-post-fire-management.html#risk-reduction-and-preparedness"><i class="fa fa-check"></i><b>7.5.5</b> Risk reduction and preparedness</a></li>
+<li class="chapter" data-level="7.5.6" data-path="data-and-post-fire-management.html"><a href="data-and-post-fire-management.html#policy-and-decision-making"><i class="fa fa-check"></i><b>7.5.6</b> Policy and Decision-Making</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="case-study-yellowstone-national-park-wildfire-of-1988.html"><a href="case-study-yellowstone-national-park-wildfire-of-1988.html"><i class="fa fa-check"></i><b>7.6</b> Case Study: Yellowstone National Park Wildfire of 1988</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="case-study-yellowstone-national-park-wildfire-of-1988.html"><a href="case-study-yellowstone-national-park-wildfire-of-1988.html#the-1988-fire-event"><i class="fa fa-check"></i><b>7.6.1</b> The 1988 fire event</a></li>
+<li class="chapter" data-level="7.6.2" data-path="case-study-yellowstone-national-park-wildfire-of-1988.html"><a href="case-study-yellowstone-national-park-wildfire-of-1988.html#response-and-management"><i class="fa fa-check"></i><b>7.6.2</b> Response and management</a></li>
+<li class="chapter" data-level="7.6.3" data-path="case-study-yellowstone-national-park-wildfire-of-1988.html"><a href="case-study-yellowstone-national-park-wildfire-of-1988.html#recovery-and-long-term-impact"><i class="fa fa-check"></i><b>7.6.3</b> Recovery and long-term impact</a></li>
+<li class="chapter" data-level="7.6.4" data-path="case-study-yellowstone-national-park-wildfire-of-1988.html"><a href="case-study-yellowstone-national-park-wildfire-of-1988.html#conclusion"><i class="fa fa-check"></i><b>7.6.4</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="case-study-bandhavgarh-tiger-reserve-wildfire-of-2021.html"><a href="case-study-bandhavgarh-tiger-reserve-wildfire-of-2021.html"><i class="fa fa-check"></i><b>7.7</b> Case Study: Bandhavgarh Tiger Reserve Wildfire of 2021</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="case-study-bandhavgarh-tiger-reserve-wildfire-of-2021.html"><a href="case-study-bandhavgarh-tiger-reserve-wildfire-of-2021.html#the-wildfire-event"><i class="fa fa-check"></i><b>7.7.1</b> The wildfire event</a></li>
+<li class="chapter" data-level="7.7.2" data-path="case-study-bandhavgarh-tiger-reserve-wildfire-of-2021.html"><a href="case-study-bandhavgarh-tiger-reserve-wildfire-of-2021.html#response-and-challenges"><i class="fa fa-check"></i><b>7.7.2</b> Response and challenges</a></li>
+<li class="chapter" data-level="7.7.3" data-path="case-study-bandhavgarh-tiger-reserve-wildfire-of-2021.html"><a href="case-study-bandhavgarh-tiger-reserve-wildfire-of-2021.html#restoration-and-recovery"><i class="fa fa-check"></i><b>7.7.3</b> Restoration and recovery</a></li>
+<li class="chapter" data-level="7.7.4" data-path="case-study-bandhavgarh-tiger-reserve-wildfire-of-2021.html"><a href="case-study-bandhavgarh-tiger-reserve-wildfire-of-2021.html#conclusion-1"><i class="fa fa-check"></i><b>7.7.4</b> Conclusion</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>III Technologies &amp; best practices</b></span></li>
+<li class="chapter" data-level="8" data-path="remote-sensing.html"><a href="remote-sensing.html"><i class="fa fa-check"></i><b>8</b> Remote Sensing</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="fundamentals.html"><a href="fundamentals.html"><i class="fa fa-check"></i><b>8.1</b> Fundamentals</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="fundamentals.html"><a href="fundamentals.html#what-is-remote-sensing"><i class="fa fa-check"></i><b>8.1.1</b> What is Remote Sensing?</a></li>
+<li class="chapter" data-level="8.1.2" data-path="fundamentals.html"><a href="fundamentals.html#electromagnetic-spectrum"><i class="fa fa-check"></i><b>8.1.2</b> Electromagnetic spectrum</a></li>
+<li class="chapter" data-level="8.1.3" data-path="fundamentals.html"><a href="fundamentals.html#interaction-of-waves-with-matter"><i class="fa fa-check"></i><b>8.1.3</b> Interaction of waves with matter</a></li>
+<li class="chapter" data-level="8.1.4" data-path="fundamentals.html"><a href="fundamentals.html#atm-window"><i class="fa fa-check"></i><b>8.1.4</b> Atmospheric interactions and atmospheric window</a></li>
+<li class="chapter" data-level="8.1.5" data-path="fundamentals.html"><a href="fundamentals.html#passive-and-active-remote-sensing"><i class="fa fa-check"></i><b>8.1.5</b> Passive and active remote sensing</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="earth-observation-satellites.html"><a href="earth-observation-satellites.html"><i class="fa fa-check"></i><b>8.2</b> Earth-observation satellites</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="earth-observation-satellites.html"><a href="earth-observation-satellites.html#historical-development"><i class="fa fa-check"></i><b>8.2.1</b> Historical development</a></li>
+<li class="chapter" data-level="8.2.2" data-path="earth-observation-satellites.html"><a href="earth-observation-satellites.html#satellite-orbits"><i class="fa fa-check"></i><b>8.2.2</b> Satellite orbits</a></li>
+<li class="chapter" data-level="8.2.3" data-path="earth-observation-satellites.html"><a href="earth-observation-satellites.html#time-period-of-a-satellite"><i class="fa fa-check"></i><b>8.2.3</b> Time period of a satellite</a></li>
+<li class="chapter" data-level="8.2.4" data-path="earth-observation-satellites.html"><a href="earth-observation-satellites.html#types-of-satellite-orbits"><i class="fa fa-check"></i><b>8.2.4</b> Types of satellite orbits</a></li>
+<li class="chapter" data-level="8.2.5" data-path="earth-observation-satellites.html"><a href="earth-observation-satellites.html#sat-data"><i class="fa fa-check"></i><b>8.2.5</b> Satellite data</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="radar.html"><a href="radar.html"><i class="fa fa-check"></i><b>8.3</b> RADAR</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="radar.html"><a href="radar.html#sar"><i class="fa fa-check"></i><b>8.3.1</b> SAR</a></li>
+<li class="chapter" data-level="8.3.2" data-path="radar.html"><a href="radar.html#distance-of-the-target-from-the-satellite"><i class="fa fa-check"></i><b>8.3.2</b> Distance of the target from the satellite</a></li>
+<li class="chapter" data-level="8.3.3" data-path="radar.html"><a href="radar.html#polsar"><i class="fa fa-check"></i><b>8.3.3</b> PolSAR</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="lidar.html"><a href="lidar.html"><i class="fa fa-check"></i><b>8.4</b> LiDAR</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="lidar.html"><a href="lidar.html#features-of-lidar"><i class="fa fa-check"></i><b>8.4.1</b> Features of LiDAR</a></li>
+<li class="chapter" data-level="8.4.2" data-path="lidar.html"><a href="lidar.html#fundamental-components"><i class="fa fa-check"></i><b>8.4.2</b> Fundamental components</a></li>
+<li class="chapter" data-level="8.4.3" data-path="lidar.html"><a href="lidar.html#modes-of-operation"><i class="fa fa-check"></i><b>8.4.3</b> Modes of operation</a></li>
+<li class="chapter" data-level="8.4.4" data-path="lidar.html"><a href="lidar.html#applications-in-forestry"><i class="fa fa-check"></i><b>8.4.4</b> Applications in forestry</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="geographic-information-systems-gis.html"><a href="geographic-information-systems-gis.html"><i class="fa fa-check"></i><b>8.5</b> Geographic Information Systems (GIS)</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="geographic-information-systems-gis.html"><a href="geographic-information-systems-gis.html#core-components-of-gis"><i class="fa fa-check"></i><b>8.5.1</b> Core components of GIS</a></li>
+<li class="chapter" data-level="8.5.2" data-path="geographic-information-systems-gis.html"><a href="geographic-information-systems-gis.html#data-integration-in-gis"><i class="fa fa-check"></i><b>8.5.2</b> Data Integration in GIS</a></li>
+<li class="chapter" data-level="8.5.3" data-path="geographic-information-systems-gis.html"><a href="geographic-information-systems-gis.html#applications-in-forestry-and-wildfire-management"><i class="fa fa-check"></i><b>8.5.3</b> Applications in forestry and wildfire management</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="drones.html"><a href="drones.html"><i class="fa fa-check"></i><b>8.6</b> Drones</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="drones.html"><a href="drones.html#working-of-drones"><i class="fa fa-check"></i><b>8.6.1</b> Working of drones</a></li>
+<li class="chapter" data-level="8.6.2" data-path="drones.html"><a href="drones.html#advantages-of-drones"><i class="fa fa-check"></i><b>8.6.2</b> Advantages of drones</a></li>
+<li class="chapter" data-level="8.6.3" data-path="drones.html"><a href="drones.html#applications-of-drones"><i class="fa fa-check"></i><b>8.6.3</b> Applications of drones</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="comp-systems.html"><a href="comp-systems.html"><i class="fa fa-check"></i><b>9</b> Computational systems in wildfire management</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="fire-behavior-modeling.html"><a href="fire-behavior-modeling.html"><i class="fa fa-check"></i><b>9.1</b> Fire behavior modeling</a></li>
+<li class="chapter" data-level="9.2" data-path="computational-systems-for-remote-sensing-and-gis-data-analyses.html"><a href="computational-systems-for-remote-sensing-and-gis-data-analyses.html"><i class="fa fa-check"></i><b>9.2</b> Computational systems for Remote Sensing and GIS data analyses</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="computational-systems-for-remote-sensing-and-gis-data-analyses.html"><a href="computational-systems-for-remote-sensing-and-gis-data-analyses.html#remote-sensing-integration"><i class="fa fa-check"></i><b>9.2.1</b> Remote Sensing integration</a></li>
+<li class="chapter" data-level="9.2.2" data-path="computational-systems-for-remote-sensing-and-gis-data-analyses.html"><a href="computational-systems-for-remote-sensing-and-gis-data-analyses.html#gis-data-analyses"><i class="fa fa-check"></i><b>9.2.2</b> GIS data analyses</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="predictive-analytics.html"><a href="predictive-analytics.html"><i class="fa fa-check"></i><b>9.3</b> Predictive analytics</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="predictive-analytics.html"><a href="predictive-analytics.html#forecasting"><i class="fa fa-check"></i><b>9.3.1</b> Forecasting</a></li>
+<li class="chapter" data-level="9.3.2" data-path="predictive-analytics.html"><a href="predictive-analytics.html#risk-identification"><i class="fa fa-check"></i><b>9.3.2</b> Risk identification</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="decision-support-systems-dss.html"><a href="decision-support-systems-dss.html"><i class="fa fa-check"></i><b>9.4</b> Decision Support Systems (DSS)</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="decision-support-systems-dss.html"><a href="decision-support-systems-dss.html#scenario-analysis"><i class="fa fa-check"></i><b>9.4.1</b> Scenario analysis</a></li>
+<li class="chapter" data-level="9.4.2" data-path="decision-support-systems-dss.html"><a href="decision-support-systems-dss.html#resource-management"><i class="fa fa-check"></i><b>9.4.2</b> Resource management</a></li>
+<li class="chapter" data-level="9.4.3" data-path="decision-support-systems-dss.html"><a href="decision-support-systems-dss.html#evacuation-planning"><i class="fa fa-check"></i><b>9.4.3</b> Evacuation planning</a></li>
+<li class="chapter" data-level="9.4.4" data-path="decision-support-systems-dss.html"><a href="decision-support-systems-dss.html#incident-coordination"><i class="fa fa-check"></i><b>9.4.4</b> Incident coordination</a></li>
+<li class="chapter" data-level="9.4.5" data-path="decision-support-systems-dss.html"><a href="decision-support-systems-dss.html#public-communication"><i class="fa fa-check"></i><b>9.4.5</b> Public communication</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="internet-of-things-iot-and-sensor-networks.html"><a href="internet-of-things-iot-and-sensor-networks.html"><i class="fa fa-check"></i><b>9.5</b> Internet of Things (IoT) and sensor networks</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="internet-of-things-iot-and-sensor-networks.html"><a href="internet-of-things-iot-and-sensor-networks.html#environmental-sensors"><i class="fa fa-check"></i><b>9.5.1</b> Environmental sensors</a></li>
+<li class="chapter" data-level="9.5.2" data-path="internet-of-things-iot-and-sensor-networks.html"><a href="internet-of-things-iot-and-sensor-networks.html#fire-detection-sensors"><i class="fa fa-check"></i><b>9.5.2</b> Fire detection sensors</a></li>
+<li class="chapter" data-level="9.5.3" data-path="internet-of-things-iot-and-sensor-networks.html"><a href="internet-of-things-iot-and-sensor-networks.html#networked-systems"><i class="fa fa-check"></i><b>9.5.3</b> Networked systems</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="artificial-intelligence-ai-and-machine-learning-ml.html"><a href="artificial-intelligence-ai-and-machine-learning-ml.html"><i class="fa fa-check"></i><b>9.6</b> Artificial Intelligence (AI) and Machine Learning (ML)</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="artificial-intelligence-ai-and-machine-learning-ml.html"><a href="artificial-intelligence-ai-and-machine-learning-ml.html#fire-behavior-prediction"><i class="fa fa-check"></i><b>9.6.1</b> Fire behavior prediction</a></li>
+<li class="chapter" data-level="9.6.2" data-path="artificial-intelligence-ai-and-machine-learning-ml.html"><a href="artificial-intelligence-ai-and-machine-learning-ml.html#pattern-recognition"><i class="fa fa-check"></i><b>9.6.2</b> Pattern recognition</a></li>
+<li class="chapter" data-level="9.6.3" data-path="artificial-intelligence-ai-and-machine-learning-ml.html"><a href="artificial-intelligence-ai-and-machine-learning-ml.html#adaptive-learning"><i class="fa fa-check"></i><b>9.6.3</b> Adaptive learning</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="cloud-computing.html"><a href="cloud-computing.html"><i class="fa fa-check"></i><b>9.7</b> Cloud computing</a>
+<ul>
+<li class="chapter" data-level="9.7.1" data-path="cloud-computing.html"><a href="cloud-computing.html#data-storage-and-processing"><i class="fa fa-check"></i><b>9.7.1</b> Data storage and processing</a></li>
+<li class="chapter" data-level="9.7.2" data-path="cloud-computing.html"><a href="cloud-computing.html#real-time-data-access"><i class="fa fa-check"></i><b>9.7.2</b> Real-time data access</a></li>
+<li class="chapter" data-level="9.7.3" data-path="cloud-computing.html"><a href="cloud-computing.html#collaboration"><i class="fa fa-check"></i><b>9.7.3</b> Collaboration</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="research-and-development-rd-in-wildfire-management.html"><a href="research-and-development-rd-in-wildfire-management.html"><i class="fa fa-check"></i><b>10</b> Research and Development (R&amp;D) in wildfire management</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="advancements-in-fire-behavior-modeling.html"><a href="advancements-in-fire-behavior-modeling.html"><i class="fa fa-check"></i><b>10.1</b> Advancements in fire behavior modeling</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="advancements-in-fire-behavior-modeling.html"><a href="advancements-in-fire-behavior-modeling.html#enhanced-computational-techniques"><i class="fa fa-check"></i><b>10.1.1</b> Enhanced computational techniques</a></li>
+<li class="chapter" data-level="10.1.2" data-path="advancements-in-fire-behavior-modeling.html"><a href="advancements-in-fire-behavior-modeling.html#integration-of-multi-source-data"><i class="fa fa-check"></i><b>10.1.2</b> Integration of multi-source data</a></li>
+<li class="chapter" data-level="10.1.3" data-path="advancements-in-fire-behavior-modeling.html"><a href="advancements-in-fire-behavior-modeling.html#real-time-modeling-and-simulation"><i class="fa fa-check"></i><b>10.1.3</b> Real-time modeling and simulation</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="development-of-new-technologies.html"><a href="development-of-new-technologies.html"><i class="fa fa-check"></i><b>10.2</b> Development of new technologies</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="development-of-new-technologies.html"><a href="development-of-new-technologies.html#advanced-sensor-networks"><i class="fa fa-check"></i><b>10.2.1</b> Advanced sensor networks</a></li>
+<li class="chapter" data-level="10.2.2" data-path="development-of-new-technologies.html"><a href="development-of-new-technologies.html#remote-sensing-technologies"><i class="fa fa-check"></i><b>10.2.2</b> Remote sensing technologies</a></li>
+<li class="chapter" data-level="10.2.3" data-path="development-of-new-technologies.html"><a href="development-of-new-technologies.html#autonomous-systems"><i class="fa fa-check"></i><b>10.2.3</b> Autonomous systems</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="enhancements-in-fire-detection-and-monitoring.html"><a href="enhancements-in-fire-detection-and-monitoring.html"><i class="fa fa-check"></i><b>10.3</b> Enhancements in fire detection and monitoring</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="enhancements-in-fire-detection-and-monitoring.html"><a href="enhancements-in-fire-detection-and-monitoring.html#improved-detection-algorithms"><i class="fa fa-check"></i><b>10.3.1</b> Improved detection algorithms</a></li>
+<li class="chapter" data-level="10.3.2" data-path="enhancements-in-fire-detection-and-monitoring.html"><a href="enhancements-in-fire-detection-and-monitoring.html#integration-of-iot-and-cloud-computing"><i class="fa fa-check"></i><b>10.3.2</b> Integration of IoT and cloud computing</a></li>
+<li class="chapter" data-level="10.3.3" data-path="enhancements-in-fire-detection-and-monitoring.html"><a href="enhancements-in-fire-detection-and-monitoring.html#enhanced-data-visualization-and-analysis"><i class="fa fa-check"></i><b>10.3.3</b> Enhanced data visualization and analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="new-materials.html"><a href="new-materials.html"><i class="fa fa-check"></i><b>10.4</b> New materials</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="new-materials.html"><a href="new-materials.html#fire-resistant-materials"><i class="fa fa-check"></i><b>10.4.1</b> Fire-resistant materials</a></li>
+<li class="chapter" data-level="10.4.2" data-path="new-materials.html"><a href="new-materials.html#fire-resistant-foams-and-gels"><i class="fa fa-check"></i><b>10.4.2</b> Fire-resistant foams and gels</a></li>
+<li class="chapter" data-level="10.4.3" data-path="new-materials.html"><a href="new-materials.html#innovative-fire-retardants"><i class="fa fa-check"></i><b>10.4.3</b> Innovative fire retardants</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="modern-vehicles.html"><a href="modern-vehicles.html"><i class="fa fa-check"></i><b>10.5</b> Modern vehicles</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="modern-vehicles.html"><a href="modern-vehicles.html#all-terrain-firefighting-vehicles"><i class="fa fa-check"></i><b>10.5.1</b> All-terrain firefighting vehicles</a></li>
+<li class="chapter" data-level="10.5.2" data-path="modern-vehicles.html"><a href="modern-vehicles.html#amphibious-firefighting-vehicles"><i class="fa fa-check"></i><b>10.5.2</b> Amphibious firefighting vehicles</a></li>
+<li class="chapter" data-level="10.5.3" data-path="modern-vehicles.html"><a href="modern-vehicles.html#drone-based-firefighting-systems"><i class="fa fa-check"></i><b>10.5.3</b> Drone-based firefighting systems</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="firefighting-safety-and-efficiency.html"><a href="firefighting-safety-and-efficiency.html"><i class="fa fa-check"></i><b>10.6</b> Firefighting safety and efficiency</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="firefighting-safety-and-efficiency.html"><a href="firefighting-safety-and-efficiency.html#advanced-personal-protective-equipment-ppe"><i class="fa fa-check"></i><b>10.6.1</b> Advanced personal protective equipment (PPE)</a></li>
+<li class="chapter" data-level="10.6.2" data-path="firefighting-safety-and-efficiency.html"><a href="firefighting-safety-and-efficiency.html#wearable-technology"><i class="fa fa-check"></i><b>10.6.2</b> Wearable technology</a></li>
+<li class="chapter" data-level="10.6.3" data-path="firefighting-safety-and-efficiency.html"><a href="firefighting-safety-and-efficiency.html#firefighting-equipment-innovations"><i class="fa fa-check"></i><b>10.6.3</b> Firefighting equipment innovations</a></li>
+<li class="chapter" data-level="10.6.4" data-path="firefighting-safety-and-efficiency.html"><a href="firefighting-safety-and-efficiency.html#enhanced-training-and-simulation"><i class="fa fa-check"></i><b>10.6.4</b> Enhanced training and simulation</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="integrating-climate-change.html"><a href="integrating-climate-change.html"><i class="fa fa-check"></i><b>10.7</b> Integrating climate change</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="integrating-climate-change.html"><a href="integrating-climate-change.html#modeling-climate-change-impacts"><i class="fa fa-check"></i><b>10.7.1</b> Modeling climate change impacts</a></li>
+<li class="chapter" data-level="10.7.2" data-path="integrating-climate-change.html"><a href="integrating-climate-change.html#developing-adaptive-management-strategies"><i class="fa fa-check"></i><b>10.7.2</b> Developing adaptive management strategies</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>IV Appendix</b></span></li>
+<li class="chapter" data-level="11" data-path="wind-movement.html"><a href="wind-movement.html"><i class="fa fa-check"></i><b>11</b> Wind movement</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="bernoulli-equation.html"><a href="bernoulli-equation.html"><i class="fa fa-check"></i><b>11.1</b> Bernoulli equation</a></li>
+<li class="chapter" data-level="11.2" data-path="principles-of-air-movement.html"><a href="principles-of-air-movement.html"><i class="fa fa-check"></i><b>11.2</b> Principles of air movement</a></li>
+<li class="chapter" data-level="11.3" data-path="general-circulation.html"><a href="general-circulation.html"><i class="fa fa-check"></i><b>11.3</b> General circulation</a></li>
+<li class="chapter" data-level="11.4" data-path="local-winds.html"><a href="local-winds.html"><i class="fa fa-check"></i><b>11.4</b> Local winds</a>
+<ul>
+<li class="chapter" data-level="11.4.1" data-path="local-winds.html"><a href="local-winds.html#periodical-winds"><i class="fa fa-check"></i><b>11.4.1</b> Periodical winds</a></li>
+<li class="chapter" data-level="11.4.2" data-path="local-winds.html"><a href="local-winds.html#non-periodical-winds"><i class="fa fa-check"></i><b>11.4.2</b> Non-periodical winds</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="other-wind-phenomena.html"><a href="other-wind-phenomena.html"><i class="fa fa-check"></i><b>11.5</b> Other wind phenomena</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Wildfires</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="earth-observation-satellites" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Earth-observation satellites<a href="earth-observation-satellites.html#earth-observation-satellites" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Earth-observation satellites are advanced spacecraft positioned in orbit around our planet to provide continuous and comprehensive monitoring. These satellites are instrumental in a range of applications including weather forecasting, environmental monitoring, resource management, cartography, and even military surveillance. Their ability to observe and collect data from space has revolutionized our understanding of Earth and its processes.</p>
+<div id="historical-development" class="section level3 hasAnchor" number="8.2.1">
+<h3><span class="header-section-number">8.2.1</span> Historical development<a href="earth-observation-satellites.html#historical-development" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The concept of capturing images of Earth from above has evolved significantly over the centuries. Early attempts at aerial photography included the use of balloons, which, in the mid-19th century, allowed for the collection of images from elevated positions. By the early 20th century, pigeon cameras, which were mounted on pigeons, provided a novel approach to capturing aerial imagery. During the World Wars, aircraft-mounted cameras played a critical role in reconnaissance, offering a strategic advantage. The dawn of space-based remote sensing began in 1946 with a sub-orbital V-2 rocket equipped with a camera. This marked the first step towards the extensive satellite imagery we rely on today. The Landsat program, initiated in 1972, represents a significant milestone in Earth observation, providing the first systematic satellite imagery.</p>
+</div>
+<div id="satellite-orbits" class="section level3 hasAnchor" number="8.2.2">
+<h3><span class="header-section-number">8.2.2</span> Satellite orbits<a href="earth-observation-satellites.html#satellite-orbits" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Satellites are positioned at various altitudes, which impacts their observational capabilities and operational characteristics. Satellites in low Earth orbit (LEO) operate at altitudes ranging from about 200 km to 2,000 km. These satellites provide high-resolution images and cover small areas in great detail. However, they experience significant atmospheric drag, which requires more fuel for orbit maintenance and regular re-boost operations. Conversely, satellites in higher orbits, such as those in a geostationary orbit, can observe larger portions of the Earth but with less detail. These higher orbits, located at approximately 35,786 km above the Earth, require substantial energy for launch and orbital insertion. Geostationary satellites appear fixed relative to a specific point on the Earth’s surface, which is ideal for continuous monitoring of weather patterns, fire spread, and communications.</p>
+</div>
+<div id="time-period-of-a-satellite" class="section level3 hasAnchor" number="8.2.3">
+<h3><span class="header-section-number">8.2.3</span> Time period of a satellite<a href="earth-observation-satellites.html#time-period-of-a-satellite" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Satellites typically move in elliptical orbits. However, to better understand satellite orbits, we can simplify the scenario by considering a satellite moving in a circular orbit. Let <span class="math inline">\(m\)</span> represent the mass of the satellite, and <span class="math inline">\(r\)</span> its distance from the center of the Earth. The gravitational force acting on the satellite is given by:</p>
+<p><span class="math display">\[
+F = \frac{G \times M \times m}{r^2}
+\]</span></p>
+<p>where <span class="math inline">\(G\)</span> is the gravitational constant (<span class="math inline">\(6.674 \times 10^{-11} \, \text{m}^3 \text{kg}^{-1} \text{s}^{-2}\)</span>), and <span class="math inline">\(M\)</span> is the mass of the Earth. This gravitational force provides the centripetal acceleration necessary for the satellite’s circular motion. Thus,</p>
+<p><span class="math display">\[
+\frac{G \times M \times m}{r^2} = m \times \frac{v^2}{r}
+\]</span></p>
+<p>where <span class="math inline">\(v\)</span> is the satellite’s linear speed. Solving for <span class="math inline">\(v\)</span>, we get</p>
+<p><span class="math display">\[
+v = \sqrt{\frac{G \times M}{r}}
+\]</span></p>
+<p>During one complete orbit, the satellite travels a distance of <span class="math inline">\(2 \pi r\)</span>. Therefore, its speed <span class="math inline">\(v\)</span> can be expressed as:</p>
+<p><span class="math display">\[
+v = \frac{2 \pi r}{T}
+\]</span></p>
+<p>where <span class="math inline">\(T\)</span> is the orbital period. Rearranging to solve for <span class="math inline">\(T\)</span>:</p>
+<p><span class="math display">\[
+T = \frac{2 \pi r}{v} = 2 \pi \sqrt{\frac{r^3}{G \times M}}
+\]</span></p>
+<p>This relationship indicates that as the distance <span class="math inline">\(r\)</span> from the center of the Earth increases, the orbital period <span class="math inline">\(T\)</span> also increases. Satellites in higher orbits take longer to complete a single orbit compared to those in lower orbits.</p>
+<p>To compute the height of a geostationary satellite, we set <span class="math inline">\(T\)</span> as 24 hours, to get an orbital radius of 42,164 kilometers. Subtracting the radius of the Earth, 6,378 kilometers gives the altitude of 35,786 kilometers relative to the Earth’s surface.</p>
+</div>
+<div id="types-of-satellite-orbits" class="section level3 hasAnchor" number="8.2.4">
+<h3><span class="header-section-number">8.2.4</span> Types of satellite orbits<a href="earth-observation-satellites.html#types-of-satellite-orbits" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Earth-observation satellites typically operate in one of two primary types of orbits, each serving specific observational needs:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Sun-Synchronous Orbit</strong>: Also known as a heliosynchronous orbit, this is a near-polar orbit where the satellite passes over the same point on Earth at the same local solar time each day. This consistency allows for observations under similar lighting conditions, which is valuable for monitoring changes over time. Sun-synchronous orbits are typically located at altitudes between 700 and 800 km, resulting in an orbital period of about 100 minutes.</p></li>
+<li><p><strong>Geostationary Orbit</strong>: Satellites in this orbit are positioned 35,786 km above the Earth’s equator, where their orbital period matches the Earth’s rotational period. This synchronization allows the satellite to remain fixed relative to a specific point on the Earth’s surface. Geostationary orbits are particularly advantageous for continuous monitoring of weather patterns, communications, and broadcasting.</p></li>
+</ol>
+</div>
+<div id="sat-data" class="section level3 hasAnchor" number="8.2.5">
+<h3><span class="header-section-number">8.2.5</span> Satellite data<a href="earth-observation-satellites.html#sat-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Satellite data is collected and stored in digital raster formats. A raster file represents data in a grid format, with information stored in a matrix of rows and columns. Each cell in this matrix is known as a pixel, and each pixel has a value called its digital number (DN). The DN represents the information captured by the pixel, and can include:</p>
+<ul>
+<li><strong>Photographic images</strong>: RGB values from a photograph or scanned map.</li>
+<li><strong>Continuous data</strong>: Measurements such as elevation, temperature, or spectral information collected by remote sensors.</li>
+<li><strong>Discrete data</strong>: Categorical information such as land use classification or vegetation types.</li>
+</ul>
+<p>Raster images are characterized by several key resolution parameters:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Spatial resolution</strong>: This refers to the sensor’s capacity to discern between closely proximate objects on the Earth’s surface. Enhanced spatial resolution facilitates the capture of finer details and more precise identification of features. For instance, a high spatial resolution may enable the detection of individual trees or even leaves, whereas lower resolution may only reveal broader forested areas. Factors that influence spatial resolution encompass the sensor’s optical characteristics, its distance from the target, and atmospheric conditions. Higher spatial resolution yields more detailed images but also entails larger file sizes.</p></li>
+<li><p><strong>Spectral resolution</strong>: This indicates the sensor’s capability to discern and record diverse electromagnetic radiation bands. For instance, a monochrome camera captures only brightness values across a broad spectrum, rendering various colors as the same shade of gray. Incorporating color filters enables the detection of specific wavelengths, resulting in images with distinct color bands. Higher spectral resolution entails employing additional filters, thereby capturing more detailed spectral information at the expense of larger file sizes.</p></li>
+<li><p><strong>Radiometric resolution</strong>: This describes the sensor’s ability to discern differences in radiance or brightness levels. For example, a sensor with a 1-bit radiometric resolution might classify pixels as either black (0) or white (1), while a 2-bit resolution can differentiate four levels of brightness (00, 01, 10, and 11). Modern sensors typically use 8-bit or higher radiometric resolution, allowing for a greater range of brightness levels at the cost of larger file sizes.</p></li>
+<li><p><strong>Temporal resolution</strong>: This refers to the frequency at which a satellite revisits the same area of the Earth’s surface. Higher temporal resolution enables more frequent observations, facilitating the detection of rapid temporal changes. However, this increased frequency necessitates a substantial volume of data storage and processing. Temporal resolution for an orbit can be enhanced by deploying multiple satellites within the same orbital configuration.</p></li>
+</ol>
+<p>As an example, Landsat 7 satellite captures images with eight spectral bands, in spatial resolutions ranging from 15 to 60 meters, a temporal resolution of 16 days, and an 8-bit radiometric resolution. The detailed band information for Landsat 7 is summarized in table <a href="earth-observation-satellites.html#tab:landsat7">8.2</a> <span class="citation">(<a href="#ref-NASAl7">Center 2013a</a>)</span>.</p>
+<table>
+<caption><span id="tab:landsat7">Table 8.2: </span>Band information for Landsat 7</caption>
+<thead>
+<tr class="header">
+<th align="left">Band</th>
+<th align="left">Wavelength (µm)</th>
+<th align="right">Resolution (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Band 1 - Blue</td>
+<td align="left">0.45-0.52</td>
+<td align="right">30</td>
+</tr>
+<tr class="even">
+<td align="left">Band 2 - Green</td>
+<td align="left">0.52-0.60</td>
+<td align="right">30</td>
+</tr>
+<tr class="odd">
+<td align="left">Band 3 - Red</td>
+<td align="left">0.63-0.69</td>
+<td align="right">30</td>
+</tr>
+<tr class="even">
+<td align="left">Band 4 - Near Infrared (NIR)</td>
+<td align="left">0.77-0.90</td>
+<td align="right">30</td>
+</tr>
+<tr class="odd">
+<td align="left">Band 5 - Shortwave Infrared (SWIR) 1</td>
+<td align="left">1.55-1.75</td>
+<td align="right">30</td>
+</tr>
+<tr class="even">
+<td align="left">Band 6 - Thermal</td>
+<td align="left">10.40-12.50</td>
+<td align="right">60</td>
+</tr>
+<tr class="odd">
+<td align="left">Band 7 - Shortwave Infrared (SWIR) 2</td>
+<td align="left">2.09-2.35</td>
+<td align="right">30</td>
+</tr>
+<tr class="even">
+<td align="left">Band 8 - Panchromatic</td>
+<td align="left">0.52-0.90</td>
+<td align="right">15</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-NASAl7" class="csl-entry">
+Center, NASA Goddard Space Flight. 2013a. <span>“BandpassesL7vL8-Jul2013.jpg.”</span> <a href="https://landsat.gsfc.nasa.gov/wp-content/uploads/2013/01/BandpassesL7vL8-Jul20131.pdf" class="uri">https://landsat.gsfc.nasa.gov/wp-content/uploads/2013/01/BandpassesL7vL8-Jul20131.pdf</a>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="fundamentals.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="radar.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": null,
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
