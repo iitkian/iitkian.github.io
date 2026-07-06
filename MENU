@@ -1,4 +1,3 @@
-mainpage            [index.html]
-about            	[about.html]
-courses      	[courses.html]
-writings        	[writings.html]
+home            [index.html]
+courses         [courses.html]
+writings        [writings.html]
