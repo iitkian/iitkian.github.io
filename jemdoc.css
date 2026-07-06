@@ -27,9 +27,9 @@ body {
 /* Base Table Layout Redefined as Grid */
 table#tlayout {
   display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 2.5rem;
-  max-width: 1150px;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 900px;
   width: 90%;
   margin: 4rem auto;
   border: none;
@@ -41,18 +41,19 @@ table#tlayout > tbody, table#tlayout > tbody > tr, table#tlayout > tr {
   display: contents;
 }
 
-/* Glassmorphism sidebar/menu */
+/* Glassmorphism top menu */
 #layout-menu {
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(18px) saturate(180%);
   -webkit-backdrop-filter: blur(18px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 24px;
-  padding: 2rem 1.25rem;
+  border-radius: 20px;
+  padding: 1rem 1.5rem;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.04);
-  align-self: start;
-  position: sticky;
-  top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
   width: 100%;
 }
 
@@ -68,33 +69,15 @@ table#tlayout > tbody, table#tlayout > tbody > tr, table#tlayout > tr {
   width: 100%;
 }
 
-/* Menu Category Titles */
-div.menu-category {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #64748b;
-  border-bottom: none;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-  padding-left: 0.75rem;
-}
-
-div.menu-category:first-child {
-  margin-top: 0;
-}
-
 /* Menu Items */
 div.menu-item {
-  padding-left: 0;
-  text-indent: 0;
-  margin-bottom: 0.25rem;
+  display: inline-block;
+  margin-bottom: 0;
 }
 
 #layout-menu a {
-  display: block;
-  padding: 0.6rem 0.85rem;
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
   border-radius: 12px;
   color: #475569;
   font-weight: 500;
@@ -108,7 +91,6 @@ div.menu-item {
 #layout-menu a:hover {
   background: rgba(59, 130, 246, 0.08);
   color: #2563eb;
-  transform: translateX(4px);
   border-bottom: none;
 }
 
@@ -275,47 +257,19 @@ div#footer a:hover {
   }
 
   table#tlayout {
-    grid-template-columns: 1fr;
     margin: 1.5rem auto;
     width: 95%;
     gap: 1.5rem;
   }
 
   #layout-menu {
-    position: static;
-    padding: 1.25rem;
+    padding: 0.85rem 1rem;
     border-radius: 18px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.35rem;
-  }
-
-  div.menu-category {
-    width: 100%;
-    text-align: center;
-    margin-top: 0.75rem;
-    margin-bottom: 0.25rem;
-    padding-left: 0;
-    font-size: 0.7rem;
-  }
-
-  div.menu-category:first-child {
-    margin-top: 0;
-  }
-
-  div.menu-item {
-    margin-bottom: 0;
   }
 
   #layout-menu a {
-    display: inline-block;
     padding: 0.4rem 0.75rem;
     font-size: 0.88rem;
-  }
-  
-  #layout-menu a:hover {
-    transform: none;
   }
 
   #layout-content {
