@@ -1,5 +1,7 @@
 # jemdoc: menu{MENU}{writings.html}
-= Writings
+= Goodies
+
+== Selected Publications
 
 - [https://www.amazon.com/dp/1032831723?ref_=cm_sw_r_ffobk_cp_ud_dp_5NQKXESZ7HMXKYFDH4HJ Wildfires: Principles, Management Strategies, and Best Practices] ([wildfires/index.html Web version])
 - [Forest-fire-management-book.pdf Fire fighting: 10 lessons in management]
@@ -8,3 +10,14 @@
 - [https://www.ignfa.gov.in/rs-gis-software RS-GIS with free software]
 - [https://www.ignfa.gov.in/forest-working-plans QGIS based decision-support system for creating Forest Working Plans]
 - [https://mpforest.gov.in/publicdomain/atlas/index.html MP Forest Department Publications]
+
+== Applications
+
+- [https://aranyani.streamlit.app AI-based Deforestation Detection]
+- [http://nrtfire.streamlit.app Current Forest Fires]
+- [https://www.arcgis.com/apps/instant/3dviewer/index.html?appid=8e4ac452ae77434f99ed06dbb1351edf SimplyFire 3D (Desktop Only)]
+- [http://burnedarea.streamlit.app Burned area mapping]
+- [http://firestats.streamlit.app Fire Statistics]
+- [http://egreenwatch2.streamlit.app Long-term Vegetation Monitoring]
+- [http://parivartan.streamlit.app Vegetation Change Monitoring]
+

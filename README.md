@@ -37,6 +37,14 @@ Always build the website using the local custom configuration to ensure mobile d
 python3 jemdoc_mathjax-master/jemdoc -c mysite.conf *.jemdoc
 ```
 
+### Running Locally:
+To preview the website locally, start a local HTTP server:
+```bash
+# Start a local Python HTTP server on port 8000
+python3 -m http.server 8000
+```
+Then navigate to `http://localhost:8000` in your web browser.
+
 ### Configuration Files:
 - **`mysite.conf`:** Custom configuration override injecting `<meta name="viewport" content="width=device-width, initial-scale=1.0" />` into the HTML `<head>`.
 - **`MENU`:** Contains the flat list of site links. Each line should be structured as `linkname [filename.html]` without category header text lines.
