@@ -1,59 +1,37 @@
 <!DOCTYPE html>
+
 <html lang="" xml:lang="">
 <head>
-
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8.4 LiDAR | Wildfires</title>
-  <meta name="description" content="This book provides an easy introduction to the causes, principles, management strategies, and best practices in wildfires." />
-  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
-
-  <meta property="og:title" content="8.4 LiDAR | Wildfires" />
-  <meta property="og:type" content="book" />
-  
-  <meta property="og:description" content="This book provides an easy introduction to the causes, principles, management strategies, and best practices in wildfires." />
-  <meta name="github-repo" content="rstudio/bookdown-demo" />
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8.4 LiDAR | Wildfires" />
-  
-  <meta name="twitter:description" content="This book provides an easy introduction to the causes, principles, management strategies, and best practices in wildfires." />
-  
-
-<meta name="author" content="Ankur Awadhiya" />
-
-
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  
-<link rel="prev" href="radar.html"/>
-<link rel="next" href="geographic-information-systems-gis.html"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<title>8.4 LiDAR | Wildfires</title>
+<meta content="This book provides an easy introduction to the causes, principles, management strategies, and best practices in wildfires." name="description"/>
+<meta content="bookdown 0.42 and GitBook 2.6.7" name="generator"/>
+<meta content="8.4 LiDAR | Wildfires" property="og:title"/>
+<meta content="book" property="og:type"/>
+<meta content="This book provides an easy introduction to the causes, principles, management strategies, and best practices in wildfires." property="og:description"/>
+<meta content="rstudio/bookdown-demo" name="github-repo"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="8.4 LiDAR | Wildfires" name="twitter:title"/>
+<meta content="This book provides an easy introduction to the causes, principles, management strategies, and best practices in wildfires." name="twitter:description"/>
+<meta content="Ankur Awadhiya" name="author"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<link href="radar.html" rel="prev"/>
+<link href="geographic-information-systems-gis.html" rel="next"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
-
-
-
-
-
-
-
-<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
-<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet"/>
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet"/>
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet"/>
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet"/>
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet"/>
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet"/>
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet"/>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet"/>
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet"/>
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-
-
-
 <style type="text/css">
   
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
@@ -81,22 +59,14 @@ div.csl-indent {
   margin-left: 2em;
 }
 </style>
-
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
-
 <body>
-
-
-
-  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
-
-    <div class="book-summary">
-      <nav role="navigation">
-
+<div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+<div class="book-summary">
+<nav role="navigation">
 <ul class="summary">
 <li><a href="./">Wildfires</a></li>
-
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Legal note</a></li>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
@@ -470,43 +440,38 @@ div.csl-indent {
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
 </ul>
-
-      </nav>
-    </div>
-
-    <div class="book-body">
-      <div class="body-inner">
-        <div class="book-header" role="navigation">
-          <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Wildfires</a>
-          </h1>
-        </div>
-
-        <div class="page-wrapper" tabindex="-1" role="main">
-          <div class="page-inner">
-
-            <section class="normal" id="section-">
-<div id="lidar" class="section level2 hasAnchor" number="8.4">
-<h2><span class="header-section-number">8.4</span> LiDAR<a href="lidar.html#lidar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</nav>
+</div>
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Wildfires</a>
+</h1>
+</div>
+<div class="page-wrapper" role="main" tabindex="-1">
+<div class="page-inner">
+<section class="normal" id="section-">
+<div class="section level2 hasAnchor" id="lidar" number="8.4">
+<h2><span class="header-section-number">8.4</span> LiDAR<a aria-label="Anchor link to header" class="anchor-section" href="lidar.html#lidar"></a></h2>
 <p>LiDAR, which stands for “Light Detection and Ranging,” represents a sophisticated active remote sensing technology that utilizes LASER light to measure distances with exceptional accuracy. The term itself reflects the integration of LASER and RADAR principles, highlighting its ability to detect and measure distances using light. Developed by Hughes Aircraft, Inc. in the 1960s, LiDAR has evolved into a critical tool in remote sensing, offering capabilities far beyond traditional optical and RADAR methods.</p>
-<div id="features-of-lidar" class="section level3 hasAnchor" number="8.4.1">
-<h3><span class="header-section-number">8.4.1</span> Features of LiDAR<a href="lidar.html#features-of-lidar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="section level3 hasAnchor" id="features-of-lidar" number="8.4.1">
+<h3><span class="header-section-number">8.4.1</span> Features of LiDAR<a aria-label="Anchor link to header" class="anchor-section" href="lidar.html#features-of-lidar"></a></h3>
 <p>LiDAR utilizes monochromatic light. Lasers emit light at a singular, precise wavelength, conferring LiDAR with exceptionally high spectral resolution. This attribute enables the system to discern subtle variations in surface materials based on their interaction with the LASER light. In topographic LiDAR applications, near-infrared lasers are employed to penetrate vegetation and capture intricate land surface features. In bathymetric LiDAR, green lasers are utilized to measure underwater features, such as seafloor and riverbed elevations, owing to their ability to penetrate water.</p>
 <p>The LASER beam within a LiDAR system possesses remarkable directionality, maintaining its strength and focus over extended distances. This characteristic facilitates the detection and measurement of reflected signals from considerable distances, ensuring high-quality data acquisition. The narrow beam width also contributes to the reduction of measurement errors and enhances spatial resolution, rendering LiDAR highly effective for comprehensive and detailed surveys.</p>
 <p>LiDAR systems exhibit exceptional precision and resolution, which are paramount in applications necessitating precise measurements. This precision is achieved through the meticulous measurement of time intervals between the emission and reception of LASER pulses, in conjunction with precise positional data obtained from Global Positioning System (GPS) and inertial measurement systems. The culmination of these efforts yields highly accurate spatial data, which can be utilized for a diverse range of applications, including topographic mapping and vegetation analysis.</p>
 </div>
-<div id="fundamental-components" class="section level3 hasAnchor" number="8.4.2">
-<h3><span class="header-section-number">8.4.2</span> Fundamental components<a href="lidar.html#fundamental-components" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="section level3 hasAnchor" id="fundamental-components" number="8.4.2">
+<h3><span class="header-section-number">8.4.2</span> Fundamental components<a aria-label="Anchor link to header" class="anchor-section" href="lidar.html#fundamental-components"></a></h3>
 <p>To get information about a target, we require three measurements — the position of the LiDAR instrument and the distance and angular measurements of the target from the LiDAR instrument’s position. The exact location of the LiDAR platform — whether mounted on an aircraft, UAV, or a ground-based system — is determined using Differential GPS (DGPS) and an Inertial Measurement Unit (IMU). DGPS provides accurate geographic coordinates, while the IMU measures orientation and movement. Together, these systems ensure that the LiDAR data is accurately georeferenced, allowing for precise spatial analysis.</p>
 <p>The distance from the LiDAR instrument to the target is computed using the same formula that we discussed in RADAR distance measurement:</p>
 <p><span class="math display">\[ d = \frac{c \times t}{2} \]</span></p>
 <p>In this formula, <span class="math inline">\(d\)</span> is the distance to the target, <span class="math inline">\(c\)</span> represents the speed of light (<span class="math inline">\(299,792,458\)</span> meters per second in a vacuum, with a slight reduction in refractive media like air), and <span class="math inline">\(t\)</span> is the time it takes for the LASER pulse to travel to the target and return. The factor of 2 accounts for the round-trip distance traveled by the LASER beam.</p>
 <p>The angle at which the LASER beam is emitted and received is also crucial for creating three-dimensional (3D) models of the target area. By measuring these angles, LiDAR systems can generate detailed 3D representations of landscapes and structures, capturing intricate details that are essential for accurate spatial analysis.</p>
 </div>
-<div id="modes-of-operation" class="section level3 hasAnchor" number="8.4.3">
-<h3><span class="header-section-number">8.4.3</span> Modes of operation<a href="lidar.html#modes-of-operation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="section level3 hasAnchor" id="modes-of-operation" number="8.4.3">
+<h3><span class="header-section-number">8.4.3</span> Modes of operation<a aria-label="Anchor link to header" class="anchor-section" href="lidar.html#modes-of-operation"></a></h3>
 <p>LiDAR systems can be operated in various modes to capture different types of data:</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>First Pulse (FP) Mode</strong>: In FP mode, the LiDAR system detects the initial pulse of the reflected LASER beam. This pulse typically corresponds to the elevation of the highest surfaces within the target area, such as tree canopies or building rooftops. FP mode is particularly advantageous for capturing the uppermost features and provides valuable information for applications such as vegetation mapping and urban planning.</p></li>
@@ -519,8 +484,8 @@ div.csl-indent {
 <li><p><strong>Digital Canopy Height Model (DCHM)</strong>: The DCHM is calculated by subtracting the DTM from the DEM, representing the height of vegetation or other objects above the ground. This model is useful for analyzing forest canopy height, assessing vegetation density, and studying habitat structure. DCHMs provide insights into forest health, biomass, carbon sequestration, and ecological dynamics.</p></li>
 </ol>
 </div>
-<div id="applications-in-forestry" class="section level3 hasAnchor" number="8.4.4">
-<h3><span class="header-section-number">8.4.4</span> Applications in forestry<a href="lidar.html#applications-in-forestry" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="section level3 hasAnchor" id="applications-in-forestry" number="8.4.4">
+<h3><span class="header-section-number">8.4.4</span> Applications in forestry<a aria-label="Anchor link to header" class="anchor-section" href="lidar.html#applications-in-forestry"></a></h3>
 <p>LiDAR technology has proven to be exceptionally versatile and valuable in forestry and ecological studies, offering numerous applications.</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Aerial and space-based surveys</strong>: LiDAR systems are deployed on various platforms, including aircraft, UAVs, and space-based missions such as NASA’s GEDI (Global Ecosystem Dynamics Investigation) aboard the International Space Station [Figure <a href="lidar.html#fig:LiDARforestry">8.2</a>a]. This deployment option allows for data collection at both local and global scales, enabling comprehensive forest monitoring and analysis.</p></li>
@@ -530,23 +495,22 @@ div.csl-indent {
 <li><p><strong>Terrestrial Laser Scanning (TLS)</strong>: LiDAR systems can also be used in a horizontal manner as Terrestrial Laser Scanners (TLS), which are either mounted on tripods or UAVs for deployment in dense forest areas. TLS provides detailed, high-resolution information about forest attributes at a more localized scale, enhancing our understanding of forest structure, species composition, and habitat characteristics [Figure <a href="lidar.html#fig:LiDARforestry">8.2</a>h].</p></li>
 </ol>
 <p>In this way, LiDAR technology has revolutionized the field of remote sensing by providing precise, high-resolution spatial data. Its applications span a wide range of fields, from forestry and environmental monitoring to urban planning and infrastructure development. The ability to deliver detailed 3D models and accurate measurements makes LiDAR an indispensable tool for advancing our understanding of natural and built environments, supporting informed decision-making, and fostering sustainable resource management.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:LiDARforestry"></span>
-<img src="Figure/lidar1.png" alt="Some uses of LiDAR in forestry." width="38%" /><img src="Figure/lidar2.png" alt="Some uses of LiDAR in forestry." width="38%" /><img src="Figure/lidar3.png" alt="Some uses of LiDAR in forestry." width="38%" /><img src="Figure/lidar4.png" alt="Some uses of LiDAR in forestry." width="38%" /><img src="Figure/lidar5.png" alt="Some uses of LiDAR in forestry." width="38%" /><img src="Figure/lidar6.png" alt="Some uses of LiDAR in forestry." width="38%" /><img src="Figure/lidar7.png" alt="Some uses of LiDAR in forestry." width="38%" /><img src="Figure/lidar8.png" alt="Some uses of LiDAR in forestry." width="38%" />
+<div class="figure" style="text-align: center"><span id="fig:LiDARforestry" style="display:block;"></span>
+<div class="sub-image-wrapper" style="width: 38%; margin: 0.5%;"><img alt="Some uses of LiDAR in forestry." src="Figure/lidar1.png"/><span class="sub-image-label">a</span></div><div class="sub-image-wrapper" style="width: 38%; margin: 0.5%;"><img alt="Some uses of LiDAR in forestry." src="Figure/lidar2.png"/><span class="sub-image-label">b</span></div><div class="sub-image-wrapper" style="width: 38%; margin: 0.5%;"><img alt="Some uses of LiDAR in forestry." src="Figure/lidar3.png"/><span class="sub-image-label">c</span></div><div class="sub-image-wrapper" style="width: 38%; margin: 0.5%;"><img alt="Some uses of LiDAR in forestry." src="Figure/lidar4.png"/><span class="sub-image-label">d</span></div><div class="sub-image-wrapper" style="width: 38%; margin: 0.5%;"><img alt="Some uses of LiDAR in forestry." src="Figure/lidar5.png"/><span class="sub-image-label">e</span></div><div class="sub-image-wrapper" style="width: 38%; margin: 0.5%;"><img alt="Some uses of LiDAR in forestry." src="Figure/lidar6.png"/><span class="sub-image-label">f</span></div><div class="sub-image-wrapper" style="width: 38%; margin: 0.5%;"><img alt="Some uses of LiDAR in forestry." src="Figure/lidar7.png"/><span class="sub-image-label">g</span></div><div class="sub-image-wrapper" style="width: 38%; margin: 0.5%;"><img alt="Some uses of LiDAR in forestry." src="Figure/lidar8.png"/><span class="sub-image-label">h</span></div>
 <p class="caption">
 Figure 8.2: Some uses of LiDAR in forestry.
 </p>
 </div>
 </div>
 </div>
-            </section>
-
-          </div>
-        </div>
-      </div>
-<a href="radar.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="geographic-information-systems-gis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
-    </div>
-  </div>
+</section>
+</div>
+</div>
+</div>
+<a aria-label="Previous page" class="navigation navigation-prev" href="radar.html"><i class="fa fa-angle-left"></i></a>
+<a aria-label="Next page" class="navigation navigation-next" href="geographic-information-systems-gis.html"><i class="fa fa-angle-right"></i></a>
+</div>
+</div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -594,7 +558,6 @@ gitbook.start({
 });
 });
 </script>
-
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
   (function () {
@@ -610,5 +573,4 @@ gitbook.start({
   })();
 </script>
 </body>
-
 </html>
