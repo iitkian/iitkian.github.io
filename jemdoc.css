@@ -302,13 +302,13 @@ div#footer a:hover {
   color: #2563eb;
   transform: rotate(15deg) scale(1.1);
 }
-
 .theme-toggle-btn svg {
   display: block;
+  pointer-events: none;
 }
 
-/* System-level or Manually Triggered Dark Theme overrides via html.dark class */
-html.dark body {
+/* System-level or Manually Triggered Dark Theme overrides via body.dark class */
+body.dark {
   background: radial-gradient(circle at 10% 20%, rgba(30, 58, 138, 0.4) 0%, transparent 45%),
               radial-gradient(circle at 85% 15%, rgba(88, 28, 135, 0.4) 0%, transparent 50%),
               radial-gradient(circle at 90% 85%, rgba(13, 148, 136, 0.25) 0%, transparent 40%),
@@ -317,103 +317,104 @@ html.dark body {
   color: #cbd5e1;
 }
 
-html.dark #layout-menu {
+body.dark #layout-menu {
   background: rgba(15, 23, 42, 0.45);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
-html.dark #layout-content {
+body.dark #layout-content {
   background: rgba(15, 23, 42, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
 }
 
-html.dark div.menu-category {
+body.dark div.menu-category {
   color: #94a3b8;
 }
 
-html.dark #layout-menu a {
+body.dark #layout-menu a {
   color: #94a3b8;
 }
 
-html.dark #layout-menu a:hover {
+body.dark #layout-menu a:hover {
   background: rgba(139, 92, 246, 0.15);
   color: #c084fc;
 }
 
-html.dark #layout-menu a.current:link, 
-html.dark #layout-menu a.current:visited {
+body.dark #layout-menu a.current:link, 
+body.dark #layout-menu a.current:visited {
   background: rgba(139, 92, 246, 0.25);
   color: #e9d5ff;
 }
 
-html.dark div#toptitle {
+body.dark div#toptitle {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-html.dark div#toptitle h1 {
+body.dark div#toptitle h1 {
   background: linear-gradient(135deg, #60a5fa 0%, #c084fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-html.dark div#subtitle {
+body.dark div#subtitle {
   color: #94a3b8;
 }
 
-html.dark h1, html.dark h2, html.dark h3 {
+body.dark h1, body.dark h2, body.dark h3 {
   color: #f1f5f9;
 }
 
-html.dark h2::after {
+body.dark h2::after {
   background: #60a5fa;
 }
 
-html.dark p, html.dark li {
+body.dark p, body.dark li {
   color: #cbd5e1;
 }
 
-html.dark #layout-content a {
+body.dark #layout-content a {
   color: #60a5fa;
   border-bottom-color: rgba(96, 165, 250, 0.2);
 }
 
-html.dark #layout-content a:hover {
+body.dark #layout-content a:hover {
   border-bottom-color: #60a5fa;
   background: rgba(96, 165, 250, 0.08);
 }
 
-html.dark tt {
+body.dark tt {
   background: rgba(96, 165, 250, 0.06);
   color: #93c5fd;
   border-color: rgba(96, 165, 250, 0.1);
 }
 
-html.dark pre {
+body.dark pre {
   background: rgba(0, 0, 0, 0.2);
   border-color: rgba(255, 255, 255, 0.05);
 }
 
-html.dark div#footer {
+body.dark div#footer {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   color: #64748b;
 }
 
-html.dark div#footer a {
+body.dark div#footer a {
   color: #94a3b8;
 }
 
-html.dark div#footer a:hover {
+body.dark div#footer a:hover {
   color: #60a5fa;
 }
 
-html.dark .theme-toggle-btn {
+body.dark .theme-toggle-btn {
   color: #94a3b8;
 }
 
-html.dark .theme-toggle-btn:hover {
+body.dark .theme-toggle-btn:hover {
   background: rgba(139, 92, 246, 0.15);
   color: #c084fc;
 }
+
 
