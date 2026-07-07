@@ -50,6 +50,12 @@ pre code {
     color: #f1f5f9;
   }
 }
+html.dark .sub-image-label {
+  background: rgba(30, 41, 59, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f1f5f9;
+}
+
 
 /* Responsive improvements for tables and preformatted text */
 table {
